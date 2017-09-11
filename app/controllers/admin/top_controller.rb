@@ -1,5 +1,5 @@
 class Admin::TopController < ApplicationController
-  before_action :admin_logget_in?
+  # before_action :admin_logget_in?
   def idnex
   end
 
@@ -20,7 +20,7 @@ class Admin::TopController < ApplicationController
     if params[:back]
       render :new
     elsif @admin.save
-      log_in @admin
+      # log_in @admin
       redirect_to admin_root_url
     else
       render :new

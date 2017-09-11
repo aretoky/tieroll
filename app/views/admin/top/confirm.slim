@@ -1,0 +1,15 @@
+h1 Admin登録確認
+.admin_confirm_form
+  = form_with model: @admin, url: {action: :create}, local: true do |f|
+    .admin_conform_name
+      = @admin.name 
+      = f.hidden_field :name 
+    .admin_confirm_email
+      = @admin.email 
+      = f.hidden_field :email
+    .admin_confirm_password
+      = @admin.password
+      = f.hidden_field :password
+    .admin_confirm_submit
+      = f.submit "修正", name: "back"
+      = f.submit "登録"
