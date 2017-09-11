@@ -47,6 +47,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-footnotes'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
