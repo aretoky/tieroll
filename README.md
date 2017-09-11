@@ -1,24 +1,47 @@
-# README
+TieRoll
+-
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**This service will shorten the coordinates of the tie!**
 
-Things you may want to cover:
+環境
 
-* Ruby version
+* Ruby 2.4.1
+* Rails 5.1.3
+* postgreSQL 9.6.3
 
-* System dependencies
 
-* Configuration
+サービス概要
+-
 
-* Database creation
+男性ももっとおしゃれであるべきだ、可能な限りのおしゃれを楽しもう！
 
-* Database initialization
+を提供すべく開発します
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+対象となるユーザー層
+-
 
-* Deployment instructions
+社会人として落ち着いていき、物にこだわり始める20代半ば〜よぼよぼになってもファッションへの飽くなき探究を求める男性の皆さん
 
-* ...
+プロジェクトプラン
+-
+
+* 9/5日着手　9/30完成予定
+* 1h/dayの時間を開発に充てます（予定）
+
+Design
+-
+
+* サイト管理者
+* スタッフ
+* ユーザー
+
+の3つの名前空間を設定し、某ファッションECサイトのスーツ特化版になるものを作っています。
+
+
+進捗
+-
+
+随時更新
+
+9/11 リポジトリ、adminロジック着手
