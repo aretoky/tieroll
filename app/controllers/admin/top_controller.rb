@@ -1,5 +1,6 @@
-class Admin::TopController < ApplicationController
-  # before_action :admin_logget_in?
+class Admin::TopController < Admin::Base
+  # before_action :current_admin, only: [:index]
+  before_action :are_you_admin?, only: [:index]
   def idnex
   end
 
@@ -20,7 +21,7 @@ class Admin::TopController < ApplicationController
     if params[:back]
       render :new
     elsif @admin.save
-      # log_in @admin
+      log_in @admin
       redirect_to admin_root_url
     else
       render :new
@@ -40,4 +41,9 @@ class Admin::TopController < ApplicationController
   def admin_params
     params.require(:admin).permit(:name, :email, :password, :password_confirmation)
   end
+
+  def are_you_admin?
+    redirect_to admin_login_url if current_admin.nil?
+  end
+
 end

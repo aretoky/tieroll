@@ -1,0 +1,9 @@
+h1 Admin_login_form
+.admin_login_form
+  = form_with url: admin_login_path, method: :post, local: true do |f|
+    .admin_login
+      = f.text_field :email, placeholder: "email", required: true 
+    .admin_login
+      = f.password_field :password, placeholder: "password", required: true 
+    .admin_login_submit
+      = f.submit "ログイン"

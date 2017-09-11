@@ -1,13 +1,13 @@
 h1 Admin create form
-.new_admin_form
+.new_admin
   = form_with model: @admin, url: confirm_admin_top_index_path, method: :post, local: true do |f|
-    .new_admin_name
+    .new_admin_form
       = f.text_field :name, placeholder: "Name", required: true
-    .new_admin_email
+    .new_admin_form
       = f.text_field :email, placeholder: "Email", required: true
-    .new_admin_password
+    .new_admin_form
       = f.text_field :password, placeholder: "Password", required: true
-    .new_admin_password_confirmation
+    .new_admin_form
       = f.password_field :password_confirmation, placeholder: "Password再入力", required: true
     .new_admin_submit
       = f.submit "確認"
