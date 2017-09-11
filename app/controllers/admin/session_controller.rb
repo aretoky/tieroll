@@ -7,6 +7,7 @@ class Admin::SessionController < Admin::Base
     if admin && admin.authenticate(params[:password])
       log_in admin
       current_admin
+      flash.alert = '管理者としてログインしました'
       redirect_to admin_root_path
     else
       render :new
