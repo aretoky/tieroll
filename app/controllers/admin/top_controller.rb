@@ -21,7 +21,7 @@ class Admin::TopController < Admin::Base
     if params[:back]
       render :new
     elsif @admin.save
-      log_in @admin
+      flash.notice = "新しい管理者を作成"
       redirect_to admin_root_url
     else
       render :new
