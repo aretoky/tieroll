@@ -1,4 +1,36 @@
-.new 
-  = link_to 'Create', new_admin_top_path
-.log 
-  = link_to 'out', admin_logout_path, method: :delete
+.pure
+  .pure-container data-effect="pure-effect-scaleDown" 
+    /トグルボタン
+    input#pure-toggle-left.pure-toggle data-toggle="left" type="checkbox" /
+    label.pure-toggle-label data-toggle-label="left" for="pure-toggle-left" 
+      span.pure-toggle-icon
+    /トグルボタン
+    /ドロワーメニュー
+    nav.pure-drawer data-position="left" 
+      .row.collapse
+        .large-12.columns
+          ul.nav-primary
+            li
+              = link_to '管理者メニュー', admin_root_path
+              hr.sep
+            li
+              = link_to 'Staff管理画面'
+              hr.sep
+            
+    /ドロワーメニュー
+    /! ▼コンテン▼
+    .pure-pusher-container
+      .pure-pusher
+        / | \.......
+    /! ▲コンテンツ▲
+    /! ▼コンテンツオーバーレイ▼
+    label.pure-overlay data-overlay="left" for="pure-toggle-left" 
+    /! ▲コンテンツオーバーレイ▲
+  
+    
+.cont  
+  h1 管理者メニュー
+  .new 
+    = link_to 'Create', new_admin_top_path
+  .log 
+    = link_to 'out', admin_logout_path, method: :delete
