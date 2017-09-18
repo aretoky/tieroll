@@ -1,6 +1,6 @@
 class Admin::TopController < Admin::Base
-  # before_action :current_admin, only: [:index]
-  before_action :are_you_admin?, only: [:index]
+  before_action :are_you_admin?
+  before_action :set_admin, only: [:edit]
   def idnex
   end
 
@@ -21,17 +21,24 @@ class Admin::TopController < Admin::Base
     if params[:back]
       render :new
     elsif @admin.save
-      flash.notice = "新しい管理者を作成"
-      redirect_to admin_root_url
+      redirect_to admin_root_url, notice: "新しい管理者を作成しました"
     else
       render :new
     end
   end
 
   def edit
+    # binding.pry
   end
 
   def update
+    binding.pry
+    @admin.assign_attributes(params[:admin_id])
+    if @admin.save
+      redirect_to admin_root_url, notice: "更新完了"
+    else
+      render :edit, alert: "入力内容を確認して下さい"
+    end
   end
 
   def destroy
@@ -44,6 +51,10 @@ class Admin::TopController < Admin::Base
 
   def are_you_admin?
     redirect_to admin_login_url if current_admin.nil?
+  end
+
+  def set_admin
+    @admin = Admin.find_by(id: params[:admin_id])
   end
 
 end
