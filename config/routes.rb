@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       delete 'logout', to: 'session#destroy', as: :logout
     end
 
-    resources :staff_member, only: [:new, :edit, :destroy] do
+    resources :staff_member, only: [:new, :create, :edit, :update, :destroy] do
       collection do
         post 'confirm'
       end
