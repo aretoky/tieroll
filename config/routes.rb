@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'customer#top'
+  
   namespace :admin do
     root to: 'top#index'
     resources :top do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
       delete 'logout', to: 'session#destroy', as: :logout
     end
 
-    resources :staff_member, only: [:new, :create, :edit, :update, :destroy] do
+    resources :staff_member do
       collection do
         post 'confirm'
       end
