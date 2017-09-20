@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'customer#top'
-  
+
   namespace :admin do
     root to: 'top#index'
     resources :top do
@@ -17,9 +17,6 @@ Rails.application.routes.draw do
         post 'confirm'
       end
     end
-    get 'login', to: 'session#new', as: :login
-    post 'login', to: 'session#create'
-    delete 'logout', to: 'session#destroy', as: :logout
   end
 
   namespace :staff_member do
