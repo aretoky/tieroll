@@ -2,23 +2,29 @@ h1 New_Staff_confirm
 .new_staff_confirm_form.staff_form
   = form_with model: @staff, url: admin_staff_member_index_path, method: :post, local: true do |f|
     .confirm_staff.staff_form
+      = f.label "会社名 : "
       = @staff.company
       = f.hidden_field :company
     .confirm_staff.staff_form
+      = f.label "メールアドレス : "
       = @staff.email
       = f.hidden_field :email
     .confirm_staff.staff_form
+      = f.label "パスワード : "
       = @staff.password 
       = f.hidden_field :password 
     .confirm_staff.staff_form
+      = f.label "開始日 : "
       = @staff.start_time
       = f.hidden_field :start_time
     .confirm_staff.staff_form
+      = f.label "有効期限 : "
       = @staff.end_time 
       = f.hidden_field :end_time
     .confirm_staff.staff_form
+      = f.label "アカウントの停止 : "
       = @staff.suspended 
       = f.hidden_field :suspended
-    .confirm_staff.submit
+    .confirm_staff.submit.staff_form
       = f.submit '戻る', name: 'back'
       = f.submit '登録'

@@ -1,19 +1,22 @@
-h1 Staff登録
-.new_staff_form.staff_form
-  = form_with model: @staff, url: confirm_admin_staff_member_index_path, method: :post, local: true do |f|
-    .new_staff_company.staff_form
-      = f.text_field :company, placeholder: "Company", required: true
-    .new_staff_email.staff_form
-      = f.text_field :email, placeholder: "Email", required: true 
-    .new_staff_password.staff_form
-      = f.text_field :password, placeholder: "Password", required: true 
-    .new_staff_password_confirm.staff_form
-      = f.text_field :password_cofirmation, placeholder: "Pass確認", required: true 
-    .new_staff_start.staff_form
-      = f.date_field :start_time
-    .new_staff_end.staff_form
-      = f.date_field :end_time
-    .new_staff_suspended
-      = f.check_box :suspended
-    .new_staff_chack.staff_form
-     = f.submit "確認"
+= render 'admin/drawer'
+.cont 
+  h1 Staff登録
+  .new_staff_form.staff_form
+    = form_with model: @staff, url: confirm_admin_staff_member_index_path, method: :post, local: true do |f|
+      .new_staff_company.staff_form
+        = f.text_field :company, placeholder: "Company", required: true
+      .new_staff_email.staff_form
+        = f.text_field :email, placeholder: "Email", required: true 
+      .new_staff_password.staff_form
+        = f.text_field :password, placeholder: "Password", required: true 
+      .new_staff_password_confirm.staff_form
+        = f.text_field :password_cofirmation, placeholder: "Pass確認", required: true 
+      .new_staff_start.staff_form
+        = f.date_field :start_time
+      .new_staff_end.staff_form
+        = f.date_field :end_time
+      .new_staff_suspended.staff_form
+        = f.label "アカウント停止 "
+        = f.check_box :suspended
+      .new_staff_chack.staff_form
+       = f.submit "確認"
