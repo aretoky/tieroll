@@ -1,6 +1,7 @@
 class Admin::StaffMemberController < ApplicationController
 
   def index
+    @staff_member = StaffMember.all 
   end
 
   def new

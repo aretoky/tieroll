@@ -1,4 +1,24 @@
 = render 'admin/drawer'
 .cont 
-  h1 Staff管理画面
-  = link_to '新しいスタッフ', new_admin_staff_member_path
+  .staff_content
+    h1 Staff管理画面
+    .new_staff
+      = link_to '新しいスタッフ', new_admin_staff_member_path
+
+    .staff_index
+      table
+        thead
+          tr
+            th 会社名
+            th 開始日
+            th 終了日
+            th アカウントの停止
+            th 
+        tbody
+          - @staff_member.each do |staff|
+            tr 
+              td = staff.company
+              td = staff.start_time
+              td = staff.end_time 
+              td = staff.suspended 
+              td = link_to '編集', edit_admin_staff_member_path(staff)
