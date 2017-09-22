@@ -1,25 +1,9 @@
 .cont
   float: right
-  width: 90%
+  // width: 90%
 
   .shopping_content
     padding-right: 10%
-
-    // 区切り線をかっこよく
-    hr
-      border-top: 1px solid #bbb
-      border-bottom: 1px solid #fff
-
-    // フォトスライダー
-    .photobox
-      padding-top: 50px
-      height: 620px
-
-      img
-        height: 600px
-
-      .carousel-cell
-        margin-left: 5px
 
     // ヘッダーのナビを横並びにする
     header:after
@@ -44,8 +28,6 @@
         color: #C0C0C0
         text-decoration: none
 
-
-    // シェアボタン
     .share-facebook
       padding: 5px 30px 5px 30px
       color: #ffffff
@@ -58,8 +40,6 @@
 
     .share
       float: left
-      padding-bottom: 0px
-
 
       ul
         margin: 0
@@ -70,7 +50,7 @@
         float: left
         width: 100px
         text-align: center
-        // margin-left: 5px
+        margin-left: 5px
 
       a
         border-radius: 5px
@@ -113,26 +93,19 @@
       top: 0
       left: 0
 
-    .session-bar
-      &:after
-        display: block
-        content: ""
-        clear: both
+    // 区切り線をかっこよく
+    hr
+      border-top: 1px solid #bbb
+      border-bottom: 1px solid #fff
 
-      ul
-        margin: 0
-        padding: 0
-        float: right
-        list-style: none
 
-      li
-        display: inline-block
-        width: auto
-        float: left
+// フォトスライダー
+.photobox
+  padding-top: 50px
+  height: 620px
 
-      a
-        color: #000000
-        float: left
-        width: 100px
-        margin: 0 5px
-        text-decoration: none
+  img
+    height: 600px
+
+  .carousel-cell
+    margin-left: 5px
