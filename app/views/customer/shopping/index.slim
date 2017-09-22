@@ -1,45 +1,47 @@
 link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"
 = render 'customer/drawer'
 .cont
-  header.header
-    .share 
+  .shopping_content
+    header.header
+      .share 
+          ul 
+            li 
+              figure 
+                a.share-facebook href=""
+                  i.fa.fa-facebook
+                figcaption
+                  a.share-hover href="https://www.facebook.com/sharer/sharer.php?u=https://tieroll.com" target="_blank" Share!
+            li 
+              figure 
+                a.share-twitter href="#"
+                  i.fa.fa-twitter
+                figcaption 
+                  a.share-hover href="http://twitter.com/share?url=http://tieroll.com" target="_blank" Share!
+                  
+      nav.headinfo
         ul 
           li 
-            figure 
-              a.share-facebook href=""
-                = fa_icon("facebook")
-              figcaption
-                a.share-hover href="https://www.facebook.com/sharer/sharer.php?u=https://tieroll.com" target="_blank" Share!
+            = link_to 'ログイン', :customer_login
           li 
-            figure 
-              a.share-twitter href="#"
-                = fa_icon("twitter")
-              figcaption 
-                a.share-hover href="http://twitter.com/share?url=http://tieroll.com" target="_blank" Share!
-                
-    nav.headinfo
-      ul 
-        li 
-          = link_to 'ログイン', :customer_login
-        li 
-          = link_to 'カゴ'
-  hr
-                  
-  .photobox
-    .carousel data-flickity='{ "wrapAround": true, "pageDots": false, "autoPlay": true }'
-      .carousel-cell
-      img src="assets/3psuit1.jpg"
-      .carousel-cell
-      img src="assets/blownsuit1.jpg"
-      .carousel-cell
-      img src="assets/blownsuit2.jpg"
-      .carousel-cell
-      img src="assets/suit4.jpg"
-      .carousel-cell
-      img src="assets/suit5.jpg"
-      .carousel-cell
-      img src="assets/suit6.jpg"
-      .carousel-cell
-      img src="assets/suit7.jpg"
-      .carousel-cell
-      img src="assets/suit8.jpg"
+            = link_to do
+              i.fa.fa-shopping-cart
+    hr
+                    
+    .photobox
+      .carousel data-flickity='{ "wrapAround": true, "pageDots": false, "autoPlay": true }'
+        .carousel-cell
+        img src="assets/3psuit1.jpg"
+        .carousel-cell
+        img src="assets/blownsuit1.jpg"
+        .carousel-cell
+        img src="assets/blownsuit2.jpg"
+        .carousel-cell
+        img src="assets/suit4.jpg"
+        .carousel-cell
+        img src="assets/suit5.jpg"
+        .carousel-cell
+        img src="assets/suit6.jpg"
+        .carousel-cell
+        img src="assets/suit7.jpg"
+        .carousel-cell
+        img src="assets/suit8.jpg"

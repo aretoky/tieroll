@@ -2,133 +2,137 @@
   float: right
   width: 90%
 
-  hr
-    width: 80%
+  .shopping_content
+    padding-right: 10%
 
-.photobox
-  height: 620px
+    // 区切り線をかっこよく
+    hr
+      border-top: 1px solid #bbb
+      border-bottom: 1px solid #fff
 
-  img
-    height: 600px
+    // フォトスライダー
+    .photobox
+      padding-top: 50px
+      height: 620px
 
-  .carousel-cell
-    margin-left: 5px
+      img
+        height: 600px
 
-// ヘッダーのナビを横並びにする
-.header
-  width: 100%
+      .carousel-cell
+        margin-left: 5px
 
-header:after
-  content: ""
-  display: block
-  clear: both
+    // ヘッダーのナビを横並びにする
+    header:after
+      content: ""
+      display: block
+      clear: both
 
-.headinfo ul
-  margin: 0
-  padding: 3px
-  list-style: none
-  float: right
+    .headinfo ul
+      margin: 0
+      padding: 3px
+      list-style: none
+      float: right
+      padding-top: 30px
 
-  li
-    float: left
-    width: auto
-
-  a
-    display: inline-block
-    width: 190px
-    margin: 0 5px
-    float: left
-    color: #000000
-    text-decoration: none
-
-
-// シェアボタン
-.share-facebook
-  padding: 5px 30px 5px 30px
-  color: #ffffff
-  background-color: #305097
-
-.share-twitter
-  padding: 5pc 30px 5px 30px
-  color: #ffffff
-  background-color: #00aced
-
-.share
-  float: left
+      li
+        float: left
+      a
+        display: inline-block
+        margin: 0 5px
+        padding: 0 10px
+        float: left
+        color: #C0C0C0
+        text-decoration: none
 
 
-  ul
-    margin: 0
-    padding: 0
-    list-style: none
+    // シェアボタン
+    .share-facebook
+      padding: 5px 30px 5px 30px
+      color: #ffffff
+      background-color: #305097
 
-  li
-    float: left
-    width: 100px
-    text-align: center
-    margin-left: 5px
+    .share-twitter
+      padding: 5pc 30px 5px 30px
+      color: #ffffff
+      background-color: #00aced
 
-  a
-    border-radius: 5px
-
-.share-hover
-  text-decoration: none
-
-.share-facebook:hover i
-  opacity: 0.0
-
-.share-twitter:hover i
-  opacity: 0.0
-
-// シェアボタンのマウスオーバー
-figure
-  position: relative
-  overflow: hidden
-  width: 100%
+    .share
+      float: left
+      padding-bottom: 0px
 
 
-figcaption
-  position: absolute
-  top: 0
-  left: -100%
-  z-index: 2
-  width: 100%
-  height: 100%
-  background: rbga(0, 0, 0, 0)
-  -webkit-transition: .3s
-  transition: .3s
-  opacity: 1
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+
+      li
+        float: left
+        width: 100px
+        text-align: center
+        // margin-left: 5px
+
+      a
+        border-radius: 5px
+
+    .share-hover
+      text-decoration: none
+
+    .share-facebook:hover i
+      opacity: 0.0
+
+    .share-twitter:hover i
+      opacity: 0.0
+
+    // シェアボタンのマウスオーバー
+    figure
+      position: relative
+      overflow: hidden
+      width: 100%
 
 
-figcaption > a
-  display: block
-  color: #ffffff
+    figcaption
+      position: absolute
+      top: 0
+      left: -100%
+      z-index: 2
+      width: 100%
+      height: 100%
+      background: rbga(0, 0, 0, 0)
+      -webkit-transition: .3s
+      transition: .3s
+      opacity: 1
 
 
-figure:hover figcaption
-  top: 0
-  left: 0
+    figcaption > a
+      display: block
+      color: #ffffff
 
-.session-bar
-  &:after
-    display: block
-    content: ""
-    clear: both
 
-  ul
-    margin: 0
-    padding: 0
-    float: right
-    list-style: none
+    figure:hover figcaption
+      top: 0
+      left: 0
 
-  li
-    display: inline-block
-    width: auto
-    float: left
+    .session-bar
+      &:after
+        display: block
+        content: ""
+        clear: both
 
-  a
-    color: #000000
-    float: left
-    width: 100px
-    margin: 0 5px
-    text-decoration: none
+      ul
+        margin: 0
+        padding: 0
+        float: right
+        list-style: none
+
+      li
+        display: inline-block
+        width: auto
+        float: left
+
+      a
+        color: #000000
+        float: left
+        width: 100px
+        margin: 0 5px
+        text-decoration: none
