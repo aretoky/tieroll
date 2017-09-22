@@ -1,0 +1,26 @@
+.cont
+  h1 Staff編集
+  .edit_staff_form.staff_form 
+    = form_with model: [:admin, @staff], local: true do |f|
+      .staff_form 
+        = f.label "会社名 "
+        = f.text_field :company 
+      .staff_form 
+        = f.label "Email"
+        = f.text_field :email 
+      .staff_form
+        = f.label "開始日"
+        = f.date_field :start_time 
+      .staff_form 
+        = f.label "終了日"
+        = f.date_field :end_time
+      .staff_form 
+        = f.label "アカウントの停止"
+        = f.check_box :suspended 
+      .staff_form
+        = f.submit '更新'
+
+  .cancel
+    = button_to 'キャンセル', :admin_staff_member_index, method: :get
+  .destroy_button
+    = button_to 'スタッフの削除', :admin_staff_member, method: :delete, data: {confirm: "本当に消すの？"}

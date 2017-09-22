@@ -3,7 +3,7 @@
   .staff_content
     h1 Staff管理画面
     .new_staff
-      = link_to '新しいスタッフ', new_admin_staff_member_path
+      = button_to '新しいスタッフ', :new_admin_staff_member, method: :get
 
     .staff_index
       table
@@ -14,6 +14,7 @@
             th 終了日
             th アカウントの停止
             th 
+            th
         tbody
           - @staff_member.each do |staff|
             tr 
@@ -22,3 +23,4 @@
               td = staff.end_time 
               td = staff.suspended 
               td = link_to '編集', edit_admin_staff_member_path(staff)
+              td = link_to '詳細', admin_staff_member_path(staff)

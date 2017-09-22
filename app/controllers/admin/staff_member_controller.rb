@@ -1,7 +1,7 @@
 class Admin::StaffMemberController < ApplicationController
 
   def index
-    @staff_member = StaffMember.all 
+    @staff_member = StaffMember.all
   end
 
   def new
@@ -17,19 +17,28 @@ class Admin::StaffMemberController < ApplicationController
     if params[:back]
       render :new
     elsif @staff.save
-      redirect_to admin_root_url, notice: "新規スタッフを作成しました"
+      redirect_to :admin_staff_member_index, notice: "新規スタッフを作成しました"
     else
       render :new, alert: "入力内容を確認してね"
     end
   end
 
   def edit
+    @staff = StaffMember.find_by(id: params[:id])
   end
 
   def update
+    @staff = StaffMember.find_by(id: params[:id])
+    if @staff.update(staff_params)
+      redirect_to admin_staff_member_index_path, notice: "更新しました"
+    else
+      render :new, alert: "内容に誤りがあるよ"
+    end
   end
 
   def destroy
+    staff = StaffMember.find_by(id: params[:id])
+    redirect_to :admin_staff_member_index, alert: "消した" if staff.destroy
   end
 
   private
