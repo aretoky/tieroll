@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'customer#top'
+  root to: 'customer/shopping#index'
 
   namespace :admin do
     root to: 'top#index'
@@ -26,12 +26,16 @@ Rails.application.routes.draw do
     delete 'logout', to: 'session#destroy', as: :logout
   end
 
-  namespace :customer do
-    resources :top do
+  # urlをtieroll/~~にしたい
+  namespace :customer, path: '' do
+    root to: 'shopping#index'
+    resources :user do
       collection do
         post 'confirm'
       end
     end
+    resources :shopping
+
     get 'login', to: 'session#new', as: :login
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy', as: :logout
