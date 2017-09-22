@@ -28,20 +28,20 @@ class Admin::TopController < Admin::Base
   end
 
   def edit
-    # binding.pry
   end
 
   def update
-    binding.pry
-    @admin.assign_attributes(params[:admin_id])
-    if @admin.save
-      redirect_to admin_root_url, notice: "更新完了"
+    admin = Admin.find_by(id: params[:id])
+    if admin.update(admin_params)
+      redirect_to admin, notice: "変更したよ"
     else
-      render :edit, alert: "入力内容を確認して下さい"
+      render :new, alert: "内容を確認してね"
     end
   end
 
   def destroy
+    admin = Admin.find_by(id: params[:id])
+    redirect_to admin_root_url if admin.destroy 
   end
 
   private

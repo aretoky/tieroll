@@ -2,13 +2,11 @@
 / .cont
 /   h1 Admin_edit_form
 /   .edit_admin 
-/     = form_for @current_admin, url: {action: :update}, method: :post do |f|
+/     = form_with model: @admin, url: {adtion: :update}, local: true do |f|
 /       .edit_admin_name
 /         = f.text_field :name, placeholder: "Name"
 /       .edit_admin_email
 /         = f.text_field :email, placeholder: "Email"
-/       .edit_admin_check
-/         = f.text_field :password, placeholder: "確認用パスワード"
 /       .edit_admin_submit
 /         = f.submit '更新する'
 /         
