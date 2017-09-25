@@ -1,7 +1,5 @@
-class Customer::UserController < ApplicationController
+class Customer::UserController < Customer::Base
   before_action :set_user, only: [:show, :edit, :destroy]
-  def index
-  end
 
   def show
   end

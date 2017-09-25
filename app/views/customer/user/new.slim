@@ -1,0 +1,16 @@
+h1 new_user
+.new_user.user_form
+  = form_with model: @user, url: confirm_customer_user_index_path, local: true do |f|
+    .user_form
+      = f.text_field :name, placeholder: "Name", required: true 
+    .user_form
+      = f.text_field :email, placeholder: "Email", required: true 
+    .user_form
+      = f.text_field :password, placeholder: "Password", required: true 
+    .user_form
+      = f.password_field :password_confirmation, placeholder: "Password確認",required: true
+    .user_form
+      = f.submit '確認'
+      
+.return
+  = link_to 'トップページ', :customer_root

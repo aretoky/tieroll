@@ -1,0 +1,18 @@
+h1 confirm 
+.new_user   
+  = form_with model: @user, url: customer_user_index_path, method: :post, local: true do |f|
+    .user_form
+      = f.label "お名前 : "
+      = @user.name 
+      = f.hidden_field :name 
+    .user_form
+      = f.label "アドレス : "
+      = @user.email 
+      = f.hidden_field :email 
+    .user_form
+      = f.label "パスワード : "
+      = @user.password
+      = f.hidden_field :password
+    .create_submit
+      = f.submit '戻る', name: "back"
+      = f.submit '登録'
