@@ -2,6 +2,7 @@ class Customer::UserController < Customer::Base
   before_action :set_user, only: [:show, :edit, :destroy]
 
   def show
+    # binding.pry
   end
 
   def new
@@ -28,6 +29,8 @@ class Customer::UserController < Customer::Base
   end
 
   def update
+    @user = User.find_by(id: params[:user_id])
+
   end
 
   def destroy
@@ -39,6 +42,11 @@ class Customer::UserController < Customer::Base
   end
 
   def set_user
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
   end
+
+  # def are_you_login?
+  #   redirect_to :customer_login, alert: "ログインして下さいね" unless current_user
+  # end
+
 end

@@ -1,0 +1,15 @@
+h1 user_edit Form
+.edit_user
+  = form_with model: @user, local: true do |f|
+    .user_form
+      = f.label "名前 : "
+      = @user.name 
+      = f.text_field :name, placeholder: "Name"
+    .user_from
+      = f.label "Email : "
+      = @user.email 
+      = f.text_field :email, placeholder: "Email"
+    .user_form 
+      = f.submit 'Go'
+      
+      

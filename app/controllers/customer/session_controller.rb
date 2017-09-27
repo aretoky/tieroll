@@ -1,11 +1,12 @@
-class Customer::SessionController < ApplicationController
+class Customer::SessionController < Customer::Base
   def new
   end
 
   def create
-    user = user.find_by(email: params[:email])
-    if user
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
       log_in user
+      redirect_to '/'
     else
       render :new, alert: "入力内容を確認してね"
     end
@@ -13,6 +14,6 @@ class Customer::SessionController < ApplicationController
 
   def destroy
     log_out
-    redirect_to :customer_root
+    redirect_to '/'
   end
 end
