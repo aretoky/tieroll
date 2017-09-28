@@ -33,3 +33,10 @@
 .pure-toggle-label {
   border: none;
 }
+ul {
+  border-top: solid 2px #ffffff
+}
+li a{
+  /*border-top: solid 1px #ffffff;*/
+  border-bottom: solid 1px #ffffff
+}

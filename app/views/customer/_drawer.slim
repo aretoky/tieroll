@@ -11,28 +11,20 @@
           ul.nav-primary
             li
               = link_to 'マイページ', customer_user_path(current_user) if session[:user_id]
-              hr.sep
             li
               = link_to 'ログアウト', customer_logout_path, method: :delete if session[:user_id]
-              hr.sep
             li
               = link_to 'お気に入り'
-              hr.sep
             li
               = link_to 'about'
-              hr.sep
             li
               = link_to '権利関係?'
-              hr.sep
             li
               = link_to 'メーラとか'
-              hr.sep
             li
               = link_to '( ๑❛ᴗ❛๑)۶♡٩(๑❛ᴗ❛๑ )'
-              hr.sep
             li
               = link_to '┌(┌^o^)┐'
-              hr.sep
 
     .pure-pusher-container
       .pure-pusher
