@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 15, minimum: 4}
   validates :password, presence: true, allow_nil: true, length: {minimum: 6, maximum: 16}
   before_save{self.email = email.downcase}
-  
-  validates :email, uniqueness: true, presences: true
+
+  validates :email, uniqueness: true, presence: true
 
 end
