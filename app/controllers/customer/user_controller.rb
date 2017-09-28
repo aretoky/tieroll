@@ -1,5 +1,5 @@
 class Customer::UserController < Customer::Base
-  before_action :set_user, only: [:show, :edit, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
     # binding.pry
@@ -19,6 +19,7 @@ class Customer::UserController < Customer::Base
     if params[:back]
       render :new
     elsif @user.save
+      log_in @user
       redirect_to :customer_root
     else
       render :new, alert: "入力内容を確認してね"
@@ -29,11 +30,18 @@ class Customer::UserController < Customer::Base
   end
 
   def update
-    @user = User.find_by(id: params[:user_id])
-
+    if @user.update_attributes(user_params)
+      redirect_to customer_user_url(@user), notice: "更新完了"
+    else
+      render :edit, alert: '内容を確認してね'
+    end
   end
 
   def destroy
+    if @user.destroy
+      log_out
+      redirect_to :root
+    end
   end
 
   private

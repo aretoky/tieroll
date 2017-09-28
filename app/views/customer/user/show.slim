@@ -1,6 +1,8 @@
-h1 customer_show
-body.user 
 = render 'customer/drawer'
-  .cont
-    
-    
+.cont
+  h1 customer_show
+  .user 
+    span hello 
+    = @user.name
+  
+  = link_to '登録情報の確認', edit_customer_user_path

@@ -1,15 +1,17 @@
 h1 user_edit Form
-.edit_user
-  = form_with model: @user, local: true do |f|
+.edit_form 
+  = form_with model: [:customer, @user], local: true do |f|
     .user_form
-      = f.label "名前 : "
-      = @user.name 
-      = f.text_field :name, placeholder: "Name"
-    .user_from
-      = f.label "Email : "
-      = @user.email 
-      = f.text_field :email, placeholder: "Email"
-    .user_form 
-      = f.submit 'Go'
-      
-      
+      = f.label '名前'
+      = f.text_field :name 
+    .user_form
+      = f.label 'アドレス'
+      = f.text_field :email 
+    .user_form_submit
+      = f.submit '更新'
+  
+.top_link
+  = link_to 'トップページ', :root
+.delete 
+  = link_to 'アカウントの削除', :customer_user, method: :delete, data: {confirm: "本当に削除しますか"}
+  
