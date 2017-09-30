@@ -19,8 +19,9 @@ Rails.application.routes.draw do
     delete 'logout', to: 'session#destroy', as: :logout
   end
 
-  namespace :staff_member do
-    resources :top
+  namespace :staff do
+    root to: 'top#index'
+    resources :member
     get 'login', to: 'session#new', as: :login
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy', as: :logout
