@@ -1,4 +1,6 @@
-class Staff::MemberController < ApplicationController
+class Staff::MemberController < Staff::Base
+  before_action :are_you_staff?
+  before_action :set_staff, only: [:show, :edit, :update, :destroy]
   def show
   end
 
@@ -9,5 +11,9 @@ class Staff::MemberController < ApplicationController
   end
 
   def destroy
-  end 
+  end
+  private
+  def set_staff
+    @staff = StaffMember.find_by(id: session[:staff_id])
+  end
 end

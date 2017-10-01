@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   namespace :staff do
-    root to: 'top#index'
+    root to: 'member#show'
     resources :member
     get 'login', to: 'session#new', as: :login
     post 'login', to: 'session#create'
