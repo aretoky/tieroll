@@ -1,4 +1,5 @@
 class Admin::StaffMemberController < ApplicationController
+  before_action :set_staff, only: [:show, :edit, :update, :destroy]
 
   def index
     @staff_member = StaffMember.all
@@ -24,11 +25,9 @@ class Admin::StaffMemberController < ApplicationController
   end
 
   def edit
-    @staff = StaffMember.find_by(id: params[:id])
   end
 
   def update
-    @staff = StaffMember.find_by(id: params[:id])
     if @staff.update(staff_params)
       redirect_to admin_staff_member_index_path, notice: "更新しました"
     else
@@ -37,12 +36,16 @@ class Admin::StaffMemberController < ApplicationController
   end
 
   def destroy
-    staff = StaffMember.find_by(id: params[:id])
-    redirect_to :admin_staff_member_index, alert: "消した" if staff.destroy
+    @staff = StaffMember.find_by(id: params[:id])
+    redirect_to :admin_staff_member_index, alert: "消した" if @staff.destroy
   end
 
   private
   def staff_params
     params.require(:staff_member).permit(:company, :email, :password, :password_confirmation, :start_time, :end_time, :suspended)
+  end
+
+  def set_staff
+    @staff = StaffMember.find_by(id: params[:id])
   end
 end
