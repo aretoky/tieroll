@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924061723) do
+ActiveRecord::Schema.define(version: 20171020070205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,30 @@ ActiveRecord::Schema.define(version: 20170924061723) do
     t.string "email"
     t.string "password_digest"
     t.boolean "admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "colors", force: :cascade do |t|
+    t.string "product_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patterns", force: :cascade do |t|
+    t.string "product_pattern"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scenes", force: :cascade do |t|
+    t.string "product_scene"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string "product_season"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
