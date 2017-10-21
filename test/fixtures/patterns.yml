@@ -1,0 +1,48 @@
+pattern1:
+  id: 1
+  product_pattern: None
+
+
+pattern2:
+  id: 2
+  product_pattern: Check
+
+
+pattern3:
+  id: 3
+  product_pattern: Strip
+
+
+pattern4:
+  id: 4
+  product_pattern: Dot
+
+
+pattern5:
+  id: 5
+  product_pattern: Diamond
+
+
+pattern6:
+  id: 6
+  product_pattern: Paisley
+
+
+pattern7:
+  id: 7
+  product_pattern: Animal
+
+
+pattern8:
+  id: 8
+  product_pattern: Flower
+
+
+pattern9:
+  id: 9
+  product_pattern: Regiment
+
+
+pattern10:
+  id: 10
+  product_pattern: Other

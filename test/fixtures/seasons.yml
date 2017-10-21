@@ -1,0 +1,18 @@
+season1:
+  id: 1
+  product_season: Spring
+
+
+season2:
+  id: 2
+  product_season: Summer
+
+
+season3:
+  id: 3
+  product_season: Autumn
+
+
+season4:
+  id: 4
+  product_season: Winter

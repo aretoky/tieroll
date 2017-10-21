@@ -1,0 +1,73 @@
+color1:
+  id: 1
+  product_color: White
+
+
+color2:
+  id: 2
+  product_color: Black
+
+
+color3:
+  id: 3
+  product_color: Gray
+
+
+color4:
+  id: 4
+  product_color: Blue
+
+
+color5:
+  id: 5
+  product_color: Red
+
+
+color6:
+  id: 6
+  product_color: Green
+
+
+color7:
+  id: 7
+  product_color: Orange
+
+
+color8:
+  id: 8
+  product_color: Yellow
+
+
+color9:
+  id: 9
+  product_color: Brown
+
+
+color10:
+  id: 10
+  product_color: Pink
+
+
+color11:
+  id: 11
+  product_color: Purple
+
+
+color12:
+  id: 12
+  product_color: Beige
+
+
+color13:
+  id: 13
+  product_color: Silver
+
+
+color14:
+  id: 14
+  product_color: Gold
+
+
+color15:
+  id: 15
+  product_color: Other
