@@ -1,0 +1,13 @@
+size1:
+  id: 1
+  product_size: S
+
+
+size2:
+  id: 2
+  product_size: M
+
+
+size3:
+  id: 3
+  product_size: L
