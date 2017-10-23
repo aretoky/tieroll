@@ -16,6 +16,6 @@ class Staff::Base < ApplicationController
   def are_you_staff?
     if current_staff.nil?
       redirect_to :staff_login
-    end 
+    end
   end
 end

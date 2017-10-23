@@ -2,10 +2,12 @@ class Photo < ApplicationRecord
   validates :product_face, presence: true
   validates :product_id, presence: true, uniqueness: true
 
+  belongs_to :product
+
 
   mount_uploader :product_face, ProductFaceUploader
   mount_uploader :j_front, J_FrontUploader
-  mount_uploader :j_back, J_Backuploader
+  mount_uploader :j_back, J_BackUploader
   mount_uploader :open_front, Open_FrontUploader
   mount_uploader :closed_front, Closed_FrontUploader
   mount_uploader :lapel, LapelUploader

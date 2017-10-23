@@ -1,4 +1,9 @@
 class Admin::StaffMemberController < ApplicationController
+
+
+  # 管理者内のスタッフコントローラー
+
+
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
 
   def index
