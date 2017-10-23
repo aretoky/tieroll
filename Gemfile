@@ -66,6 +66,9 @@ group :development do
   gem 'brakeman'
   gem 'rack-mini-profiler'
   gem 'bullet'
+  gem 'guard-rspec', require: false
+  gem 'terminal-notifier'
+  gem 'terminal-notifier-guard'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
