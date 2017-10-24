@@ -85,10 +85,10 @@ RSpec.describe StaffMember, type: :model do
       end
 
       it "文字の間に空白が2つ以上続いた時に一つにする" do
-        staff = StaffMember.new(company: 'staff       user', email: 'staff@email.com', password: 'staffmember')
+        staff = StaffMember.new(company: 'staff       us   er', email: 'staff@email.com', password: 'staffmember')
         staff.save
         expect(staff.company).to eq('staff user')
-      end 
+      end
     end
   end
 
