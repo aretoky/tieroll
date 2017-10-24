@@ -54,6 +54,8 @@ group :development, :test do
   gem 'rails-footnotes'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -66,9 +68,16 @@ group :development do
   gem 'brakeman'
   gem 'rack-mini-profiler'
   gem 'bullet'
-  gem 'guard-rspec', require: false
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
+end
+
+group :test do
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
