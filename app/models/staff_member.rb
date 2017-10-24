@@ -15,19 +15,19 @@ class StaffMember < ApplicationRecord
   before_save{self.password = password.gsub(" ", "")}
 
 
-  protected
-  def email_down
-    self.email = email.downcase
-  end
-
-  def email_white_space
-    self.email = email.gsub(" ", "")
-  end
-
-  def company_white_space
-    self.company = company.strip
-    self.company = company.gsub(/\s+/, " ")
-  end
+  # protected
+  # def email_down
+  #   self.email = email.downcase
+  # end
+  #
+  # def email_white_space
+  #   self.email = email.gsub(" ", "")
+  # end
+  #
+  # def company_white_space
+  #   self.company = company.strip
+  #   self.company = company.gsub(/\s+/, " ")
+  # end
 
 
 end
