@@ -1,5 +1,8 @@
 class Admin < ApplicationRecord
-  before_validation :email_down, :email_white_space
+  # 切り出しておく
+  # include CommonEmail
+  before_save :email_down, :email_white_space
+
   has_secure_password
 
 
@@ -11,6 +14,7 @@ class Admin < ApplicationRecord
 
   validates :password, length: { minimun: 4, maximum: 16}
 
+  before_save :email_down, :email_white_space
 
   before_save{self.name = name.gsub(" ", "")}
 
