@@ -36,6 +36,16 @@ RSpec.describe Admin, type: :model do
       expect(admin.save).to be_falsey
     end
 
+    it "@の後に.だけでもだめ" do
+      admin = Admin.new(name: 'adminuser', email: 'admin@.', password: 'admin')
+      expect(admin.save).to be_falsey
+    end
+
+    it "@の直後に.comでも保存されない" do
+      admin = Admin.new(name: 'adminuser', email: 'admin@.com', password: 'admin')
+      expect(admin.save).to be_falsey
+    end 
+
     it "emailの重複は許可されない" do
       admin = Admin.new(name: 'adminuser', email: 'admin@email.com', password: 'admin')
       admin2 = Admin.new(name: 'adminuser', email: 'admin@email.com', password: 'admin')
@@ -121,6 +131,6 @@ RSpec.describe Admin, type: :model do
         expect(admin.email).to eq('admin@email.com')
       end
     end
-  end   
+  end
 
 end
