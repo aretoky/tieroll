@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Admin, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
-  describe "create test" do
+  describe "create" do
     it "正常に登録される" do
       admin = Admin.new(name: 'adminuser', email: 'admin@email.com', password: 'admin')
       expect(admin.save).to be_truthy
@@ -25,7 +25,7 @@ RSpec.describe Admin, type: :model do
   end
 
 
-  describe "email formt test" do
+  describe "email formt" do
     it "@なしでは登録できない" do
       admin = Admin.new(name: 'adminuser', email: 'adminemail.com', password: 'admin')
       expect(admin.save).to be_falsey
@@ -44,7 +44,7 @@ RSpec.describe Admin, type: :model do
     it "@の直後に.comでも保存されない" do
       admin = Admin.new(name: 'adminuser', email: 'admin@.com', password: 'admin')
       expect(admin.save).to be_falsey
-    end 
+    end
 
     it "emailの重複は許可されない" do
       admin = Admin.new(name: 'adminuser', email: 'admin@email.com', password: 'admin')
@@ -54,7 +54,7 @@ RSpec.describe Admin, type: :model do
   end
 
 
-  describe "name length test" do
+  describe "name length" do
     it "３文字は保存されない" do
       admin = Admin.new(name: '123', email: 'admin@email.com', password: 'admin')
       expect(admin.save).to be_falsey
