@@ -24,7 +24,7 @@ class Admin < ApplicationRecord
 
   def email_white_space
     self.email = email.strip
-    self.email = email.gsub(/(\s+)/, "")
+    self.email = email.gsub(" ", "")
   end
 
 end

@@ -7,6 +7,12 @@ RSpec.describe StaffMember, type: :model do
       expect(staff.save).to be_truthy
     end
 
+    it "指定しなければsuspendedはfalse" do
+      staff = StaffMember.new(company: 'tieroll', email: 'staff@email.com', password: 'staffmember')
+      staff.save
+      expect(staff.suspended).to eq(false)
+    end
+
     it "会社名が空だと保存されない" do
       staff = StaffMember.new(company: '', email: 'staff@email.com', password: 'staffmember')
       expect(staff.save).to be_falsey
@@ -85,11 +91,37 @@ RSpec.describe StaffMember, type: :model do
       end
 
       it "文字の間に空白が2つ以上続いた時に一つにする" do
-        staff = StaffMember.new(company: 'staff       us   er', email: 'staff@email.com', password: 'staffmember')
+        staff = StaffMember.new(company: 'staff       user', email: 'staff@email.com', password: 'staffmember')
         staff.save
         expect(staff.company).to eq('staff user')
       end
     end
+
+    # TODO emailのフォーマットと当たってて空白がそのまま保存される
+    # describe "email" do
+    #   it "先頭の空白を除去" do
+    #     staff = StaffMember.new(company: 'staffuser', email: ' staff@email.com', password: 'staffmember')
+    #     staff.save
+    #     expect(staff.email).to eq('staff@email.com')
+    #   end
+    #   it "末尾の空白を除去" do
+    #     staff = StaffMember.new(company: 'staffuser', email: 'staff@email.com ', password: 'staffmember')
+    #     staff.save
+    #     expect(staff.email).to eq('staff@email.com')
+    #   end
+    #   it "文字の間の空白を除去" do
+    #     staff = StaffMember.new(company: 'staffuser', email: 's taff@email.com', password: 'staffmember')
+    #     staff.save
+    #     expect(staff.email).to eq('staff@email.com')
+    #   end
+    #   it "空白が続いていても除去" do
+    #     staff = StaffMember.new(company: 'staffuser', email: 's taff@email.com', password: 'staffmember')
+    #     staff.save
+    #     expect(staff.email).to eq('staff@email.com')
+    #   end
+    # end
+
+
   end
 
 end
