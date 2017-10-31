@@ -1,5 +1,6 @@
 class Jacket < ApplicationRecord
   validates :staff_member, presence: true
+  belongs_to :staff_member
 
 
   mount_uploader :j_front,          JFrontUploader

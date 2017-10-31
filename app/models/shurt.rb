@@ -1,6 +1,7 @@
 class Shurt < ApplicationRecord
   validates :staff_member, presence: true
-
+  belongs_to :staff_member
+  
 
   mount_uploader :s_front,          SFrontUploader
   mount_uploader :s_back,           SBackUploader

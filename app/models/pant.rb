@@ -1,5 +1,6 @@
 class Pant < ApplicationRecord
   validates :staff_member, presence: true
+  belongs_to :staff_member
 
 
   mount_uploader :p_front,      PFrontUploader

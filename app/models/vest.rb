@@ -1,5 +1,7 @@
 class Vest < ApplicationRecord
   validates :staff_member, presence: true
+  belongs_to :staff_member
+  
 
   mount_uploader :v_front,    VFrontUploader
   mount_uploader :v_back,     VBackUploader

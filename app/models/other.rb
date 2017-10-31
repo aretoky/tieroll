@@ -1,5 +1,6 @@
 class Other < ApplicationRecord
   validates :staff_member, presence: true
+  belongs_to :staff_member
 
 
   mount_uploader :other_one,        OtherOneUploader
