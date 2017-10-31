@@ -1,0 +1,27 @@
+.product_form
+  = f.label "商品説明"
+  = f.text_field :discription
+
+.product_form
+  = f.label "価格(税込み)"
+  = f.number_field :price
+  
+.product_form
+  = f.label "サイズ"
+  = f.collection_select :size, @size, prompt: "選んでね"
+  
+.product_form
+  = f.label "色"
+  = f.collection_select :color, Color.all, :id, :product_color, prompt: "選んでね"
+
+.product_form
+  = f.label "柄"
+  = f.collection_select :pattern, Pattern.all, :id, :product_pattern, prompt: "選んでね"
+  
+.product_form
+  = f.label "季節"
+  = f.collection_select :season, Season.all, :id, :product_season, prompt: "選んでね"
+
+.product_form
+  = f.label "シーン"
+  = f.collection_select :scene, Scene.all, :id, :product_scene, prompt: "選んでね"

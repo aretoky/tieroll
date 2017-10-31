@@ -3,6 +3,7 @@ class Staff::MainProductController < Staff::Base
 
   def new
     @product = Product.new
+    @size = Size.pluck(:id, :product_size)
   end
 
   def confirm
