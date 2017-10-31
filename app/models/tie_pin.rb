@@ -1,0 +1,2 @@
+class TiePin < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class PocketChief < ApplicationRecord
+end

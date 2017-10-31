@@ -1,0 +1,2 @@
+class Vest < ApplicationRecord
+end

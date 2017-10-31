@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021234846) do
+ActiveRecord::Schema.define(version: 20171031073112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,16 +24,126 @@ ActiveRecord::Schema.define(version: 20171021234846) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "belts", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "belt_name"
+    t.string "belt_code"
+    t.string "belt_one"
+    t.string "belt_two"
+    t.string "belt_three"
+    t.string "belt_four"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_belts_on_staff_member_id"
+  end
+
   create_table "colors", force: :cascade do |t|
     t.string "product_color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "jackets", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "jacket_name"
+    t.string "jacket_code"
+    t.string "j_front"
+    t.string "j_back"
+    t.string "open_front"
+    t.string "closed_front"
+    t.string "j_cuff"
+    t.string "lapel"
+    t.string "j_inner"
+    t.string "j_inner_r"
+    t.string "j_inner_l"
+    t.string "j_button"
+    t.string "j_pocket"
+    t.string "j_breast_pocket"
+    t.string "j_other_one"
+    t.string "j_other_two"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_jackets_on_staff_member_id"
+  end
+
+  create_table "others", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "other_item_name"
+    t.string "other_item_code"
+    t.string "other_one"
+    t.string "other_two"
+    t.string "other_three"
+    t.string "other_four"
+    t.string "other_five"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_others_on_staff_member_id"
+  end
+
+  create_table "pants", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "pant_name"
+    t.string "pant_code"
+    t.string "p_front"
+    t.string "p_back"
+    t.string "p_inner"
+    t.string "belt_roop"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_pants_on_staff_member_id"
+  end
+
   create_table "patterns", force: :cascade do |t|
     t.string "product_pattern"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pocket_chiefs", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "chief_name"
+    t.string "chief_code"
+    t.string "chief_one"
+    t.string "chief_two"
+    t.string "chief_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_pocket_chiefs_on_staff_member_id"
   end
 
   create_table "scenes", force: :cascade do |t|
@@ -48,10 +158,73 @@ ActiveRecord::Schema.define(version: 20171021234846) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "shoes", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "shoes_name"
+    t.string "shoes_code"
+    t.string "shoes_one"
+    t.string "shoes_two"
+    t.string "shoes_three"
+    t.string "shoes_four"
+    t.string "shoes_five"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_shoes_on_staff_member_id"
+  end
+
+  create_table "shurts", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "shurt_name"
+    t.string "shurt_code"
+    t.string "s_front"
+    t.string "s_back"
+    t.string "s_cuff"
+    t.string "s_button"
+    t.string "s_breast_pocket"
+    t.string "colar"
+    t.string "s_other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_shurts_on_staff_member_id"
+  end
+
   create_table "sizes", force: :cascade do |t|
     t.string "product_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sockes", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "sockes_name"
+    t.string "sockes_code"
+    t.string "sockes_oen"
+    t.string "sockes_two"
+    t.string "sockes_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_sockes_on_staff_member_id"
   end
 
   create_table "staff_members", force: :cascade do |t|
@@ -65,6 +238,44 @@ ActiveRecord::Schema.define(version: 20171021234846) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tie_pins", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "tie_pin_name"
+    t.string "tie_pin_code"
+    t.string "tie_pin_one"
+    t.string "tie_pin_two"
+    t.string "tie_pin_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_tie_pins_on_staff_member_id"
+  end
+
+  create_table "ties", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "tie_name"
+    t.string "tie_code"
+    t.string "tie_one"
+    t.string "tie_two"
+    t.string "tie_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_ties_on_staff_member_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -73,4 +284,36 @@ ActiveRecord::Schema.define(version: 20171021234846) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vests", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.string "vest_name"
+    t.string "vest_code"
+    t.string "v_front"
+    t.string "v_back"
+    t.string "v_inner"
+    t.string "v_buckle"
+    t.string "v_other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_vests_on_staff_member_id"
+  end
+
+  add_foreign_key "belts", "staff_members"
+  add_foreign_key "jackets", "staff_members"
+  add_foreign_key "others", "staff_members"
+  add_foreign_key "pants", "staff_members"
+  add_foreign_key "pocket_chiefs", "staff_members"
+  add_foreign_key "shoes", "staff_members"
+  add_foreign_key "shurts", "staff_members"
+  add_foreign_key "sockes", "staff_members"
+  add_foreign_key "tie_pins", "staff_members"
+  add_foreign_key "ties", "staff_members"
+  add_foreign_key "vests", "staff_members"
 end
