@@ -1,4 +1,4 @@
-class SHemUploader < CarrierWave::Uploader::Base
+class JInnerRUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
