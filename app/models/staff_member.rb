@@ -1,8 +1,19 @@
 class StaffMember < ApplicationRecord
   has_secure_password
-  has_many :products, dependent: :destroy
 
-  has_many :belts, :jackets, :pants, :pocket_chiefs, :shoes, :shurts, :tie_pins, :sockes, :ties, :vests, :others, dependent: :destroy
+
+  has_many :products,       dependent: :destroy
+  has_many :belts,          dependent: :destroy
+  has_many :jackets,        dependent: :destroy
+  has_many :pants,          dependent: :destroy
+  has_many :pocket_chiefs,  dependent: :destroy
+  has_many :shoes,          dependent: :destroy
+  has_many :shurts,         dependent: :destroy
+  has_many :tie_pins,       dependent: :destroy
+  has_many :sockes,         dependent: :destroy
+  has_many :ties,           dependent: :destroy
+  has_many :vests,          dependent: :destroy
+  has_many :others,         dependent: :destroy
 
 
   validates :company, presence: true, length: {maximum: 34}
