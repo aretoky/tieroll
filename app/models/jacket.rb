@@ -1,5 +1,5 @@
 class Jacket < ApplicationRecord
-  validates :staff_member, presence: true
+  validates :staff_member, :jacket_name, :jacket_code, :j_front, :description, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 

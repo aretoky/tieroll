@@ -11,7 +11,7 @@ class CreateSockes < ActiveRecord::Migration[5.1]
       t.text :description
       t.string :sockes_name
       t.string :sockes_code
-      t.string :sockes_oen
+      t.string :sockes_one
       t.string :sockes_two
       t.string :sockes_three
 

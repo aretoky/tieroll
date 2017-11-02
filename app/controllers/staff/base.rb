@@ -12,9 +12,17 @@ class Staff::Base < ApplicationController
   def current_staff
     @current_staff ||= StaffMember.find_by(id: session[:staff_id])
   end
+  #
+  # def are_you_staff?
+  #   if current_staff.nil?
+  #     redirect_to :staff_login
+  #   end
+  # end
 
-  def are_you_staff?
-    if current_staff.nil?
+  def are_you_staff_member?
+    if session[:staff_id]
+      @current_staff = StaffMember.find_by(id: session[:staff_id])
+    else
       redirect_to :staff_login
     end
   end

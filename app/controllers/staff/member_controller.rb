@@ -1,5 +1,5 @@
 class Staff::MemberController < Staff::Base
-  before_action :are_you_staff?, only: [:show]
+  before_action :are_you_staff_member?, only: [:show]
   def show
   end
 

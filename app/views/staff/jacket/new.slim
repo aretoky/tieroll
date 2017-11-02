@@ -1,0 +1,70 @@
+h1 jacket_new_form
+= form_with model: [:staff, @jacket], url: {action: :confirm}, local: true do |f|
+  .product_form.required
+    = f.label '商品名'
+    = f.text_field :jacket_name
+    
+  .product_form.required
+    = f.label '商品コード'
+    = f.text_field :jacket_code
+
+  = render 'staff/product_form', common: f
+  
+  .product_form.required
+    = f.label '正面'
+    = f.file_field :j_front
+
+  .product_form
+    = f.label '後ろ'
+    = f.file_field :j_back
+    
+  .product_form
+    = f.label 'ボタン開けた正面'
+    = f.file_field :open_front
+    
+  .product_form
+    = f.label 'ボタン閉じた正面'
+    = f.file_field :closed_front
+    
+  .product_form
+    = f.label '切羽'
+    = f.file_field :j_cuff
+    
+  .product_form
+    = f.label '裏地'
+    = f.file_field :j_inner
+    
+  .product_form
+    = f.label '右側　裏'
+    = f.file_field :j_inner_r
+  
+  .product_form
+    = f.label '左側　裏'
+    = f.file_field :j_inner_l
+    
+  .product_form
+    = f.label 'ラペル'
+    = f.file_field :lapel
+    
+  .product_form
+    = f.label 'ボタン'
+    = f.file_field :j_button
+    
+  .product_form
+    = f.label 'ポケット'
+    = f.file_field :j_pocket
+    
+  .product_form
+    = f.label '胸ポケット'
+    = f.file_field :j_breast_pocket
+    
+  .product_form
+    = f.label 'その他１'
+    = f.file_field :j_other_one
+  
+  .product_form
+    = f.label 'その他２'
+    = f.file_field :j_other_two
+    
+  .product_submit
+    = f.submit '確認'

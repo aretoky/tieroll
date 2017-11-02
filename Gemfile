@@ -56,6 +56,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
   gem 'spring-commands-rspec'
+  gem 'beautiful-log'
+  gem 'awesome_print'
 end
 
 group :development do

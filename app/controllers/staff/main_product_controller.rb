@@ -1,5 +1,4 @@
 class Staff::MainProductController < Staff::Base
-  before_action :current_staff
 
   def new
     @product = Product.new
