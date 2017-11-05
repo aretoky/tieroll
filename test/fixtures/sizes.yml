@@ -11,3 +11,7 @@ size2:
 size3:
   id: 3
   product_size: L
+
+size4:
+  id: 4
+  product_size: Free

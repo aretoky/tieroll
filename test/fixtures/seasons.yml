@@ -16,3 +16,7 @@ season3:
 season4:
   id: 4
   product_season: Winter
+
+season5:
+  id: 5
+  product_season: All

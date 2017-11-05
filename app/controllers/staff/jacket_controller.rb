@@ -26,7 +26,7 @@ class Staff::JacketController < Staff::Base
       # binding.pry
     elsif @jacket && @jacket.save
       # binding.pry
-      redirect_to :staff_root
+      redirect_to :staff_root, notice: "登録したよ"
     else
       # binding.pry
       render :new, alert: "だめよ"

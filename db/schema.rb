@@ -215,26 +215,6 @@ ActiveRecord::Schema.define(version: 20171105095103) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sockes", force: :cascade do |t|
-    t.bigint "staff_member_id"
-    t.integer "price"
-    t.integer "size"
-    t.integer "color"
-    t.integer "pattern"
-    t.integer "season"
-    t.integer "scene"
-    t.text "description"
-    t.text "raw_materials"
-    t.string "socks_name"
-    t.string "socks_code"
-    t.string "socks_one"
-    t.string "socks_two"
-    t.string "socks_three"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["staff_member_id"], name: "index_sockes_on_staff_member_id"
-  end
-
   create_table "socks", force: :cascade do |t|
     t.bigint "staff_member_id"
     t.integer "price"
@@ -343,7 +323,6 @@ ActiveRecord::Schema.define(version: 20171105095103) do
   add_foreign_key "pocket_chiefs", "staff_members"
   add_foreign_key "shoes", "staff_members"
   add_foreign_key "shurts", "staff_members"
-  add_foreign_key "sockes", "staff_members"
   add_foreign_key "socks", "staff_members"
   add_foreign_key "tie_pins", "staff_members"
   add_foreign_key "ties", "staff_members"
