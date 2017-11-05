@@ -1,5 +1,5 @@
 class Belt < ApplicationRecord
-  validates :staff_member, presence: true
+  validates :staff_member, :belt_one, presence: true
   belongs_to :staff_member
 
 

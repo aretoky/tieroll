@@ -1,2 +1,28 @@
 h1 belt_new_form
 = form_with model: [:staff, @belt], url: {action: :create}, html: {multipart: true}, local: true do |f|
+  .product_form.required
+    = f.label '商品名'
+    = f.text_field :belt_name
+    
+  .product_form.required
+    = f.label '商品コード'
+    = f.text_field :belt_code
+  
+  = render 'staff/product_form', common: f
+  
+  .product_form.required
+    = f.label 'ベルト写真1'
+    = f.file_field :belt_one
+    
+  .product_form
+    = f.label 'ベルト写真2'
+    = f.file_field :belt_two
+  
+  .product_form
+    = f.label 'ベルト写真3'
+    = f.file_field :belt_three
+    
+  .product_submit
+    = f.submit '確認'
+    
+  
