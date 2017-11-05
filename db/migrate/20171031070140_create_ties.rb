@@ -8,7 +8,8 @@ class CreateTies < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :tie_name
       t.string :tie_code
       t.string :tie_one

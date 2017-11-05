@@ -8,7 +8,8 @@ class CreateVests < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :vest_name
       t.string :vest_code
       t.string :v_front

@@ -8,7 +8,8 @@ class CreateOthers < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :other_item_name
       t.string :other_item_code
       t.string :other_one

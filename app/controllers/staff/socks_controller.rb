@@ -24,6 +24,6 @@ class Staff::SocksController < Staff::Base
 
   private
   def socks_params
-    params.require(:socks).permit(:price, :size, :color, :pattern, :season, :scene, :description, :sockes_name, :sockes_code, :sockes_one, :sockes_two, :sockes_three)
-  end 
+    params.require(:socks).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :sockes_name, :sockes_code, :sockes_one, :sockes_two, :sockes_three)
+  end
 end

@@ -24,6 +24,6 @@ class Staff::ShoesController < Staff::Base
 
   private
   def shoes_params
-    params.require(:shoes).permit(:price, :size, :color, :pattern, :season, :scene, :description, :shoes_name, :shoes_code, :shoes_one, :shoes_two, :shoes_three, :shoes_four, :shoes_five)
-  end 
+    params.require(:shoes).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :shoes_name, :shoes_code, :shoes_one, :shoes_two, :shoes_three, :shoes_four, :shoes_five)
+  end
 end

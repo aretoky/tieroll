@@ -8,7 +8,8 @@ class CreateSockes < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :sockes_name
       t.string :sockes_code
       t.string :sockes_one

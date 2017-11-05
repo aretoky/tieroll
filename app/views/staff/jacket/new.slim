@@ -1,5 +1,5 @@
 h1 jacket_new_form
-= form_with model: [:staff, @jacket], url: {action: :confirm}, local: true do |f|
+= form_with model: [:staff, @jacket], url: {action: :create}, local: true do |f|
   .product_form.required
     = f.label '商品名'
     = f.text_field :jacket_name
@@ -7,17 +7,19 @@ h1 jacket_new_form
   .product_form.required
     = f.label '商品コード'
     = f.text_field :jacket_code
-
+  
   = render 'staff/product_form', common: f
   
   .product_form.required
     = f.label '正面'
     = f.file_field :j_front
-
+    = f.hidden_field :j_front_cache
+  
   .product_form
     = f.label '後ろ'
     = f.file_field :j_back
-    
+    = f.hidden_field :j_back_cache
+
   .product_form
     = f.label 'ボタン開けた正面'
     = f.file_field :open_front

@@ -24,6 +24,6 @@ class Staff::ShurtController < Staff::Base
 
   private
   def shurt_params
-    params.require(:shurt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :shurt_name, :shurt_code, :s_front, :s_back, :s_button, :s_breast_pocket, :colar, :s_other)
+    params.require(:shurt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :shurt_name, :shurt_code, :s_front, :s_back, :s_button, :s_breast_pocket, :colar, :s_other)
   end
 end

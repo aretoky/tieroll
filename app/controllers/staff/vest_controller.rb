@@ -24,6 +24,6 @@ class Staff::VestController < Staff::Base
 
   private
   def vest_params
-    params.require(:vest).permit(:price, :size, :color, :pattern, :season, :scene, :description, :vest_name, :vest_code, :v_front, :v_back, :v_inner, :v_buckle, :v_other)
-  end 
+    params.require(:vest).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :vest_name, :vest_code, :v_front, :v_back, :v_inner, :v_buckle, :v_other)
+  end
 end

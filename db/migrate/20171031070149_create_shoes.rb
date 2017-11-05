@@ -8,7 +8,8 @@ class CreateShoes < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :shoes_name
       t.string :shoes_code
       t.string :shoes_one

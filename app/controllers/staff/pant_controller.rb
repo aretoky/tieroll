@@ -24,6 +24,6 @@ class Staff::PantController < taff::Base
 
   private
   def pants_params
-    params.require(:pant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :pant_name, :pant_code, :p_front, :p_back, :p_inner, :belt_roop)
+    params.require(:pant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :pant_name, :pant_code, :p_front, :p_back, :p_inner, :belt_roop)
   end
 end

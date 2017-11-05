@@ -8,7 +8,8 @@ class CreateJackets < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :jacket_name
       t.string :jacket_code
       t.string :j_front

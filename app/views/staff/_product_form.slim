@@ -1,6 +1,10 @@
 .product_form.required
   = common.label "商品説明"
-  = common.text_field :description
+  = common.text_area :description
+  
+.product_form.required
+  = common.label "素材"
+  = common.text_area :raw_materials
 
 .product_form.required
   = common.label "価格(税込み)"

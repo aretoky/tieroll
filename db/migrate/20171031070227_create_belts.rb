@@ -8,7 +8,8 @@ class CreateBelts < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :belt_name
       t.string :belt_code
       t.string :belt_one

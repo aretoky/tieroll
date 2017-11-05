@@ -24,6 +24,6 @@ class Staff::PocketChiefController < Staff::Base
 
   private
   def chief_params
-    params.require(:pocket_chief).permit(:price, :size, :color, :pattern, :season, :scene, :description, :chief_name, :chief_code, :chief_one, :chief_two, :chief_three)
-  end 
+    params.require(:pocket_chief).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :chief_name, :chief_code, :chief_one, :chief_two, :chief_three)
+  end
 end

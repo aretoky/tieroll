@@ -24,6 +24,6 @@ class Staff::TiePinController < Staff::Base
 
   private
   def ite_pin_params
-    params.require(:ite_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :tie_pin_name. :tie_pin_code, :tie_pin_one, :tie_pin_two, :tie_pin_three)
-  end 
+    params.require(:tie_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :tie_pin_name, :tie_pin_code, :tie_pin_one, :tie_pin_two, :tie_pin_three)
+  end
 end

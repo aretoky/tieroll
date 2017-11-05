@@ -24,6 +24,6 @@ class Staff::TieController < Staff::Base
 
   private
   def tie_params
-    params.require(:tie).permit(:price, :size, :color, :pattern, :season, :scene, :description, :tie_name, :tie_code, :tie_one, :tie_two, :tie_three)
-  end 
+    params.require(:tie).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :tie_name, :tie_code, :tie_one, :tie_two, :tie_three)
+  end
 end

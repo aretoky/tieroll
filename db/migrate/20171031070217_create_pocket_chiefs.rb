@@ -8,7 +8,8 @@ class CreatePocketChiefs < ActiveRecord::Migration[5.1]
       t.integer :pattern
       t.integer :season
       t.integer :scene
-      t.text :description
+      t.text    :description
+      t.text    :raw_materials
       t.string :chief_name
       t.string :chief_code
       t.string :chief_one
