@@ -12,7 +12,9 @@
             li
               = link_to 'マイページ', staff_member_path(current_staff)
             li
-              = link_to '商品', new_staff_jacket_path
+              = link_to '商品登録', :staff_item_post
+            li 
+              = link_to '商品編集', :staff_item_edit
             li
               = link_to 'about'
             li

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031073112) do
+ActiveRecord::Schema.define(version: 20171105095103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -225,14 +225,34 @@ ActiveRecord::Schema.define(version: 20171031073112) do
     t.integer "scene"
     t.text "description"
     t.text "raw_materials"
-    t.string "sockes_name"
-    t.string "sockes_code"
-    t.string "sockes_one"
-    t.string "sockes_two"
-    t.string "sockes_three"
+    t.string "socks_name"
+    t.string "socks_code"
+    t.string "socks_one"
+    t.string "socks_two"
+    t.string "socks_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_sockes_on_staff_member_id"
+  end
+
+  create_table "socks", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "socks_name"
+    t.string "socks_code"
+    t.string "socks_one"
+    t.string "socks_two"
+    t.string "socks_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_socks_on_staff_member_id"
   end
 
   create_table "staff_members", force: :cascade do |t|
@@ -324,6 +344,7 @@ ActiveRecord::Schema.define(version: 20171031073112) do
   add_foreign_key "shoes", "staff_members"
   add_foreign_key "shurts", "staff_members"
   add_foreign_key "sockes", "staff_members"
+  add_foreign_key "socks", "staff_members"
   add_foreign_key "tie_pins", "staff_members"
   add_foreign_key "ties", "staff_members"
   add_foreign_key "vests", "staff_members"

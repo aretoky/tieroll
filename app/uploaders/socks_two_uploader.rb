@@ -1,4 +1,4 @@
-class SockesOneUploader < CarrierWave::Uploader::Base
+class SocksTwoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

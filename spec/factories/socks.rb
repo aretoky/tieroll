@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :socke do
+  factory :sock do
     
   end
 end

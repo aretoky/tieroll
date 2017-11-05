@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     get 'login', to: 'session#new', as: :login
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy', as: :logout
+
+    get 'item_post', to: 'item#item_post'
+    get 'item_edit', to: 'item#item_edit'
   end
 
   # urlをtieroll/~~にしたい

@@ -1,6 +1,6 @@
-class CreateSockes < ActiveRecord::Migration[5.1]
+class CreateSocks < ActiveRecord::Migration[5.1]
   def change
-    create_table :sockes do |t|
+    create_table :socks do |t|
       t.references :staff_member, foreign_key: true
       t.integer :price
       t.integer :size
