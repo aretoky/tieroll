@@ -1,2 +1,0 @@
-class SocksController < ApplicationController
-end
