@@ -5,12 +5,21 @@ class Staff::PantController < taff::Base
   end
 
   def new
+    @pants = Pant.new
   end
 
   def confirm
   end
 
   def create
+    @pant = @current_staff.pants.build(pants_params)
+    if name[:back]
+      render :new, notice: "編集してね"
+    elsif @pant && @pant.save
+      redirect_to :root_staff, notice: "保存したよ"
+    else
+      render :new, alert: "入力に誤りがあるよ"
+    end
   end
 
   def edit

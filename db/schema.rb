@@ -120,6 +120,9 @@ ActiveRecord::Schema.define(version: 20171105095103) do
     t.string "p_back"
     t.string "p_inner"
     t.string "belt_roop"
+    t.string "p_pocket"
+    t.string "p_hem"
+    t.string "p_other"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_pants_on_staff_member_id"
@@ -281,6 +284,7 @@ ActiveRecord::Schema.define(version: 20171105095103) do
     t.string "tie_one"
     t.string "tie_two"
     t.string "tie_three"
+    t.string "tie_four"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_ties_on_staff_member_id"
@@ -308,6 +312,8 @@ ActiveRecord::Schema.define(version: 20171105095103) do
     t.string "vest_code"
     t.string "v_front"
     t.string "v_back"
+    t.string "v_pocket"
+    t.string "v_breast_pocket"
     t.string "v_inner"
     t.string "v_buckle"
     t.string "v_other"

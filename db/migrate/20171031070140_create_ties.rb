@@ -15,6 +15,7 @@ class CreateTies < ActiveRecord::Migration[5.1]
       t.string :tie_one
       t.string :tie_two
       t.string :tie_three
+      t.string :tie_four
 
       t.timestamps
     end

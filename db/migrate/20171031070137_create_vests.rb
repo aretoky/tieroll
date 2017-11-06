@@ -14,6 +14,8 @@ class CreateVests < ActiveRecord::Migration[5.1]
       t.string :vest_code
       t.string :v_front
       t.string :v_back
+      t.string :v_pocket
+      t.string :v_breast_pocket
       t.string :v_inner
       t.string :v_buckle
       t.string :v_other

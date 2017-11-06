@@ -6,5 +6,5 @@ class Belt < ApplicationRecord
   mount_uploader :belt_one,     BeltOneUploader
   mount_uploader :belt_two,     BeltTwoUploader
   mount_uploader :belt_three,   BeltThreeUploader
-
+  mount_uploader :belt_four,    BeltFourUploader
 end
