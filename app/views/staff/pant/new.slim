@@ -20,24 +20,28 @@ h1 pant_create_form
     
   .product_form
     = f.label "内側"
-    = f.file_field :v_inner
+    = f.file_field :p_inner
     
+  .product_form
+    = f.label "裾"
+    = f.file_field :p_hem
+    
+  .product_form
+    = f.label "ベルトループ"
+    = f.file_field :belt_roop
+  
   .product_form
     = f.label "ポケット"
-    = f.file_field :v_pocket
+    = f.file_field :p_front_pocket
     
   .product_form
-    = f.label "胸ポケット"
-    = f.file_field :v_breast_pocket
-    
-  .product_form
-    = f.label "バックル"
-    = f.file_field :v_buckle
+    = f.label "後ろポケット"
+    = f.file_field :p_back_pocket
     
   .product_form
     = f.label "その他"
-    = f.file_field :v_other
-    
+    = f.file_field :p_other
+
   .product_submit
     = f.submit '確認'
   

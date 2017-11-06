@@ -1,4 +1,4 @@
-class PPocketUploader < CarrierWave::Uploader::Base
+class PFrontPocketUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
