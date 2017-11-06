@@ -14,6 +14,7 @@ class CreatePants < ActiveRecord::Migration[5.1]
       t.string :pant_code
       t.string :p_front
       t.string :p_back
+      t.string :p_side
       t.string :p_inner
       t.string :belt_roop
       t.string :p_front_pocket

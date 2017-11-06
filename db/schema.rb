@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20171105095103) do
     t.string "pant_code"
     t.string "p_front"
     t.string "p_back"
+    t.string "p_side"
     t.string "p_inner"
     t.string "belt_roop"
     t.string "p_front_pocket"

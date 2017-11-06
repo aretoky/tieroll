@@ -1,11 +1,11 @@
-class Staff::PantController < taff::Base
+class Staff::PantController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   def index
   end
 
   def new
-    @pants = Pant.new
+    @pant = Pant.new
   end
 
   def confirm
@@ -13,10 +13,10 @@ class Staff::PantController < taff::Base
 
   def create
     @pant = @current_staff.pants.build(pants_params)
-    if name[:back]
+    if params[:back]
       render :new, notice: "編集してね"
     elsif @pant && @pant.save
-      redirect_to :root_staff, notice: "保存したよ"
+      redirect_to :staff_item_post, notice: "保存したよ"
     else
       render :new, alert: "入力に誤りがあるよ"
     end

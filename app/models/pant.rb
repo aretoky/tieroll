@@ -5,6 +5,7 @@ class Pant < ApplicationRecord
 
   mount_uploader :p_front,        PFrontUploader
   mount_uploader :p_back,         PBackUploader
+  mount_uploader :p_side,         PSideUploader
   mount_uploader :p_inner,        PInnerUploader
   mount_uploader :p_hem,          PHemUploader
   mount_uploader :p_front_pocket, PFrontPocketUploader

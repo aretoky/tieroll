@@ -1,0 +1,26 @@
+h1 cehif_create_form
+= form_with model: [:staff, @chief], url: {action: :create}, html: {multipart: true}, local: true do |f|
+  .product_form.required
+    = f.label "商品名"
+    = f.text_field :chief_name
+    
+  .product_form.required
+    = f.label "商品コード"
+    = f.text_field :chief_code
+  
+  = render 'staff/product_form', common: f
+  
+  .product_form.requried
+    = f.label "写真1"
+    = f.file_field :chief_one 
+  
+  .product_form
+    = f.label "写真2"
+    = f.file_field :chief_two
+    
+  .product_form
+    = f.label "写真3"
+    = f.file_field :chief_three
+    
+  .product_submit
+    = f.submit "確認"

@@ -16,7 +16,7 @@ class Staff::BeltController < Staff::Base
     if params[:back]
       render :new, notice: '編集してね'
     elsif @belt && @belt.save
-      redirect_to staff_root_path, notice: '登録完了'
+      redirect_to :staff_item_post, notice: '登録完了'
     else
       render :new, alert: '入力に誤りがあるよ'
     end

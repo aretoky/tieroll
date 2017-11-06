@@ -5,12 +5,21 @@ class Staff::PocketChiefController < Staff::Base
   end
 
   def new
+    @chief = PocketChief.new
   end
 
   def confirm
   end
 
   def create
+    @chief = @current_staff.pocket_chiefs.build(chief_params)
+    if params[:back]
+      render :new, notice: "編集してね"
+    elsif @chief && @chief.save
+      redirect_to :staff_item_post, notice: "登録したよ"
+    else
+      render :new, alert: "入力に誤りがあるよ"
+    end
   end
 
   def edit

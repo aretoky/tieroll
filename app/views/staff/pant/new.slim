@@ -18,6 +18,10 @@ h1 pant_create_form
     = f.label "後ろ"
     = f.file_field :p_back
     
+  .product_form.required
+    = f.label "横"
+    = f.file_field :p_side
+    
   .product_form
     = f.label "内側"
     = f.file_field :p_inner
