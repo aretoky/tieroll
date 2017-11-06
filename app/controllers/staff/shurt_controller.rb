@@ -5,12 +5,21 @@ class Staff::ShurtController < Staff::Base
   end
 
   def new
+    @shurt = Shurt.new
   end
 
   def confirm
   end
 
   def create
+    @shurt = @current_staff.build(shurt_params)
+    if params[:back]
+      render :new, notice: "編集してね"
+    elsif  @shurt && @shurt.save
+      redirect_to :staff_item_post, notice: "登録しました"
+    else
+      render :new, alert: "確認してね"
+    end 
   end
 
   def edit
