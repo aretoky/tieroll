@@ -5,12 +5,21 @@ class Staff::VestController < Staff::Base
   end
 
   def new
+    @vest = Vest.new
   end
 
   def confirm
   end
 
   def create
+    @vest = @current_staff.vests.build(vest_params)
+    if params[:back]
+      render :new, notice: "編集してね"
+    elsif @vest && @vest.save
+      redirect_to :staff_item_post, notice: "登録しました"
+    else
+      render :new, alert: "確認してね "
+    end
   end
 
   def edit

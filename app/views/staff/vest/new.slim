@@ -1,0 +1,43 @@
+h1 vest_create_form 
+= form_with model: [:staff, @vest], url: {action: :create}, html: {multipart: true}, local: true do |f|
+  .product_form.required
+    = f.label "商品名"
+    = f.text_field :vest_name
+    
+  .product_form.required
+    = f.label "商品コード"
+    = f.text_field :vest_code
+    
+  = render 'staff/product_form', common: f
+  
+  .product_form.required
+    = f.label "正面"
+    = f.file_field :v_front
+    
+  .product_form
+    = f.label "後ろ"
+    = f.file_field :v_back
+  
+  .product_form
+    = f.label "ポケット"
+    = f.file_field :v_pocket
+    
+  .product_form
+    = f.label "胸ポケット"
+    = f.file_field :v_breast_pocket
+  
+  .product_form
+    = f.label "内側"
+    = f.file_field :v_inner
+    
+  .product_form
+    = f.label "バックル"
+    = f.file_field :v_buckle
+  
+  .product_form
+    = f.label "その他"
+    = f.file_field :v_other
+    
+  .product_submit
+    = f.submit "確認"
+    
