@@ -1,5 +1,5 @@
 class PocketChief < ApplicationRecord
-  validates :staff_member, presence: true
+  validates :staff_member, :chief_name, :chief_code, :chief_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 

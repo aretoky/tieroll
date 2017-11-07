@@ -1,7 +1,7 @@
 class Shoe < ApplicationRecord
-  validates :staff_member, presence: true
+  validates :staff_member, :shoes_name, :shoes_code, :shoes_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
-  
+
 
   mount_uploader :shoes_one,    ShoesOneUploader
   mount_uploader :shoes_two,    ShoesTwoUploader

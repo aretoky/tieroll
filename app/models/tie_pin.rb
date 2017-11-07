@@ -1,5 +1,5 @@
 class TiePin < ApplicationRecord
-  validates :staff_member, presence: true
+  validates :staff_member, :tie_pin_name, :tie_pin_code, :tie_pin_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 

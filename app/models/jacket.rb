@@ -3,7 +3,7 @@ class Jacket < ApplicationRecord
   belongs_to :staff_member
 
   # cache確認時の簡易的な検証
-  validates :j_front, :jacket_name, presence: true
+  # validates :j_front, :jacket_name, presence: true
 
 
   mount_uploader :j_front,          JFrontUploader

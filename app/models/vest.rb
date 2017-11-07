@@ -1,5 +1,5 @@
 class Vest < ApplicationRecord
-  validates :staff_member, presence: true
+  validates :staff_member, :vest_name, :vest_code, :v_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 
