@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107122226) do
+ActiveRecord::Schema.define(version: 20171107123700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,6 +176,26 @@ ActiveRecord::Schema.define(version: 20171107122226) do
     t.string "knit_one"
     t.string "knit_two"
     t.string "knit_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lapel_pins", force: :cascade do |t|
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "lapel_pin_name"
+    t.string "lapel_pin_code"
+    t.string "lapel_pin_one"
+    t.string "lapel_pin_two"
+    t.string "lapel_pin_three"
+    t.string "lapel_pin_four"
+    t.string "lapel_pin_five"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
