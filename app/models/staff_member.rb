@@ -10,8 +10,8 @@ class StaffMember < ApplicationRecord
   has_many :shoes,          dependent: :destroy
   has_many :shurts,         dependent: :destroy
   has_many :tie_pins,       dependent: :destroy
-  has_many :socks,         dependent: :destroy
-  has_many :ties,           dependent: :destroy
+  has_many :socks,          dependent: :destroy
+  has_many :tie_necks,      dependent: :destroy
   has_many :vests,          dependent: :destroy
   has_many :others,         dependent: :destroy
 

@@ -1,6 +1,6 @@
-class CreateTies < ActiveRecord::Migration[5.1]
+class CreateTieNecks < ActiveRecord::Migration[5.1]
   def change
-    create_table :ties do |t|
+    create_table :tie_necks do |t|
       t.references :staff_member, foreign_key: true
       t.integer :price
       t.integer :size

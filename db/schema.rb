@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106141058) do
+ActiveRecord::Schema.define(version: 20171107032439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -251,6 +251,27 @@ ActiveRecord::Schema.define(version: 20171106141058) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tie_necks", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "tie_name"
+    t.string "tie_code"
+    t.string "tie_one"
+    t.string "tie_two"
+    t.string "tie_three"
+    t.string "tie_four"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_tie_necks_on_staff_member_id"
+  end
+
   create_table "tie_pins", force: :cascade do |t|
     t.bigint "staff_member_id"
     t.integer "price"
@@ -269,27 +290,6 @@ ActiveRecord::Schema.define(version: 20171106141058) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_tie_pins_on_staff_member_id"
-  end
-
-  create_table "ties", force: :cascade do |t|
-    t.bigint "staff_member_id"
-    t.integer "price"
-    t.integer "size"
-    t.integer "color"
-    t.integer "pattern"
-    t.integer "season"
-    t.integer "scene"
-    t.text "description"
-    t.text "raw_materials"
-    t.string "tie_name"
-    t.string "tie_code"
-    t.string "tie_one"
-    t.string "tie_two"
-    t.string "tie_three"
-    t.string "tie_four"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["staff_member_id"], name: "index_ties_on_staff_member_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -332,7 +332,7 @@ ActiveRecord::Schema.define(version: 20171106141058) do
   add_foreign_key "shoes", "staff_members"
   add_foreign_key "shurts", "staff_members"
   add_foreign_key "socks", "staff_members"
+  add_foreign_key "tie_necks", "staff_members"
   add_foreign_key "tie_pins", "staff_members"
-  add_foreign_key "ties", "staff_members"
   add_foreign_key "vests", "staff_members"
 end

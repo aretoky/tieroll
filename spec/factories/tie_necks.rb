@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :ty, class: 'Tie' do
+  factory :tie_neck do
     
   end
 end
