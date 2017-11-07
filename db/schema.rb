@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107114857) do
+ActiveRecord::Schema.define(version: 20171107120712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,6 +154,27 @@ ActiveRecord::Schema.define(version: 20171107114857) do
     t.string "knit_one"
     t.string "knit_two"
     t.string "knit_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mufflers", force: :cascade do |t|
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "muffler_name"
+    t.string "muffler_code"
+    t.string "muffler_front"
+    t.string "muffler_back"
+    t.string "muffler_fringe"
+    t.string "muffler_one"
+    t.string "muffler_two"
+    t.string "muffler_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

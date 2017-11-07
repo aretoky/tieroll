@@ -5,17 +5,17 @@ class Staff::GloveController < Staff::Base
   end
 
   def new
-    @coat = Coat.new
+    @glove = Glove.new
   end
 
   def confirm
   end
 
   def create
-    @coat = @current_staff.coats.build(coat_params)
+    @glove = @current_staff.gloves.build(glove_params)
     if params[:back]
       render :new, notice: "編集してね"
-    elsif @coat && @coat.save
+    elsif @glove && @glove.save
       redirect_to :staff_item_post, notice: "登録したよ"
     else
       render :new, alert: "だめよ"
