@@ -1,4 +1,4 @@
-class ShoesFourUploader < CarrierWave::Uploader::Base
+class ShoeFiveUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
