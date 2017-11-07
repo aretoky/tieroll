@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107110156) do
+ActiveRecord::Schema.define(version: 20171107113322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,30 @@ ActiveRecord::Schema.define(version: 20171107110156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_jackets_on_staff_member_id"
+  end
+
+  create_table "knits", force: :cascade do |t|
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "knit_name"
+    t.string "knit_code"
+    t.string "knit_front"
+    t.string "knit_back"
+    t.string "knit_hem"
+    t.string "knit_collar"
+    t.string "knit_inner"
+    t.string "knit_neck"
+    t.string "knit_one"
+    t.string "knit_two"
+    t.string "knit_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "others", force: :cascade do |t|
