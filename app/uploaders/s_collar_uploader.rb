@@ -1,4 +1,4 @@
-class ColarUploader < CarrierWave::Uploader::Base
+class SCollarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

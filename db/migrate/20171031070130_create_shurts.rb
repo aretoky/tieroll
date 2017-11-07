@@ -17,7 +17,7 @@ class CreateShurts < ActiveRecord::Migration[5.1]
       t.string :s_cuff
       t.string :s_button
       t.string :s_breast_pocket
-      t.string :colar
+      t.string :s_collar
       t.string :s_other
 
       t.timestamps

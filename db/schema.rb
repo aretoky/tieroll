@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(version: 20171107032439) do
     t.string "s_cuff"
     t.string "s_button"
     t.string "s_breast_pocket"
-    t.string "colar"
+    t.string "s_collar"
     t.string "s_other"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
