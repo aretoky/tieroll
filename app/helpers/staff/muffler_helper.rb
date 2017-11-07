@@ -1,0 +1,2 @@
+module Staff::MufflerHelper
+end

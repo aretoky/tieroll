@@ -11,6 +11,7 @@ class Jacket < ApplicationRecord
   mount_uploader :open_front,       OpenFrontUploader
   mount_uploader :closed_front,     ClosedFrontUploader
   mount_uploader :lapel,            LapelUploader
+  mount_uploader :j_bents,          JBentsUploader
   mount_uploader :j_cuff,           JCuffUploader
   mount_uploader :j_button,         JButtonUploader
   mount_uploader :j_inner,          JInnerUploader

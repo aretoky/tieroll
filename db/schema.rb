@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107032439) do
+ActiveRecord::Schema.define(version: 20171107110156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,35 @@ ActiveRecord::Schema.define(version: 20171107032439) do
     t.index ["staff_member_id"], name: "index_belts_on_staff_member_id"
   end
 
+  create_table "coats", force: :cascade do |t|
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "coat_name"
+    t.string "coat_code"
+    t.string "coat_front"
+    t.string "coat_back"
+    t.string "coat_open_front"
+    t.string "coat_closed_front"
+    t.string "coat_inner"
+    t.string "coat_inner_r"
+    t.string "coat_inner_l"
+    t.string "coat_lapel"
+    t.string "coat_pocket"
+    t.string "coat_breast_pocket"
+    t.string "coat_bents"
+    t.string "coat_one"
+    t.string "coat_two"
+    t.string "coat_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "colors", force: :cascade do |t|
     t.string "product_color"
     t.datetime "created_at", null: false
@@ -69,6 +98,7 @@ ActiveRecord::Schema.define(version: 20171107032439) do
     t.string "closed_front"
     t.string "j_cuff"
     t.string "lapel"
+    t.string "j_bents"
     t.string "j_inner"
     t.string "j_inner_r"
     t.string "j_inner_l"

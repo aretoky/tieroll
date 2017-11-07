@@ -18,6 +18,7 @@ class CreateJackets < ActiveRecord::Migration[5.1]
       t.string :closed_front
       t.string :j_cuff
       t.string :lapel
+      t.string :j_bents
       t.string :j_inner
       t.string :j_inner_r
       t.string :j_inner_l

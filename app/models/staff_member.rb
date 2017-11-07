@@ -13,6 +13,7 @@ class StaffMember < ApplicationRecord
   has_many :socks,          dependent: :destroy
   has_many :tie_necks,      dependent: :destroy
   has_many :vests,          dependent: :destroy
+  has_many :coats,          dependent: :destroy
   has_many :others,         dependent: :destroy
 
 
