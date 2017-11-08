@@ -5,14 +5,15 @@ class Staff::GloveController < Staff::Base
   end
 
   def new
-    @glove = Glove.new
+    # gloveとするとglovesの際の不規則変化に引っかかり、元のモデルがglofeと判断されてしまうが、tie_neckの様に簡単な代替が思いつかないのでモデル名のみ変更する
+    @glove = Gant.new
   end
 
   def confirm
   end
 
   def create
-    @glove = @current_staff.gloves.build(glove_params)
+    @glove = @current_staff.gants.build(glove_params)
     if params[:back]
       render :new, notice: "編集してね"
     elsif @glove && @glove.save
@@ -33,6 +34,6 @@ class Staff::GloveController < Staff::Base
 
   private
   def glove_params
-    params.require(:glove).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :glove_name, :glove_code, :glove_front, :glove_back, :glove_inner, :glove_wrist, :glove_one, :glove_two, :glove_three)
+    params.require(:gant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :glove_name, :glove_code, :glove_front, :glove_back, :glove_inner, :glove_wrist, :glove_one, :glove_two, :glove_three)
   end
 end
