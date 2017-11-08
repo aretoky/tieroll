@@ -1,6 +1,7 @@
 class CreateMufflers < ActiveRecord::Migration[5.1]
   def change
     create_table :mufflers do |t|
+      t.references :staff_member, foreign_key: true
       t.integer :price
       t.integer :size
       t.integer :color

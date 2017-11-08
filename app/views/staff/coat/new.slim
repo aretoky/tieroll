@@ -1,0 +1,71 @@
+h1 coat_create_form
+= form_with model: [:staff, @coat], url: {action: :create}, html: {multipart: true}, local: true do |f|
+  .product.required
+    = f.label "商品名"
+    = f.text_field :coat_name
+    
+  .product.required
+    = f.label "商品コード"
+    = f.text_field :coat_code
+    
+  = render 'staff/product_form', common: f
+  
+  .product.requried
+    = f.label "正面"
+    = f.file_field :coat_front
+  .product
+    = f.label "後ろ"
+    = f.file_field :coat_back
+  
+  .product
+    = f.label "ボタン開けた正面"
+    = f.file_field :coat_open_front
+    
+  .product
+    = f.label "ボタン閉じた正面"
+    = f.file_field :coat_closed_front
+  
+  .product
+    = f.label "内側"
+    = f.file_field :coat_inner
+  
+  .product
+    = f.label "内側右"
+    = f.file_field :coat_inner_r
+  
+  .product
+    = f.label "内側左"
+    = f.file_field :coat_inner_l
+  
+  
+  .product
+    = f.label "ラペル"
+    = f.file_field :coat_lapel
+  
+  .product
+    = f.label "ポケット"
+    = f.file_field :coat_pocket
+  
+  .product
+    = f.label "胸ポケット"
+    = f.file_field :coat_breast_pocket
+  
+  .product
+    = f.label "ベンツ"
+    = f.file_field :coat_bents
+  
+  .product
+    = f.label "その他1"
+    = f.file_field :coat_one
+  
+  .product
+    = f.label "その他2"
+    = f.file_field :coat_two
+  
+  .product
+    = f.label "その他3"
+    = f.file_field :coat_three
+
+
+  .product_submit
+    = f.submit "確認"

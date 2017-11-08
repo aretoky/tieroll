@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
   end
 
   create_table "coats", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "coat_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_coats_on_staff_member_id"
   end
 
   create_table "colors", force: :cascade do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
   end
 
   create_table "cuff_links", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -98,9 +101,11 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "cuff_link_seven"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_cuff_links_on_staff_member_id"
   end
 
   create_table "ear_mufflers", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -120,9 +125,11 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "ear_muffler_four"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_ear_mufflers_on_staff_member_id"
   end
 
   create_table "gloves", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -142,9 +149,11 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "glove_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_gloves_on_staff_member_id"
   end
 
   create_table "hats", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -163,6 +172,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "hat_two"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_hats_on_staff_member_id"
   end
 
   create_table "jackets", force: :cascade do |t|
@@ -198,6 +208,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
   end
 
   create_table "knits", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -219,9 +230,11 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "knit_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_knits_on_staff_member_id"
   end
 
   create_table "lapel_pins", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -239,9 +252,11 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "lapel_pin_five"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_lapel_pins_on_staff_member_id"
   end
 
   create_table "mufflers", force: :cascade do |t|
+    t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
     t.integer "color"
@@ -260,6 +275,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "muffler_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["staff_member_id"], name: "index_mufflers_on_staff_member_id"
   end
 
   create_table "others", force: :cascade do |t|
@@ -511,7 +527,15 @@ ActiveRecord::Schema.define(version: 20171108104850) do
   end
 
   add_foreign_key "belts", "staff_members"
+  add_foreign_key "coats", "staff_members"
+  add_foreign_key "cuff_links", "staff_members"
+  add_foreign_key "ear_mufflers", "staff_members"
+  add_foreign_key "gloves", "staff_members"
+  add_foreign_key "hats", "staff_members"
   add_foreign_key "jackets", "staff_members"
+  add_foreign_key "knits", "staff_members"
+  add_foreign_key "lapel_pins", "staff_members"
+  add_foreign_key "mufflers", "staff_members"
   add_foreign_key "others", "staff_members"
   add_foreign_key "pants", "staff_members"
   add_foreign_key "pocket_chiefs", "staff_members"

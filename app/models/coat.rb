@@ -6,7 +6,7 @@ class Coat < ApplicationRecord
   mount_uploader :coat_front,         CoatFrontUploader
   mount_uploader :coat_back,          CoatBackUploader
   mount_uploader :coat_open_front,    CoatOpenFrontUploader
-  mount_uploader :coat_closed_front,  CoatClosedFrontpUloader
+  mount_uploader :coat_closed_front,  CoatClosedFrontUploader
   mount_uploader :coat_inner,         CoatInnerUploader
   mount_uploader :coat_inner_r,       CoatInnerRUploader
   mount_uploader :coat_inner_l,       CoatInnerLUploader
