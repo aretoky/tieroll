@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108103346) do
+ActiveRecord::Schema.define(version: 20171108104850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,27 @@ ActiveRecord::Schema.define(version: 20171108103346) do
     t.string "glove_one"
     t.string "glove_two"
     t.string "glove_three"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hats", force: :cascade do |t|
+    t.integer "price"
+    t.integer "size"
+    t.integer "color"
+    t.integer "pattern"
+    t.integer "season"
+    t.integer "scene"
+    t.text "description"
+    t.text "raw_materials"
+    t.string "hat_front"
+    t.string "hat_back"
+    t.string "hat_side"
+    t.string "hat_roof"
+    t.string "hat_sole"
+    t.string "hat_inner"
+    t.string "hat_one"
+    t.string "hat_two"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
