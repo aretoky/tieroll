@@ -33,5 +33,6 @@ class Staff::CuffLinkController < Staff::Base
 
   private
   def cuff_link_params
-    params.require(:cuff_link).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials,)
+    params.require(:cuff_link).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :cuff_link_oen, :cuff_link_two, :cuff_link_three, :cuff_link_four, :cuff_link_five, :cuff_link_six, :cuff_link_seven)
+  end
 end
