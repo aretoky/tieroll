@@ -16,7 +16,7 @@ class StaffMember < ApplicationRecord
   has_many :coats,          dependent: :destroy
   has_many :mufflers,       dependent: :destroy
   has_many :ear_mufflers,   dependent: :destroy
-  has_many :gloves,         dependent: :destroy
+  has_many :gants,          dependent: :destroy
   has_many :knits,          dependent: :destroy
   has_many :cuff_links,     dependent: :destroy
   has_many :lapel_pin,      dependent: :destroy

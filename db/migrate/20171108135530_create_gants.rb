@@ -1,6 +1,6 @@
-class CreateGloves < ActiveRecord::Migration[5.1]
+class CreateGants < ActiveRecord::Migration[5.1]
   def change
-    create_table :gloves do |t|
+    create_table :gants do |t|
       t.references :staff_member, foreign_key: true
       t.integer :price
       t.integer :size

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108104850) do
+ActiveRecord::Schema.define(version: 20171108135530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.index ["staff_member_id"], name: "index_ear_mufflers_on_staff_member_id"
   end
 
-  create_table "gloves", force: :cascade do |t|
+  create_table "gants", force: :cascade do |t|
     t.bigint "staff_member_id"
     t.integer "price"
     t.integer "size"
@@ -149,7 +149,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
     t.string "glove_three"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["staff_member_id"], name: "index_gloves_on_staff_member_id"
+    t.index ["staff_member_id"], name: "index_gants_on_staff_member_id"
   end
 
   create_table "hats", force: :cascade do |t|
@@ -530,7 +530,7 @@ ActiveRecord::Schema.define(version: 20171108104850) do
   add_foreign_key "coats", "staff_members"
   add_foreign_key "cuff_links", "staff_members"
   add_foreign_key "ear_mufflers", "staff_members"
-  add_foreign_key "gloves", "staff_members"
+  add_foreign_key "gants", "staff_members"
   add_foreign_key "hats", "staff_members"
   add_foreign_key "jackets", "staff_members"
   add_foreign_key "knits", "staff_members"
