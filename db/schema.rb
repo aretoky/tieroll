@@ -92,6 +92,8 @@ ActiveRecord::Schema.define(version: 20171108135530) do
     t.integer "scene"
     t.text "description"
     t.text "raw_materials"
+    t.string "cuff_link_name"
+    t.string "cuff_link_code"
     t.string "cuff_link_one"
     t.string "cuff_link_two"
     t.string "cuff_link_three"
