@@ -1,4 +1,4 @@
-class HatFrotnUploader < CarrierWave::Uploader::Base
+class HatFrontUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

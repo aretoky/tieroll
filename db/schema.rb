@@ -164,6 +164,8 @@ ActiveRecord::Schema.define(version: 20171108135530) do
     t.integer "scene"
     t.text "description"
     t.text "raw_materials"
+    t.string "hat_name"
+    t.string "hat_code"
     t.string "hat_front"
     t.string "hat_back"
     t.string "hat_side"
