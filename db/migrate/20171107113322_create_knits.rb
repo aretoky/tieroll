@@ -15,7 +15,6 @@ class CreateKnits < ActiveRecord::Migration[5.1]
       t.string  :knit_front
       t.string  :knit_back
       t.string  :knit_hem
-      t.string  :knit_collar
       t.string  :knit_inner
       t.string  :knit_neck
       t.string  :knit_one

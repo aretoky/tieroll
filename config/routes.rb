@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   namespace :staff do
     root to: 'member#show'
     resources :member
-    resources  :main_product, :jacket, :belt, :shurt, :pant, :pocket_chief, :shoes, :tie_pin, :tie, :vest, :socks, :necktie, :coat, :knit, :glove, :muffler, :ear_muffler, :cuff_link, :hat do
+    resources  :main_product, :jacket, :belt, :shurt, :pant, :pocket_chief, :shoes, :tie_pin, :tie, :vest, :socks, :necktie, :coat, :knit, :glove, :muffler, :ear_muffler, :cuff_link, :lapel_pin, :hat do
       collection do
         post 'confirm'
       end

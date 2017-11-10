@@ -3,9 +3,9 @@ class LapelPin < ApplicationRecord
   belongs_to :staff_member
 
 
-  mount_uploader :lapel_pin_one,    LapelOneUploader
-  mount_uploader :lapel_pin_two,    LapelTwoUploader
-  mount_uploader :lapel_pin_three,  LapelThreeUploader
-  mount_uploader :lapel_pin_four,   LapelFourUploader
-  mount_uploader :lapel_pin_five,   LapelFiveUploader
+  mount_uploader :lapel_pin_one,    LapelPinOneUploader
+  mount_uploader :lapel_pin_two,    LapelPinTwoUploader
+  mount_uploader :lapel_pin_three,  LapelPinThreeUploader
+  mount_uploader :lapel_pin_four,   LapelPinFourUploader
+  mount_uploader :lapel_pin_five,   LapelPinFiveUploader
 end
