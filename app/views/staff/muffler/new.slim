@@ -1,0 +1,40 @@
+h1 muffler_create_form
+= form_with model: [:staff, @muffler], url: {action: :create}, html: {multipart: true}, local: true do |f|
+
+  .product_form.required
+    = f.label "商品名"
+    = f.text_field :muffler_name
+
+  .product_form.required
+    = f.label "商品コード"
+    = f.text_field :muffler_code
+    
+  = render 'staff/product_form', common: f
+  
+  .product_form.required
+    = f.label "正面"
+    = f.file_field :muffler_front
+  
+  .product_form
+    = f.label "後ろ"
+    = f.file_field :muffler_back
+  
+  .product_form
+    = f.label "フリンジ"
+    = f.file_field :muffler_fringe
+  
+  .product_form
+    = f.label "写真1"
+    = f.file_field :muffler_one
+  
+  .product_form
+    = f.label "写真2"
+    = f.file_field :muffler_two
+  
+  .product_form
+    = f.label "写真3"
+    = f.file_field :muffler_three
+    
+  .product_submit
+    = f.submit "確認"
+    
