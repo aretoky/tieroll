@@ -22,6 +22,7 @@ class StaffMember < ApplicationRecord
   has_many :lapel_pin,      dependent: :destroy
   has_many :hats,           dependent: :destroy
   has_many :others,         dependent: :destroy
+  has_many :main_products,  dependent: :destroy
 
 
   validates :company, presence: true, length: {maximum: 34}
