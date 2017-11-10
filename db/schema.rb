@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108135530) do
+ActiveRecord::Schema.define(version: 20171110125140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -256,6 +256,55 @@ ActiveRecord::Schema.define(version: 20171108135530) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_lapel_pins_on_staff_member_id"
+  end
+
+  create_table "main_products", force: :cascade do |t|
+    t.bigint "staff_member_id"
+    t.bigint "belt_id"
+    t.bigint "coat_id"
+    t.bigint "cuff_link_id"
+    t.bigint "ear_muffler_id"
+    t.bigint "gant_id"
+    t.bigint "hat_id"
+    t.bigint "jacket_id"
+    t.bigint "knit_id"
+    t.bigint "lapel_pin_id"
+    t.bigint "muffler_id"
+    t.bigint "other_id"
+    t.bigint "pant_id"
+    t.bigint "pocket_chief_id"
+    t.bigint "shoe_id"
+    t.bigint "shurt_id"
+    t.bigint "sock_id"
+    t.bigint "tie_neck_id"
+    t.bigint "tie_pin_id"
+    t.bigint "vest_id"
+    t.string "product_face"
+    t.string "product_name"
+    t.integer "scene"
+    t.integer "season"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["belt_id"], name: "index_main_products_on_belt_id"
+    t.index ["coat_id"], name: "index_main_products_on_coat_id"
+    t.index ["cuff_link_id"], name: "index_main_products_on_cuff_link_id"
+    t.index ["ear_muffler_id"], name: "index_main_products_on_ear_muffler_id"
+    t.index ["gant_id"], name: "index_main_products_on_gant_id"
+    t.index ["hat_id"], name: "index_main_products_on_hat_id"
+    t.index ["jacket_id"], name: "index_main_products_on_jacket_id"
+    t.index ["knit_id"], name: "index_main_products_on_knit_id"
+    t.index ["lapel_pin_id"], name: "index_main_products_on_lapel_pin_id"
+    t.index ["muffler_id"], name: "index_main_products_on_muffler_id"
+    t.index ["other_id"], name: "index_main_products_on_other_id"
+    t.index ["pant_id"], name: "index_main_products_on_pant_id"
+    t.index ["pocket_chief_id"], name: "index_main_products_on_pocket_chief_id"
+    t.index ["shoe_id"], name: "index_main_products_on_shoe_id"
+    t.index ["shurt_id"], name: "index_main_products_on_shurt_id"
+    t.index ["sock_id"], name: "index_main_products_on_sock_id"
+    t.index ["staff_member_id"], name: "index_main_products_on_staff_member_id"
+    t.index ["tie_neck_id"], name: "index_main_products_on_tie_neck_id"
+    t.index ["tie_pin_id"], name: "index_main_products_on_tie_pin_id"
+    t.index ["vest_id"], name: "index_main_products_on_vest_id"
   end
 
   create_table "mufflers", force: :cascade do |t|
@@ -538,6 +587,26 @@ ActiveRecord::Schema.define(version: 20171108135530) do
   add_foreign_key "jackets", "staff_members"
   add_foreign_key "knits", "staff_members"
   add_foreign_key "lapel_pins", "staff_members"
+  add_foreign_key "main_products", "belts"
+  add_foreign_key "main_products", "coats"
+  add_foreign_key "main_products", "cuff_links"
+  add_foreign_key "main_products", "ear_mufflers"
+  add_foreign_key "main_products", "gants"
+  add_foreign_key "main_products", "hats"
+  add_foreign_key "main_products", "jackets"
+  add_foreign_key "main_products", "knits"
+  add_foreign_key "main_products", "lapel_pins"
+  add_foreign_key "main_products", "mufflers"
+  add_foreign_key "main_products", "others"
+  add_foreign_key "main_products", "pants"
+  add_foreign_key "main_products", "pocket_chiefs"
+  add_foreign_key "main_products", "shoes"
+  add_foreign_key "main_products", "shurts"
+  add_foreign_key "main_products", "socks"
+  add_foreign_key "main_products", "staff_members"
+  add_foreign_key "main_products", "tie_necks"
+  add_foreign_key "main_products", "tie_pins"
+  add_foreign_key "main_products", "vests"
   add_foreign_key "mufflers", "staff_members"
   add_foreign_key "others", "staff_members"
   add_foreign_key "pants", "staff_members"
