@@ -1,6 +1,6 @@
 class Knit < ApplicationRecord
   validates :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :knit_name, :knit_code, :knit_front, presence: true
-  belongs_to staff_member
+  belongs_to :staff_member
 
   mount_uploader :knit_front,   KnitFrontUploader
   mount_uploader :knit_back,    KnitBackUploader

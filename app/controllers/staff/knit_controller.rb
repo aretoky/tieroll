@@ -33,6 +33,6 @@ class Staff::KnitController < Staff::Base
 
   private
   def knit_params
-    params.require(:knit).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :knit_name, :knit_code, :knit_front, :knit_back, :knit_inner, :knit_collar, :knit_neck, :knit_one, :knit_two, :knit_three)
+    params.require(:knit).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :knit_name, :knit_code, :knit_front, :knit_back, :knit_inner, :knit_neck, :knit_one, :knit_two, :knit_three)
   end
 end
