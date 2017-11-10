@@ -12,7 +12,7 @@ class Staff::LapelPinController < Staff::Base
   end
 
   def create
-    @lapel_pin = @current_staff.lapel_pins.build(lapel_pin_params)
+    @lapel_pin = @current_staff.lapel_pin.build(lapel_pin_params)
     if params[:back]
       render :new, notice: "編集してね"
     elsif @lapel_pin && @lapel_pin.save
@@ -34,5 +34,5 @@ class Staff::LapelPinController < Staff::Base
   private
   def lapel_pin_params
     params.require(:lapel_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :lapel_pin_name, :lapel_pin_code, :lapel_pin_one, :lapel_pin_two, :lapel_pin_three, :lapel_pin_four, :lapel_pin_five)
-  end 
+  end
 end
