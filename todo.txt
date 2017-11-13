@@ -10,3 +10,5 @@ link_toでトップに戻すと表示が崩れる
 一旦newから直でcreateに渡す
 
 なんでlapel_pinsじゃいけないの
+共通フォームの読み込み遅い
+  pluck?
