@@ -1,30 +1,32 @@
-h1 tie_create_form
-= form_with model: [:staff, @tie], url: {action: :create}, html: {multipart: true}, local: true do |f|
-  .product_form.required
-    = f.label "商品名"
-    = f.text_field :tie_name
+= render 'staff/drawer'
+.staff-cont
+  h1 tie_create_form
+  = form_with model: [:staff, @tie], url: {action: :create}, html: {multipart: true}, local: true do |f|
+    .product_form.required
+      = f.label "商品名"
+      = f.text_field :tie_name
+      
+    .product_form.required
+      = f.label "商品コード"
+      = f.text_field :tie_code
     
-  .product_form.required
-    = f.label "商品コード"
-    = f.text_field :tie_code
-  
-  = render 'staff/product_form', common: f
-  
-  .product_form.required
-    = f.label "写真1"
-    = f.file_field :tie_one
-  
-  .product_form
-    = f.label "写真2"
-    = f.file_field :tie_two
+    = render 'staff/product_form', common: f
     
-  .product_form
-    = f.label "写真3"
-    = f.file_field :tie_three
-  
-  .product_form
-    = f.label "写真4"
-    = f.file_field :tie_four
-  
-  .product_submit
-    = f.submit "確認"
+    .product_form.required
+      = f.label "写真1"
+      = f.file_field :tie_one
+    
+    .product_form
+      = f.label "写真2"
+      = f.file_field :tie_two
+      
+    .product_form
+      = f.label "写真3"
+      = f.file_field :tie_three
+    
+    .product_form
+      = f.label "写真4"
+      = f.file_field :tie_four
+    
+    .product_submit
+      = f.submit "確認"

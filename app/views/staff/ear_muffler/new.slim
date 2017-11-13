@@ -1,44 +1,46 @@
-h1 ear_muffler_create_form
-= form_with model: [:staff, @ear_muffler], url: {action: :create}, html: {multipart: true}, local: true do |f|
-  .product_form.required
-    = f.label "商品名"
-    = f.text_field :ear_muffler_name
+= render 'staff/drawer'
+.staff-cont
+  h1 ear_muffler_create_form
+  = form_with model: [:staff, @ear_muffler], url: {action: :create}, html: {multipart: true}, local: true do |f|
+    .product_form.required
+      = f.label "商品名"
+      = f.text_field :ear_muffler_name
+      
+    .product_form.required
+      = f.label "商品コード"
+      = f.text_field :ear_muffler_code
+      
     
-  .product_form.required
-    = f.label "商品コード"
-    = f.text_field :ear_muffler_code
+    = render 'staff/product_form', common: f
     
-  
-  = render 'staff/product_form', common: f
-  
-  .product_form.required
-    = f.label "メイン"
-    = f.file_field :ear_muffler_front
-  
-  .product_form
-    = f.label "後ろ"
-    = f.file_field :ear_muffler_back
-  
-  .product_form
-    = f.label "内側"
-    = f.file_field :ear_muffler_inner
-  
-  .product_form
-    = f.label "その他1"
-    = f.file_field :ear_muffler_one
-  
-  .product_form
-    = f.label "その他2"
-    = f.file_field :ear_muffler_two
-  
-  .product_form
-    = f.label "その他3"
-    = f.file_field :ear_muffler_three
-  
-  .product_form
-    = f.label "その他3"
-    = f.file_field :ear_muffler_foour
-  
-  .product_submit
-    = f.submit "確認"
-  
+    .product_form.required
+      = f.label "メイン"
+      = f.file_field :ear_muffler_front
+    
+    .product_form
+      = f.label "後ろ"
+      = f.file_field :ear_muffler_back
+    
+    .product_form
+      = f.label "内側"
+      = f.file_field :ear_muffler_inner
+    
+    .product_form
+      = f.label "その他1"
+      = f.file_field :ear_muffler_one
+    
+    .product_form
+      = f.label "その他2"
+      = f.file_field :ear_muffler_two
+    
+    .product_form
+      = f.label "その他3"
+      = f.file_field :ear_muffler_three
+    
+    .product_form
+      = f.label "その他3"
+      = f.file_field :ear_muffler_foour
+    
+    .product_submit
+      = f.submit "確認"
+    

@@ -1,46 +1,48 @@
-h1 knit_create_form
-= form_with model: [:staff, @knit], url: {action: :create}, html: {multipart: true}, local: true do |f|
-  .product_form.required
-    = f.label "商品名"
-    = f.text_field :knit_name
+= render 'staff/drawer'
+.staff-cont
+  h1 knit_create_form
+  = form_with model: [:staff, @knit], url: {action: :create}, html: {multipart: true}, local: true do |f|
+    .product_form.required
+      = f.label "商品名"
+      = f.text_field :knit_name
+      
+    .product_form.required
+      = f.label "商品コード"
+      = f.text_field :knit_code
+      
+    = render 'staff/product_form', common: f
     
-  .product_form.required
-    = f.label "商品コード"
-    = f.text_field :knit_code
+    .product_form.required
+      = f.label "正面"
+      = f.file_field :knit_front
+      
+    .product_form
+      = f.label "後ろ"
+      = f.file_field :knit_back
+      
+    .product_form
+      = f.label "裾"
+      = f.file_field :knit_hem
+      
+    .product_form
+      = f.label "内側"
+      = f.file_field :knit_inner
+      
+    .product_form
+      = f.label "首元"
+      = f.file_field :knit_neck
+      
+    .product_form
+      = f.label "その他1"
+      = f.file_field :knit_one
+      
+    .product_form
+      = f.label "その他2"
+      = f.file_field :knit_two
+      
+    .product_form
+      = f.label "その他3"
+      = f.file_field :knit_three
     
-  = render 'staff/product_form', common: f
-  
-  .product_form.required
-    = f.label "正面"
-    = f.file_field :knit_front
-    
-  .product_form
-    = f.label "後ろ"
-    = f.file_field :knit_back
-    
-  .product_form
-    = f.label "裾"
-    = f.file_field :knit_hem
-    
-  .product_form
-    = f.label "内側"
-    = f.file_field :knit_inner
-    
-  .product_form
-    = f.label "首元"
-    = f.file_field :knit_neck
-    
-  .product_form
-    = f.label "その他1"
-    = f.file_field :knit_one
-    
-  .product_form
-    = f.label "その他2"
-    = f.file_field :knit_two
-    
-  .product_form
-    = f.label "その他3"
-    = f.file_field :knit_three
-  
-  .product_submit
-    = f.submit "確認"
+    .product_submit
+      = f.submit "確認"

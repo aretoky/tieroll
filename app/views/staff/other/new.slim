@@ -1,34 +1,36 @@
-h1 other_item_create_form
-= form_with model: [:staff, @other], url: {action: :create}, html: {multipart: true}, local: true do |f|
-  .product_form.required
-    = f.label "商品名"
-    = f.text_field :other_item_naem
+= render 'staff/drawer'
+.staff-cont
+  h1 other_item_create_form
+  = form_with model: [:staff, @other], url: {action: :create}, html: {multipart: true}, local: true do |f|
+    .product_form.required
+      = f.label "商品名"
+      = f.text_field :other_item_naem
+      
+    .product_form.required
+      = f.label "商品コード"
+      = f.text_field :other_item_code
+      
+    = render 'staff/product_form', common: f
     
-  .product_form.required
-    = f.label "商品コード"
-    = f.text_field :other_item_code
-    
-  = render 'staff/product_form', common: f
-  
-  .product_form.required
-    = f.label "写真1"
-    = f.file_field :other_one
-    
-  .product_form
-    = f.label "写真2"
-    = f.file_field :other_two
-    
-  .product_form
-    = f.label "写真3"
-    = f.file_field :other_three
-    
-  .product_form
-    = f.label "写真4"
-    = f.file_field :other_four
-    
-  .product_form
-    = f.label "写真5"
-    = f.file_field :other_five
-    
-    .product_submit
-      = f.submit "確認"
+    .product_form.required
+      = f.label "写真1"
+      = f.file_field :other_one
+      
+    .product_form
+      = f.label "写真2"
+      = f.file_field :other_two
+      
+    .product_form
+      = f.label "写真3"
+      = f.file_field :other_three
+      
+    .product_form
+      = f.label "写真4"
+      = f.file_field :other_four
+      
+    .product_form
+      = f.label "写真5"
+      = f.file_field :other_five
+      
+      .product_submit
+        = f.submit "確認"
