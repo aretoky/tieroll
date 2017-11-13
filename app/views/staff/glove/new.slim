@@ -1,42 +1,44 @@
-h1 glove_create_form
-= form_with model: [:staff, @glove], url: {action: :create}, html: {multipart: true}, local: true do |f|
-  .product_form.required
-    = f.label "商品名"
-    = f.text_field :glove_name
+= render 'staff/drawer'
+.staff-cont
+  h1 glove_create_form
+  = form_with model: [:staff, @glove], url: {action: :create}, html: {multipart: true}, local: true do |f|
+    .product_form.required
+      = f.label "商品名"
+      = f.text_field :glove_name
+      
+    .product_form.required
+      = f.label "商品コード"
+      = f.text_field :glove_code
     
-  .product_form.required
-    = f.label "商品コード"
-    = f.text_field :glove_code
-  
-  = render 'staff/product_form', common: f
-  
-  .product_form.required
-    = f.label "手の甲"
-    = f.file_field :glove_front
-  
-  .product_form
-    = f.label "手の平"
-    = f.file_field :glove_back
-  
-  .product_form
-    = f.label "内側"
-    = f.file_field :glove_inner
-  
-  .product_form
-    = f.label "手首"
-    = f.file_field :glove_wrist
-  
-  .product_form
-    = f.label "その他1"
-    = f.file_field :glove_one
-  
-  .product_form
-    = f.label "その他2"
-    = f.file_field :glove_two
-  
-  .product_form
-    = f.label "その他3"
-    = f.file_field :glove_three
-  
-  .product_submit
-    = f.submit "確認"
+    = render 'staff/product_form', common: f
+    
+    .product_form.required
+      = f.label "手の甲"
+      = f.file_field :glove_front
+    
+    .product_form
+      = f.label "手の平"
+      = f.file_field :glove_back
+    
+    .product_form
+      = f.label "内側"
+      = f.file_field :glove_inner
+    
+    .product_form
+      = f.label "手首"
+      = f.file_field :glove_wrist
+    
+    .product_form
+      = f.label "その他1"
+      = f.file_field :glove_one
+    
+    .product_form
+      = f.label "その他2"
+      = f.file_field :glove_two
+    
+    .product_form
+      = f.label "その他3"
+      = f.file_field :glove_three
+    
+    .product_submit
+      = f.submit "確認"

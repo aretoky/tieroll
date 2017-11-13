@@ -8,6 +8,6 @@ class Shurt < ApplicationRecord
   mount_uploader :s_cuff,           SCuffUploader
   mount_uploader :s_button,         SButtonUploader
   mount_uploader :s_breast_pocket,  SBreastPocketUploader
-  mount_uploader :colar,            ColarUploader
+  mount_uploader :s_collar,         SCollarUploader
   mount_uploader :s_other,          SOtherUploader
 end
