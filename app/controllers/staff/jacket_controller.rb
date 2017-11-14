@@ -37,6 +37,7 @@ class Staff::JacketController < Staff::Base
   end
 
   def edit
+    @jacket = Jacket.find_by(id: params[:id])
   end
 
   def update

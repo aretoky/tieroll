@@ -13,7 +13,7 @@
     tbody
       - @jackets.each do |jac|
         tr 
-          td = image_tag jac.j_front, size: '160x200'
+          td = image_tag jac.j_front
           td = jac.jacket_name
           td = jac.jacket_code
           td = number_to_currency(jac.price, unit: '', precision: 0)
