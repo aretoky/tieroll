@@ -1,4 +1,21 @@
 .staff-cont
+
+  // 一覧
+  table
+    border-spacing: 0
+
+    thead th
+      padding: 20px 120px
+      text-align: center
+      border-bottom: solid 2px
+
+    tbody td
+      border-bottom: solid 1px #000000
+      text-align: center
+  // 一覧ココまで
+
+
+  // 新規作成
   .required::before
     content: '※'
     color: red
@@ -13,9 +30,11 @@
 
 
     input
+      // display: block
       width: 200px
 
     textarea
+      // display: block
       width: 300px
       height: 80px
       font-size: 0.7em
@@ -23,10 +42,10 @@
     label
       padding-right: 0.5em
 
-      &:after
-        content: ""
-        display: block
-        clear: both
+      // &:after
+      //   content: ""
+      //   display: block
+      //   clear: both
 
 
 
@@ -37,3 +56,12 @@
       height: 100px
       width: 80px
       font-size: 1.2em
+  // 新規作成ココまで
+
+
+  // 編集
+  .product_edit_form
+    padding-top: 50px
+
+
+  // 編集ココまで

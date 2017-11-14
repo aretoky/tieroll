@@ -2,6 +2,9 @@ class Staff::JacketController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
 
   def index
+    # @jackets = Jacket.where(staff_member: @current_staff.id).pluck(:j_front, :jacket_name, :jacket_code, :price)
+    @jackets = Jacket.where(staff_member: @current_staff.id)
+    # binding.pry
   end
 
   def new
