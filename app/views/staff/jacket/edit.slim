@@ -1,81 +1,94 @@
 = render 'staff/drawer'
 .staff-cont
-  h1 jacket_edit
-  = form_with model: [:staff, @jacket], url: {action: :create}, html: {multipart: true}, local: true do |f|
-    .product_form.required
-      = f.label '商品名'
-      = f.text_field :jacket_name
+  .product_edit_form
+    h1 jacket_edit
+    = form_with model: [:staff, @jacket], url: {action: :update}, html: {multipart: true}, local: true do |f|
+      .product_form.required
+        = f.label '商品名'
+        = f.text_field :jacket_name
+        
+      .product_form.required
+        = f.label '商品コード'
+        = f.text_field :jacket_code
       
-    .product_form.required
-      = f.label '商品コード'
-      = f.text_field :jacket_code
-    
-    = render 'staff/product_form', common: f
-    
-    .product_form.required
-      = f.label '正面'
-      = image_tag @jacket.j_front, size: '250x300'
-      = f.file_field :j_front
-      = f.hidden_field :j_front_cache
-    
-    .product_form
-      = f.label '後ろ'
-      = f.file_field :j_back
-      = f.hidden_field :j_back_cache
+      = render 'staff/product_form', common: f
+      
+      .product_form.required
+        = f.label '正面'
+        = f.file_field :j_front
+        = image_tag @jacket.j_front
+      
+      .product_form
+        = f.label '後ろ'
+        = f.file_field :j_back
+        = image_tag @jacket.j_back
 
-    .product_form
-      = f.label 'ボタン開けた正面'
-      = f.file_field :open_front
+      .product_form
+        = f.label 'ボタン開けた正面'
+        = f.file_field :open_front
+        = image_tag @jacket.open_front
+        
+      .product_form
+        = f.label 'ボタン閉じた正面'
+        = f.file_field :closed_front
+        = image_tag @jacket.closed_front
+        
+      .product_form
+        = f.label '切羽'
+        = f.file_field :j_cuff
+        = image_tag @jacket.j_cuff
+        
+      .product_form
+        = f.label '裏地'
+        = f.file_field :j_inner
+        = image_tag @jacket.j_inner
+        
+      .product_form
+        = f.label '右側　裏'
+        = f.file_field :j_inner_r
+        = image_tag @jacket.j_inner_r
       
-    .product_form
-      = f.label 'ボタン閉じた正面'
-      = f.file_field :closed_front
+      .product_form
+        = f.label '左側　裏'
+        = f.file_field :j_inner_l
+        = image_tag @jacket.j_inner_l
+        
+      .product_form
+        = f.label 'ラペル'
+        = f.file_field :lapel
+        = image_tag @jacket.lapel
+        
+      .product_form
+        = f.label 'ベンツ'
+        = f.file_field :j_bents
+        = image_tag @jacket.j_bents
+        
+      .product_form
+        = f.label 'ボタン'
+        = f.file_field :j_button
+        = image_tag @jacket.j_button
+        
+      .product_form
+        = f.label 'ポケット'
+        = f.file_field :j_pocket
+        = image_tag @jacket.j_pocket
+        
+      .product_form
+        = f.label '胸ポケット'
+        = f.file_field :j_breast_pocket
+        = image_tag @jacket.j_breast_pocket
+        
+      .product_form
+        = f.label 'その他１'
+        = f.file_field :j_other_one
+        = image_tag @jacket.j_other_one
       
-    .product_form
-      = f.label '切羽'
-      = f.file_field :j_cuff
-      
-    .product_form
-      = f.label '裏地'
-      = f.file_field :j_inner
-      
-    .product_form
-      = f.label '右側　裏'
-      = f.file_field :j_inner_r
-    
-    .product_form
-      = f.label '左側　裏'
-      = f.file_field :j_inner_l
-      
-    .product_form
-      = f.label 'ラペル'
-      = f.file_field :lapel
-      
-    .product_form
-      = f.label 'ベンツ'
-      = f.file_field :j_bents
-      
-    .product_form
-      = f.label 'ボタン'
-      = f.file_field :j_button
-      
-    .product_form
-      = f.label 'ポケット'
-      = f.file_field :j_pocket
-      
-    .product_form
-      = f.label '胸ポケット'
-      = f.file_field :j_breast_pocket
-      
-    .product_form
-      = f.label 'その他１'
-      = f.file_field :j_other_one
-    
-    .product_form
-      = f.label 'その他２'
-      = f.file_field :j_other_two
-      
-    .product_submit
-      = f.submit '確認'
+      .product_form
+        = f.label 'その他２'
+        = f.file_field :j_other_two
+        = image_tag @jacket.j_other_two
+        
+      .product_submit
+        = f.submit '確認'
 
-  
+    

@@ -1,6 +1,9 @@
 .staff-cont
 
   // 一覧
+  .staff_index
+    font-weight: bold
+
   table
     border-spacing: 0
 
@@ -24,7 +27,6 @@
   .required::before
     content: '※'
     color: red
-    // column-count: 3
 
 
   .product_form
@@ -32,7 +34,6 @@
     display: inline-flex
     padding: 20px
     width: 45%
-
 
     input
       // display: block
@@ -52,11 +53,10 @@
       //   display: block
       //   clear: both
 
-
-
   .product_submit
     // height: 100px
     padding: 20px 10px
+
     input
       height: 100px
       width: 80px
@@ -67,6 +67,16 @@
   // 編集
   .product_edit_form
     padding-top: 50px
+
+    .product_form
+      img
+        max-height: 300px
+        width: auto
+
+      input::after
+        display: block
+        content: ''
+        clear: both
 
 
   // 編集ココまで
