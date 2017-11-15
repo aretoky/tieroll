@@ -1,21 +1,22 @@
 = render 'staff/drawer'
 .staff-cont
-  h1 jacket_index
-  table
-    thead
-      tr 
-        th = @current_staff.company
-        th 商品名
-        th 商品コード 
-        th 価格
-        th 
-        th 
-    tbody
-      - @jackets.each do |jac|
+  .staff_index
+    h1 jacket_index
+    table
+      thead
         tr 
-          td = image_tag jac.j_front
-          td = jac.jacket_name
-          td = jac.jacket_code
-          td = number_to_currency(jac.price, unit: '', precision: 0)
-          td = link_to '編集', edit_staff_jacket_path(jac)
-          td = link_to '詳細', staff_jacket_path(jac)
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @jackets.each do |jac|
+          tr 
+            td = image_tag jac.j_front
+            td = jac.jacket_name
+            td = jac.jacket_code
+            td = number_to_currency(jac.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_jacket_path(jac)
+            td = link_to '詳細', staff_jacket_path(jac)
