@@ -14,6 +14,7 @@ class Coat < ApplicationRecord
   mount_uploader :coat_pocket,        CoatPocketUploader
   mount_uploader :coat_breast_pocket, CoatBreastPocketUploader
   mount_uploader :coat_bents,         CoatBentsUploader
+  mount_uploader :coat_cuff,          CoatCuffUploader
   mount_uploader :coat_one,           CoatOneUploader
   mount_uploader :coat_two,           CoatTwoUploader
   mount_uploader :coat_three,         CoatThreeUploader

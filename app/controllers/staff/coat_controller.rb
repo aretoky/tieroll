@@ -1,7 +1,10 @@
 class Staff::CoatController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_coat, only: [:show, :edit, :update, :destroy]
+
   def index
+    @coats = Coat.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::CoatController < Staff::Base
   end
 
   def update
+    if @coat.invalid?
+      render :new, alert: '確認してね'
+    elsif @coat.update!(coat_params)
+      redirect_to :staff_coat_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -33,6 +43,10 @@ class Staff::CoatController < Staff::Base
 
   private
   def coat_params
-    params.require(:coat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :coat_name, :coat_code, :coat_front, :coat_back, :coat_open_front, :coat_closed_front, :coat_inner, :coat_inner_r, :coat_inner_l, :coat_lapel, :coat_pocket, :coat_breast_pocket, :coat_bents, :coat_one, :coat_two, :coat_three)
+    params.require(:coat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :coat_name, :coat_code, :coat_front, :coat_back, :coat_open_front, :coat_closed_front, :coat_inner, :coat_inner_r, :coat_inner_l, :coat_lapel, :coat_pocket, :coat_breast_pocket, :coat_bents, :coat_cuff, :coat_one, :coat_two, :coat_three)
+  end
+
+  def set_coat
+    @coat = Coat.find_by(id: params[:id])
   end
 end

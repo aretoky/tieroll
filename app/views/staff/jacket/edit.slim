@@ -21,11 +21,17 @@
       .product_form
         = f.label '後ろ'
         = f.file_field :j_back
+        / - if @jacket.j_back
+        /   p 画像を削除する
+        /   = f.check_box :remove_j_back
         = image_tag @jacket.j_back
 
       .product_form
         = f.label 'ボタン開けた正面'
         = f.file_field :open_front
+        / - if @jacket.open_front
+        /   p 画像を削除する
+        /   = f.check_box :remove_open_front
         = image_tag @jacket.open_front
         
       .product_form
@@ -36,6 +42,9 @@
       .product_form
         = f.label '切羽'
         = f.file_field :j_cuff
+        - if @jacket.j_cuff
+          p 画像を削除
+          = f.check_box :remove_j_cuff
         = image_tag @jacket.j_cuff
         
       .product_form

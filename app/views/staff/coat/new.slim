@@ -12,7 +12,7 @@
       
     = render 'staff/product_form', common: f
     
-    .product_form.requried
+    .product_form.required
       = f.label "正面"
       = f.file_field :coat_front
     .product_form
@@ -43,6 +43,10 @@
     .product_form
       = f.label "ラペル"
       = f.file_field :coat_lapel
+      
+    .product_form
+      = f.label "切羽"
+      = f.file_field :coat_cuff
     
     .product_form
       = f.label "ポケット"
