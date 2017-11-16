@@ -1,7 +1,10 @@
 class Staff::BeltController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_belt, only: [:show, :edit, :update, :destroy]
+
   def index
+    @belts = Belt.where(id: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::BeltController < Staff::Base
   end
 
   def update
+    if @belt.invalid?
+      render :new, alert: '確認してね'
+    elsif @belt.update!(belt_params)
+      redirect_to :staff_belt_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -34,6 +44,10 @@ class Staff::BeltController < Staff::Base
   private
   def belt_params
     params.require(:belt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :belt_name, :belt_code, :belt_one, :belt_two, :belt_three, :belt_four)
+  end
+
+  def set_belt
+    @belt = Belt.find_by(id: params[:id])
   end
 
 end

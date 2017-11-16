@@ -1,0 +1,23 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 belt_index
+    table 
+      thead 
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード
+          th 価格
+          th
+          th
+      tbody
+        - @belts.each do |bel|
+         tr 
+          td = image_tag bel.belt_one
+          td = bel.belt_name
+          td = bel.belt_code
+          td = number_to_currency(bel.price, unit: '', precision: 0)
+          td = link_to '編集', edit_staff_belt_path(bel)
+          td = link_to '詳細', staff_belt_path(bel)
+          
