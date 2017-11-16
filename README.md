@@ -1,8 +1,3 @@
-TieRoll
--
-
-**This service will shorten the coordinates of the tie!**
-
 男のおしゃれ。もっと気軽に、もっと身近に。
 -
 
