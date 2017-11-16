@@ -1,5 +1,39 @@
 .staff-cont
 
+  .required::before
+    content: '※'
+    color: red
+
+
+  .product_form
+    font-size: 1.2em
+    // display: inline-flex
+    padding: 20px
+    width: 45%
+
+    input
+      // display: block
+      width: 200px
+
+    textarea
+      // display: block
+      width: 300px
+      height: 80px
+      font-size: 0.7em
+
+    label
+      padding-right: 0.5em
+
+
+  .product_submit
+    // height: 100px
+    padding: 20px 10px
+
+    input
+      height: 100px
+      width: 80px
+      font-size: 1.2em
+
   // 一覧
   .staff_index
     font-weight: bold
@@ -24,43 +58,6 @@
 
 
   // 新規作成
-  .required::before
-    content: '※'
-    color: red
-
-
-  .product_form
-    font-size: 1.2em
-    display: inline-flex
-    padding: 20px
-    width: 45%
-
-    input
-      // display: block
-      width: 200px
-
-    textarea
-      // display: block
-      width: 300px
-      height: 80px
-      font-size: 0.7em
-
-    label
-      padding-right: 0.5em
-
-      // &:after
-      //   content: ""
-      //   display: block
-      //   clear: both
-
-  .product_submit
-    // height: 100px
-    padding: 20px 10px
-
-    input
-      height: 100px
-      width: 80px
-      font-size: 1.2em
   // 新規作成ココまで
 
 
@@ -73,10 +70,12 @@
         max-height: 300px
         width: auto
 
-      input::after
-        display: block
-        content: ''
-        clear: both
+      .remove_box
+        display: inline-flex
 
+        &:before
+          content: ""
+          display: block
+          clear: both
 
   // 編集ココまで
