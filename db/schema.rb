@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20171110125140) do
     t.string "coat_pocket"
     t.string "coat_breast_pocket"
     t.string "coat_bents"
+    t.string "coat_cuff"
     t.string "coat_one"
     t.string "coat_two"
     t.string "coat_three"

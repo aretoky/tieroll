@@ -4,7 +4,7 @@ class Staff::BeltController < Staff::Base
   before_action :set_belt, only: [:show, :edit, :update, :destroy]
 
   def index
-    @belts = Belt.where(id: @current_staff.id)
+    @belts = Belt.where(staff_member: @current_staff.id)
   end
 
   def new
