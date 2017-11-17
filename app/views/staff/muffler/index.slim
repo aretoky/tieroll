@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 muffler_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @mufflers.each do |muf|
+          tr 
+            td = image_tag muf.muffler_front
+            td = muf.muffler_name
+            td = muf.muffler_code
+            td = number_to_currency(muf.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_muffler_path(muf)
+            td = link_to '詳細', staff_muffler_path(muf)

@@ -1,7 +1,10 @@
 class Staff::MufflerController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_muffler, only: %i(show edit update destroy)
+
   def index
+    @mufflers = Muffler.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::MufflerController < Staff::Base
   end
 
   def update
+    if @muffler.invalid?
+      render :new, alert: '確認してね'
+    elsif @muffler.update!(muffler_params)
+      redirect_to :staff_muffler_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -34,5 +44,9 @@ class Staff::MufflerController < Staff::Base
   private
   def muffler_params
     params.require(:muffler).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :muffler_name, :muffler_code, :muffler_front, :muffler_back, :muffler_fringe, :muffler_one, :muffler_two, :muffler_three)
+  end
+
+  def set_muffler
+    @muffler = Muffler.find_by(id: params[:id])
   end
 end
