@@ -1,7 +1,7 @@
 = render 'staff/drawer'
 .staff-cont
   .product_edit_form
-    h1 hat_create_form
+    h1 hat_edit_form
     = form_with model: [:staff, @hat], url: {action: :update}, html: {multipart: true}, local: true do |f|
       .product_form
         = f.label "商品名"

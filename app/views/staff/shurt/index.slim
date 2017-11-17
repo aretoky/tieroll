@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 shurt_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @shurts.each do |shu|
+          tr 
+            td = image_tag shu.s_front
+            td = shu.shurt_name
+            td = shu.shurt_code
+            td = number_to_currency(shu.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_shurt_path(shu)
+            td = link_to '詳細', staff_shurt_path(shu)

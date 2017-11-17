@@ -1,6 +1,6 @@
 = render 'staff/drawer'
 .staff-cont
-  h1 belt_new_form
+  h1 belt_create_form
   = form_with model: [:staff, @belt], url: {action: :create}, html: {multipart: true}, local: true do |f|
     .product_form.required
       = f.label '商品名'

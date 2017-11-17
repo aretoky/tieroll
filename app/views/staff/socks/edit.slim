@@ -1,0 +1,32 @@
+= render 'staff/drawer'
+.staff-cont
+  .product_edit_form
+    h1 socks_edit_form
+    = form_with model: [:staff, @socks], url: {action: :update}, html: {multiparrt: true}, local: true do |f|
+      .product_form.required
+        = f.label "商品名"
+        = f.text_field :socks_name
+        
+      .product_form.required
+        = f.label "商品コード"
+        = f.text_field :socks_code
+        
+      = render 'staff/product_form', common: f
+      
+      .product_form.required
+        = f.label "靴下1"
+        = f.file_field :socks_one
+        = image_tag @socks.socks_one
+      
+      .product_form
+        = f.label "靴下2"
+        = f.file_field :socks_two
+        = image_tag @socks.socks_two
+      
+      .product_form
+        = f.label "靴下3"
+        = f.file_field :socks_three
+        = image_tag @socks.socks_three
+        
+      .product_submit
+        = f.submit "確認"
