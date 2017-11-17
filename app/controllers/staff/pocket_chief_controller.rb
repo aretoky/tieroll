@@ -1,7 +1,10 @@
 class Staff::PocketChiefController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_chief, only: %i(show edit update destroy)
+
   def index
+    @chiefs = PocketChief.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::PocketChiefController < Staff::Base
   end
 
   def update
+    if @chief.invalid?
+      render :new, alert: '確認してね'
+    elsif @chief.update!(chief_params)
+      redirect_to :staff_pocket_chief_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -34,5 +44,9 @@ class Staff::PocketChiefController < Staff::Base
   private
   def chief_params
     params.require(:pocket_chief).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :chief_name, :chief_code, :chief_one, :chief_two, :chief_three)
+  end
+
+  def set_chief
+    @chief = PocketChief.find_by(id: params[:id])
   end
 end

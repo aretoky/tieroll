@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 cheif_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @chiefs.each do |chi|
+          tr 
+            td = image_tag chi.chief_one
+            td = chi.chief_name
+            td = chi.chief_code
+            td = number_to_currency(chi.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_pocket_chief_path(chi)
+            td = link_to '詳細', staff_pocket_chief_path(chi)
