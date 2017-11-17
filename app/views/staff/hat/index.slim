@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 hat_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @hats.each do |hat|
+          tr 
+            td = image_tag hat.hat_front
+            td = hat.hat_name
+            td = hat.hat_code
+            td = number_to_currency(hat.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_hat_path(hat)
+            td = link_to '詳細', staff_hat_path(hat)

@@ -2,17 +2,17 @@
 .staff-cont
   h1 hat_create_form
   = form_with model: [:staff, @hat], url: {action: :create}, html: {multipart: true}, local: true do |f|
-    .product_form
+    .product_form.required
       = f.label "商品名"
       = f.text_field :hat_name
       
-    .product_form
+    .product_form.required
       = f.label "商品コード"
       = f.text_field :hat_code
     
     = render 'staff/product_form', common: f
     
-    .product_form
+    .product_form.required
       = f.label "正面"
       = f.file_field :hat_front
       
