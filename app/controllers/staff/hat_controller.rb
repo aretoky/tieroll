@@ -1,7 +1,10 @@
 class Staff::HatController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_hat, only: [:show, :edit, :update, :destroy]
+
   def index
+    @hats = Hat.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::HatController < Staff::Base
   end
 
   def update
+    if @hat.invalid?
+      render :new, alert: '確認してね'
+    elsif @hat.update!(hat_params)
+      redirect_to :staff_hat_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -34,5 +44,9 @@ class Staff::HatController < Staff::Base
   private
   def hat_params
     params.require(:hat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :hat_name, :hat_code, :hat_front, :hat_back, :hat_side, :hat_roof, :hat_sole, :hat_inner, :hat_one, :hat_two)
+  end
+
+  def set_hat
+    @hat = Hat.find_by(id: params[:id])
   end
 end

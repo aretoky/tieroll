@@ -1,7 +1,9 @@
 class Staff::EarMufflerController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
+  before_action :set_ear_muffler, only: [:show, :edit, :update, :destroy]
 
   def index
+    @ear_mufflers = EarMuffler.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +28,13 @@ class Staff::EarMufflerController < Staff::Base
   end
 
   def update
+    if @ear_muffler.invalid?
+      render :new, alert: '確認してね'
+    elsif @ear_muffler.update!(ear_muffler_params)
+      redirect_to :staff_ear_muffler_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -34,5 +43,9 @@ class Staff::EarMufflerController < Staff::Base
   private
   def ear_muffler_params
     params.require(:ear_muffler).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :ear_muffler_name, :ear_muffler_code, :ear_muffler_front, :ear_muffler_beck, :ear_muffler_inner, :ear_muffler_one, :ear_muffler_two, :ear_muffler_three, :ear_muffler_four)
+  end
+
+  def set_ear_muffler
+    @ear_muffler = EarMuffler.find_by(id: params[:id])
   end
 end

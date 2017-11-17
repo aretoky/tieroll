@@ -1,0 +1,52 @@
+= render 'staff/drawer'
+.staff-cont
+  .product_edit_form
+    h1 cuff_link_create_form
+    = form_with model: [:staff, @cuff_link], url: {action: :update}, html: {multipart: true}, local: true do |f|
+      .product_form.required
+        = f.label "商品名"
+        = f.text_field :cuff_link_name
+        
+      .product_form.required
+        = f.label "商品コード"
+        = f.text_field :cuff_link_code
+        
+      = render 'staff/product_form', common: f
+      
+      .product_form.required
+        = f.label "写真1"
+        = f.file_field :cuff_link_one
+        = image_tag @cuff_link.cuff_link_one
+      
+      .product_form
+        = f.label "写真2"
+        = f.file_field :cuff_link_two
+        = image_tag @cuff_link.cuff_link_two
+      
+      .product_form
+        = f.label "写真3"
+        = f.file_field :cuff_link_three
+        = image_tag @cuff_link.cuff_link_three
+      
+      .product_form
+        = f.label "写真4"
+        = f.file_field :cuff_link_four
+        = image_tag @cuff_link.cuff_link_four
+      
+      .product_form
+        = f.label "写真5"
+        = f.file_field :cuff_link_five
+        = image_tag @cuff_link.cuff_link_five
+      
+      .product_form
+        = f.label "写真6"
+        = f.file_field :cuff_link_six
+        = image_tag @cuff_link.cuff_link_six
+      
+      .product_form
+        = f.label "写真7"
+        = f.file_field :cuff_link_seven
+        = image_tag @cuff_link.cuff_link_seven
+      
+      .product_submit
+        = f.submit "確認"
