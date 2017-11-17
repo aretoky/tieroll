@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 sock_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @socks.each do |soc|
+          tr 
+            td = image_tag soc.socks_one
+            td = soc.socks_name
+            td = soc.socks_code
+            td = number_to_currency(soc.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_sock_path(soc)
+            td = link_to '詳細', staff_sock_path(soc)
