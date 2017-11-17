@@ -30,11 +30,11 @@ class Staff::CoatController < Staff::Base
 
   def update
     if @coat.invalid?
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     elsif @coat.update!(coat_params)
       redirect_to :staff_coat_index, notice: '完了'
     else
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     end
   end
 
