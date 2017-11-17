@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 lapel_pin_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @lapel_pins.each do |lapin|
+          tr 
+            td = image_tag lapin.lapel_pin_one
+            td = lapin.lapel_pin_name
+            td = lapin.lapel_pin_code
+            td = number_to_currency(lapin.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_lapel_pin_path(lapin)
+            td = link_to '詳細', staff_lapel_pin_path(lapin)

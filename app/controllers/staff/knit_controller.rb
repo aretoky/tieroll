@@ -1,8 +1,8 @@
 class Staff::KnitController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
 
-  before_action :set_knit, only: [:show, :edit, :update, :destroy]
-  # before_action :set_knit, only: %i(show edit update destroy)
+  # before_action :set_knit, only: [:show, :edit, :update, :destroy]
+  before_action :set_knit, only: %i(show edit update destroy)
 
   def index
     @knits = Knit.where(staff_member: @current_staff.id)
