@@ -1,7 +1,10 @@
 class Staff::ShurtController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_shurt, only: %i(show edit update destroy)
+
   def index
+    @shurts = Shurt.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::ShurtController < Staff::Base
   end
 
   def update
+    if @shurt.invalid?
+      render :new, alert: '確認してね'
+    elsif @shurt.update!(shurt_params)
+      redirect_to :staff_shurt_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -33,6 +43,10 @@ class Staff::ShurtController < Staff::Base
 
   private
   def shurt_params
-    params.require(:shurt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :shurt_name, :shurt_code, :s_front, :s_back, :s_button, :s_breast_pocket, :collar, :s_other)
+    params.require(:shurt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :shurt_name, :shurt_code, :s_front, :s_back, :s_cuff, :s_button, :s_breast_pocket, :s_collar, :s_other)
+  end
+
+  def set_shurt
+    @shurt = Shurt.find_by(id: params[:id])
   end
 end
