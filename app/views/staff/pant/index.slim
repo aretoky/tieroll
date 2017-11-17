@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 pant_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @pants.each do |pan|
+          tr 
+            td = image_tag pan.p_front
+            td = pan.pant_name
+            td = pan.pant_code
+            td = number_to_currency(pan.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_pant_path(pan)
+            td = link_to '詳細', staff_pant_path(pan)

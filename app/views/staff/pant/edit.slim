@@ -1,0 +1,64 @@
+= render 'staff/drawer'
+.staff-cont
+  .product_edit_form
+    h1 pant_create_form
+    = form_with model: [:staff, @pant], url: {action: :update}, html: {multipart: true}, local: true do |f|
+      .product_form.required
+        = f.label "商品名"
+        = f.text_field :pant_name
+        
+      .product_form.required
+        = f.label "商品コード"
+        = f.text_field :pant_code
+
+      = render 'staff/product_form', common: f
+      
+      .product_form.required
+        = f.label "正面"
+        = f.file_field :p_front
+        = image_tag @pant.p_front
+        
+      .product_form
+        = f.label "後ろ"
+        = f.file_field :p_back
+        = image_tag @pant.p_back
+        
+      .product_form.required
+        = f.label "横"
+        = f.file_field :p_side
+        = image_tag @pant.p_side
+        
+      .product_form
+        = f.label "内側"
+        = f.file_field :p_inner
+        = image_tag @pant.p_inner
+        
+      .product_form
+        = f.label "裾"
+        = f.file_field :p_hem
+        = image_tag @pant.p_hem
+        
+      .product_form
+        = f.label "ベルトループ"
+        = f.file_field :belt_roop
+        = image_tag @pant.belt_roop
+      
+      .product_form
+        = f.label "ポケット"
+        = f.file_field :p_front_pocket
+        = image_tag @pant.p_front_pocket
+        
+      .product_form
+        = f.label "後ろポケット"
+        = f.file_field :p_back_pocket
+        = image_tag @pant.p_back_pocket
+        
+      .product_form
+        = f.label "その他"
+        = f.file_field :p_other
+        = image_tag @pant.p_other
+
+      .product_submit
+        = f.submit '確認'
+      
+      
