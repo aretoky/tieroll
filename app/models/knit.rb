@@ -8,7 +8,7 @@ class Knit < ApplicationRecord
   mount_uploader :knit_collar,  KnitCollarUploader
   mount_uploader :knit_inner,   KnitInnerUploader
   mount_uploader :knit_neck,    KnitNeckUploader
-  mount_uploader :knit_oen,     KnitOneUploader
+  mount_uploader :knit_one,     KnitOneUploader
   mount_uploader :knit_two,     KnitTwoUploader
   mount_uploader :knit_three,   KnitThreeUploader
 end
