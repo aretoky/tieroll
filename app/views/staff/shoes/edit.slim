@@ -1,0 +1,67 @@
+= render 'staff/drawer'
+.staff-cont
+  .product_edit_form
+    h1 shoe_edit_form
+    = form_with model: [:staff, @shoes], url: {action: :update}, html: {multipart: true}, local: true do |f|
+      .product_form.required
+        = f.label "商品名"
+        = f.text_field :shoe_name
+      
+      .product_form.required
+        = f.label "商品コード"
+        = f.text_field :shoe_code
+        
+      = render 'staff/product_form', common: f
+      
+      .product_form.required
+        = f.label "正面"
+        = f.file_field :shoe_front
+        = image_tag @shoes.shoe_front
+      
+      .product_form
+        = f.label "後ろ"
+        = f.file_field :shoe_back
+        = image_tag @shoes.shoe_back
+      
+      .product_form
+        = f.label "靴底"
+        = f.file_field :shoe_sole
+        = image_tag @shoes.shoe_sole
+      
+      .product_form
+        = f.label "外側"
+        = f.file_field :shoe_out_side
+        = image_tag @shoes.shoe_out_side
+        
+      .product_form
+        = f.label "内側"
+        = f.file_field :shoe_inner
+        = image_tag @shoes.shoe_inner
+        
+      .product_form
+        = f.label "その他1"
+        = f.file_field :shoe_one
+        = image_tag @shoes.shoe_one
+      
+      .product_form
+        = f.label "その他2"
+        = f.file_field :shoe_two
+        = image_tag @shoes.shoe_two
+      
+      .product_form
+        = f.label "その他3"
+        = f.file_field :shoe_three
+        = image_tag @shoes.shoe_three
+      
+      .product_form
+        = f.label "その他4"
+        = f.file_field :shoe_four
+        = image_tag @shoes.shoe_four
+        
+      .product_form
+        = f.label "その他5"
+        = f.file_field :shoe_five
+        = image_tag @shoes.shoe_five
+        
+      .product_submit
+        = f.submit "確認"
