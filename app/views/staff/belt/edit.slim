@@ -21,17 +21,17 @@
       .product_form
         = f.label 'ベルト写真2'
         = f.file_field :belt_two
-        = image_tag @bekt.belt_two if @belt_two
+        = image_tag @belt.belt_two
       
       .product_form
         = f.label 'ベルト写真3'
         = f.file_field :belt_three
-        = image_tag @bekt.belt_three if @belt_three
+        = image_tag @belt.belt_three
       
       .product_form
         = f.label 'ベルト写真4'
         = f.file_field :belt_four
-        = image_tag @bekt.belt_four if @belt_four
+        = image_tag @belt.belt_four
       
       .product_submit
         = f.submit '確認'
