@@ -4,7 +4,7 @@
   = form_with model: [:staff, @other], url: {action: :create}, html: {multipart: true}, local: true do |f|
     .product_form.required
       = f.label "商品名"
-      = f.text_field :other_item_naem
+      = f.text_field :other_item_name
       
     .product_form.required
       = f.label "商品コード"

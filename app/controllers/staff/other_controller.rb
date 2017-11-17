@@ -1,7 +1,10 @@
 class Staff::OtherController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :confirm, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_other, only: %i(show edit update destroy)
+
   def index
+    @others = Other.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::OtherController < Staff::Base
   end
 
   def update
+    if @other.invalid?
+      render :new, alert: '確認してね'
+    elsif @other.update!(other_params)
+      redirect_to :staff_other_index, notice: '完了'
+    else
+      render :new, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -36,4 +46,7 @@ class Staff::OtherController < Staff::Base
     params.require(:other).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :other_item_name, :other_item_code, :other_one, :other_two, :other_three, :other_four, :other_five)
   end
 
+  def set_other
+    @other = Other.find_by(id: params[:id])
+  end
 end
