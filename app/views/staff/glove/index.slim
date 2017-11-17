@@ -1,0 +1,22 @@
+= render 'staff/drawer'
+.staff-cont
+  .staff_index
+    h1 glove_index
+    table
+      thead
+        tr 
+          th = @current_staff.company
+          th 商品名
+          th 商品コード 
+          th 価格
+          th 
+          th 
+      tbody
+        - @gloves.each do |glo|
+          tr 
+            td = image_tag glo.glove_front
+            td = glo.glove_name
+            td = glo.glove_code
+            td = number_to_currency(glo.price, unit: '', precision: 0)
+            td = link_to '編集', edit_staff_glove_path(glo)
+            td = link_to '詳細', staff_glove_path(glo)
