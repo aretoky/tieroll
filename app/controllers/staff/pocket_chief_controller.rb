@@ -29,9 +29,9 @@ class Staff::PocketChiefController < Staff::Base
   end
 
   def update
-    if @chief.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @chief.update!(chief_params)
+    elsif @item.update!(chief_params)
       redirect_to :staff_pocket_chief_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

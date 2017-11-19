@@ -30,9 +30,9 @@ class Staff::GloveController < Staff::Base
   end
 
   def update
-    if @glove.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @glove.update!(glove_params)
+    elsif @item.update!(glove_params)
       redirect_to :staff_glove_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

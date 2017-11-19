@@ -29,9 +29,9 @@ class Staff::ShurtController < Staff::Base
   end
 
   def update
-    if @shurt.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @shurt.update!(shurt_params)
+    elsif @item.update!(shurt_params)
       redirect_to :staff_shurt_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

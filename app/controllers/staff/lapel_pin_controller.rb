@@ -29,9 +29,9 @@ class Staff::LapelPinController < Staff::Base
   end
 
   def update
-    if @lapel_pin.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @lapel_pin.update!(lapel_pin_params)
+    elsif @item.update!(lapel_pin_params)
       redirect_to :staff_lapel_pin_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

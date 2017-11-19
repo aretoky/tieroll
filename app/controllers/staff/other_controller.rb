@@ -29,9 +29,9 @@ class Staff::OtherController < Staff::Base
   end
 
   def update
-    if @other.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @other.update!(other_params)
+    elsif @item.update!(other_params)
       redirect_to :staff_other_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

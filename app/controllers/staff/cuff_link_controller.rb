@@ -28,9 +28,9 @@ class Staff::CuffLinkController < Staff::Base
   end
 
   def update
-    if @cuff_link.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @cuff_link.update!(cuff_link_params)
+    elsif @item.update!(cuff_link_params)
       redirect_to :staff_cuff_link_index, notice: '完了'
     else
       render :edit, alert: '確認してね'
