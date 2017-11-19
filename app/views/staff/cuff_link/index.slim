@@ -15,8 +15,8 @@
         - @cuff_links.each do |cuff|
           tr 
             td = image_tag cuff.cuff_link_one
-            td = cuff.cuff_link_name
-            td = cuff.cuff_link_code
+            td = cuff.name
+            td = cuff.code
             td = number_to_currency(cuff.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_cuff_link_path(cuff)
             td = link_to '詳細', staff_cuff_link_path(cuff)

@@ -15,8 +15,8 @@
         - @shurts.each do |shu|
           tr 
             td = image_tag shu.s_front
-            td = shu.shurt_name
-            td = shu.shurt_code
+            td = shu.name
+            td = shu.code
             td = number_to_currency(shu.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_shurt_path(shu)
             td = link_to '詳細', staff_shurt_path(shu)

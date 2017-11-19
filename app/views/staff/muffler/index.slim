@@ -15,8 +15,8 @@
         - @mufflers.each do |muf|
           tr 
             td = image_tag muf.muffler_front
-            td = muf.muffler_name
-            td = muf.muffler_code
+            td = muf.name
+            td = muf.code
             td = number_to_currency(muf.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_muffler_path(muf)
             td = link_to '詳細', staff_muffler_path(muf)

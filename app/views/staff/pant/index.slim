@@ -15,8 +15,8 @@
         - @pants.each do |pan|
           tr 
             td = image_tag pan.p_front
-            td = pan.pant_name
-            td = pan.pant_code
+            td = pan.name
+            td = pan.code
             td = number_to_currency(pan.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_pant_path(pan)
             td = link_to '詳細', staff_pant_path(pan)

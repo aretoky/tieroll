@@ -15,8 +15,8 @@
         - @gloves.each do |glo|
           tr 
             td = image_tag glo.glove_front
-            td = glo.glove_name
-            td = glo.glove_code
+            td = glo.name
+            td = glo.code
             td = number_to_currency(glo.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_glove_path(glo)
             td = link_to '詳細', staff_glove_path(glo)

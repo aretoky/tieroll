@@ -2,14 +2,7 @@
 .staff-cont
   h1 tie_create_form
   = form_with model: [:staff, @tie], url: {action: :create}, html: {multipart: true}, local: true do |f|
-    .product_form.required
-      = f.label "商品名"
-      = f.text_field :tie_name
-      
-    .product_form.required
-      = f.label "商品コード"
-      = f.text_field :tie_code
-    
+
     = render 'staff/product_form', common: f
     
     .product_form.required

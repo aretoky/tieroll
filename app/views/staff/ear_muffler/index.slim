@@ -15,8 +15,8 @@
         - @ear_mufflers.each do |emuff|
           tr 
             td = image_tag emuff.ear_muffler_front
-            td = emuff.ear_muffler_name
-            td = emuff.ear_muffler_code
+            td = emuff.name
+            td = emuff.code
             td = number_to_currency(emuff.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_ear_muffler_path(emuff)
             td = link_to '詳細', staff_ear_muffler_path(emuff)

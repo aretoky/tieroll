@@ -15,8 +15,8 @@
         - @knits.each do |nit|
           tr 
             td = image_tag nit.knit_front
-            td = nit.knit_name
-            td = nit.knit_code
+            td = nit.name
+            td = nit.code
             td = number_to_currency(nit.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_knit_path(nit)
             td = link_to '詳細', staff_knit_path(nit)

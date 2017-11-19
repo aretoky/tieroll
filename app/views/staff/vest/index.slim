@@ -15,8 +15,8 @@
         - @vests.each do |vest|
           tr 
             td = image_tag vest.v_front
-            td = vest.vest_name
-            td = vest.vest_code
+            td = vest.name
+            td = vest.code
             td = number_to_currency(vest.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_vest_path(vest)
             td = link_to '詳細', staff_vest_path(vest)

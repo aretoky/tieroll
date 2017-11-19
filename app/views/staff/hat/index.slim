@@ -15,8 +15,8 @@
         - @hats.each do |hat|
           tr 
             td = image_tag hat.hat_front
-            td = hat.hat_name
-            td = hat.hat_code
+            td = hat.name
+            td = hat.code
             td = number_to_currency(hat.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_hat_path(hat)
             td = link_to '詳細', staff_hat_path(hat)

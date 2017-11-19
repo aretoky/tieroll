@@ -15,8 +15,8 @@
         - @shoes.each do |sho|
           tr 
             td = image_tag sho.shoe_front
-            td = sho.shoe_name
-            td = sho.shoe_code
+            td = sho.name
+            td = sho.code
             td = number_to_currency(sho.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_shoe_path(sho)
             td = link_to '詳細', staff_shoe_path(sho)
