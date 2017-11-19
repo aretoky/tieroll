@@ -1,5 +1,5 @@
 class Jacket < ApplicationRecord
-  validates :staff_member, :jacket_name, :jacket_code, :j_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
+  validates :staff_member, :name, :code, :j_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
   # cache確認時の簡易的な検証

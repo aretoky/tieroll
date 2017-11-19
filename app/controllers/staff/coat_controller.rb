@@ -43,10 +43,10 @@ class Staff::CoatController < Staff::Base
 
   private
   def coat_params
-    params.require(:coat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :coat_name, :coat_code, :coat_front, :coat_back, :coat_open_front, :coat_closed_front, :coat_inner, :coat_inner_r, :coat_inner_l, :coat_lapel, :coat_pocket, :coat_breast_pocket, :coat_bents, :coat_cuff, :coat_one, :coat_two, :coat_three)
+    params.require(:coat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :coat_front, :coat_back, :coat_open_front, :coat_closed_front, :coat_inner, :coat_inner_r, :coat_inner_l, :coat_lapel, :coat_pocket, :coat_breast_pocket, :coat_bents, :coat_cuff, :coat_one, :coat_two, :coat_three)
   end
 
   def set_coat
-    @coat = Coat.find_by(id: params[:id])
+    @item = Coat.find_by(id: params[:id])
   end
 end

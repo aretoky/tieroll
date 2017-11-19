@@ -1,5 +1,5 @@
 class Belt < ApplicationRecord
-  validates :staff_member, :belt_name, :belt_code, :belt_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
+  validates :staff_member, :belt_name, :code, :one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 

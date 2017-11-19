@@ -43,10 +43,10 @@ class Staff::TieController < Staff::Base
 
   private
   def tie_params
-    params.require(:tie_neck).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :tie_name, :tie_code, :tie_one, :tie_two, :tie_three, :tie_four)
+    params.require(:tie_neck).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :tie_one, :tie_two, :tie_three, :tie_four)
   end
 
   def set_tie
-    @tie = TieNeck.find_by(id: params[:id])
+    @item = TieNeck.find_by(id: params[:id])
   end
 end

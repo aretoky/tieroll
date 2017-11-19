@@ -10,8 +10,8 @@ class CreateOthers < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :other_item_name
-      t.string :other_item_code
+      t.string :name
+      t.string :code
       t.string :other_one
       t.string :other_two
       t.string :other_three

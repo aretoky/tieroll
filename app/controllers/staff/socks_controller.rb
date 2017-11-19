@@ -43,10 +43,10 @@ class Staff::SocksController < Staff::Base
 
   private
   def socks_params
-    params.require(:sock).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :socks_name, :socks_code, :socks_one, :socks_two, :socks_three)
+    params.require(:sock).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :socks_one, :socks_two, :socks_three)
   end
 
   def set_socks
-    @socks = Sock.find_by(id: params[:id])
+    @item = Sock.find_by(id: params[:id])
   end
 end

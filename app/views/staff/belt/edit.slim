@@ -2,36 +2,29 @@
 .staff-cont
   .product_edit_form
     h1 belt_edit_form
-    = form_with model: [:staff, @belt], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label '商品名'
-        = f.text_field :belt_name
-        
-      .product_form.required
-        = f.label '商品コード'
-        = f.text_field :belt_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
       
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label 'ベルト写真1'
         = f.file_field :belt_one
-        = image_tag @belt.belt_one
+        = image_tag @item.belt_one
         
       .product_form
         = f.label 'ベルト写真2'
         = f.file_field :belt_two
-        = image_tag @belt.belt_two
+        = image_tag @item.belt_two
       
       .product_form
         = f.label 'ベルト写真3'
         = f.file_field :belt_three
-        = image_tag @belt.belt_three
+        = image_tag @item.belt_three
       
       .product_form
         = f.label 'ベルト写真4'
         = f.file_field :belt_four
-        = image_tag @belt.belt_four
+        = image_tag @item.belt_four
       
       .product_submit
         = f.submit '確認'

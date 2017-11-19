@@ -2,51 +2,44 @@
 .staff-cont
   .product_edit_form
     h1 vest_edit_form 
-    = form_with model: [:staff, @vest], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label "商品名"
-        = f.text_field :vest_name
-        
-      .product_form.required
-        = f.label "商品コード"
-        = f.text_field :vest_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
         
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label "正面"
         = f.file_field :v_front
-        = image_tag @vest.v_front
+        = image_tag @item.v_front
         
       .product_form
         = f.label "後ろ"
         = f.file_field :v_back
-        = image_tag @vest.v_back
+        = image_tag @item.v_back
       
       .product_form
         = f.label "ポケット"
         = f.file_field :v_pocket
-        = image_tag @vest.v_pocket
+        = image_tag @item.v_pocket
         
       .product_form
         = f.label "胸ポケット"
         = f.file_field :v_breast_pocket
-        = image_tag @vest.v_breast_pocket
+        = image_tag @item.v_breast_pocket
       
       .product_form
         = f.label "内側"
         = f.file_field :inner_v
-        = image_tag @vest.inner_v
+        = image_tag @item.inner_v
         
       .product_form
         = f.label "バックル"
         = f.file_field :v_buckle
-        = image_tag @vest.v_buckle
+        = image_tag @item.v_buckle
       
       .product_form
         = f.label "その他"
         = f.file_field :v_other
-        = image_tag @vest.v_other
+        = image_tag @item.v_other
         
       .product_submit
         = f.submit "確認"

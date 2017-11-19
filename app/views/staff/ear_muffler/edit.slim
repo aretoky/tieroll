@@ -2,52 +2,44 @@
 .staff-cont
   .product_edit_form
     h1 ear_muffler_edit_form
-    = form_with model: [:staff, @ear_muffler], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label "商品名"
-        = f.text_field :ear_muffler_name
-        
-      .product_form.required
-        = f.label "商品コード"
-        = f.text_field :ear_muffler_code
-        
-      
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
+
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label "メイン"
         = f.file_field :ear_muffler_front
-        = image_tag @ear_muffler.ear_muffler_front
+        = image_tag @item.ear_muffler_front
       
       .product_form
         = f.label "後ろ"
         = f.file_field :ear_muffler_back
-        = image_tag @ear_muffler.ear_muffler_back
+        = image_tag @item.ear_muffler_back
               
       .product_form
         = f.label "内側"
         = f.file_field :ear_muffler_inner
-        = image_tag @ear_muffler.ear_muffler_inner
+        = image_tag @item.ear_muffler_inner
       
       .product_form
         = f.label "その他1"
         = f.file_field :ear_muffler_one
-        = image_tag @ear_muffler.ear_muffler_one
+        = image_tag @item.ear_muffler_one
       
       .product_form
         = f.label "その他2"
         = f.file_field :ear_muffler_two
-        = image_tag @ear_muffler.ear_muffler_two
+        = image_tag @item.ear_muffler_two
       
       .product_form
         = f.label "その他3"
         = f.file_field :ear_muffler_three
-        = image_tag @ear_muffler.ear_muffler_three
+        = image_tag @item.ear_muffler_three
       
       .product_form
         = f.label "その他3"
         = f.file_field :ear_muffler_foour
-        = image_tag @ear_muffler.ear_muffler_four
+        = image_tag @item.ear_muffler_four
       
       .product_submit
         = f.submit "確認"

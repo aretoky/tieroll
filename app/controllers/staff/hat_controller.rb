@@ -43,10 +43,10 @@ class Staff::HatController < Staff::Base
 
   private
   def hat_params
-    params.require(:hat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :hat_name, :hat_code, :hat_front, :hat_back, :hat_side, :hat_roof, :hat_sole, :hat_inner, :hat_one, :hat_two)
+    params.require(:hat).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :hat_front, :hat_back, :hat_side, :hat_roof, :hat_sole, :hat_inner, :hat_one, :hat_two)
   end
 
   def set_hat
-    @hat = Hat.find_by(id: params[:id])
+    @item = Hat.find_by(id: params[:id])
   end
 end

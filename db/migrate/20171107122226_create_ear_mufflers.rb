@@ -10,8 +10,8 @@ class CreateEarMufflers < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string  :ear_muffler_name
-      t.string  :ear_muffler_code
+      t.string  :name
+      t.string  :code
       t.string  :ear_muffler_front
       t.string  :ear_muffler_back
       t.string  :ear_muffler_inner

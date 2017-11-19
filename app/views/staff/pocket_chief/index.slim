@@ -15,8 +15,8 @@
         - @chiefs.each do |chi|
           tr 
             td = image_tag chi.chief_one
-            td = chi.chief_name
-            td = chi.chief_code
+            td = chi.name
+            td = chi.code
             td = number_to_currency(chi.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_pocket_chief_path(chi)
             td = link_to '詳細', staff_pocket_chief_path(chi)

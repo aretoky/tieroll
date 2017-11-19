@@ -15,8 +15,8 @@
         - @tie_pins.each do |tie_pin|
           tr 
             td = image_tag tie_pin.tie_pin_one
-            td = tie_pin.tie_pin_name
-            td = tie_pin.tie_pin_code
+            td = tie_pin.name
+            td = tie_pin.code
             td = number_to_currency(tie_pin.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_tie_pin_path(tie_pin)
             td = link_to '詳細', staff_tie_pin_path(tie_pin)

@@ -15,8 +15,8 @@
         - @others.each do |oth|
           tr 
             td = image_tag oth.other_one
-            td = oth.other_item_name
-            td = oth.other_item_code
+            td = oth.name
+            td = oth.code
             td = number_to_currency(oth.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_other_path(oth)
             td = link_to '詳細', staff_other_path(oth)

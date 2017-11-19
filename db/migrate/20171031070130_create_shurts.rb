@@ -10,8 +10,8 @@ class CreateShurts < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :shurt_name
-      t.string :shurt_code
+      t.string :name
+      t.string :code
       t.string :s_front
       t.string :s_back
       t.string :s_cuff

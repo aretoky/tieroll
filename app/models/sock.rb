@@ -1,5 +1,5 @@
 class Sock < ApplicationRecord
-  validates :staff_member, :socks_name, :socks_code, :socks_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
+  validates :staff_member, :name, :code, :socks_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 

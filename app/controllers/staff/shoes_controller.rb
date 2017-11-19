@@ -43,10 +43,10 @@ class Staff::ShoesController < Staff::Base
 
   private
   def shoes_params
-    params.require(:shoe).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :shoe_name, :shoe_code, :shoe_front, :shoe_back, :shoe_inner, :shoe_out_side, :shoe_sole, :toe, :shoe_one, :shoe_two, :shoe_three, :shoe_four, :shoe_five)
+    params.require(:shoe).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :shoe_front, :shoe_back, :shoe_inner, :shoe_out_side, :shoe_sole, :toe, :shoe_one, :shoe_two, :shoe_three, :shoe_four, :shoe_five)
   end
 
   def set_shoes
-    @shoes = Shoe.find_by(id: params[:id])
+    @item = Shoe.find_by(id: params[:id])
   end
 end

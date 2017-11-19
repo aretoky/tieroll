@@ -15,8 +15,8 @@
         - @coats.each do |coa|
           tr 
             td = image_tag coa.coat_front
-            td = coa.coat_name
-            td = coa.coat_code
+            td = coa.name
+            td = coa.code
             td = number_to_currency(coa.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_coat_path(coa)
             td = link_to '詳細', staff_coat_path(coa)

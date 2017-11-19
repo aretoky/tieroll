@@ -10,8 +10,8 @@ class CreateLapelPins < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string  :lapel_pin_name
-      t.string  :lapel_pin_code
+      t.string  :name
+      t.string  :code
       t.string  :lapel_pin_one
       t.string  :lapel_pin_two
       t.string  :lapel_pin_three

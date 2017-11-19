@@ -44,10 +44,10 @@ class Staff::GloveController < Staff::Base
 
   private
   def glove_params
-    params.require(:gant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :glove_name, :glove_code, :glove_front, :glove_back, :glove_inner, :glove_wrist, :glove_one, :glove_two, :glove_three)
+    params.require(:gant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :glove_front, :glove_back, :glove_inner, :glove_wrist, :glove_one, :glove_two, :glove_three)
   end
 
   def set_glove
-    @glove = Gant.find_by(id: params[:id])
+    @item = Gant.find_by(id: params[:id])
   end
 end

@@ -15,8 +15,8 @@
         - @ties.each do |tie|
           tr 
             td = image_tag tie.tie_one
-            td = tie.tie_name
-            td = tie.tie_code
+            td = tie.name
+            td = tie.code
             td = number_to_currency(tie.price, unit: '', precision: 0)
             td = link_to '編集', edit_staff_tie_path(tie)
             td = link_to '詳細', staff_tie_path(tie)

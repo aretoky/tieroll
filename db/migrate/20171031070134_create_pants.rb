@@ -10,8 +10,8 @@ class CreatePants < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :pant_name
-      t.string :pant_code
+      t.string :name
+      t.string :code
       t.string :p_front
       t.string :p_back
       t.string :p_side

@@ -2,31 +2,24 @@
 .staff-cont
   .product_edit_form
     h1 cehif_edit_form
-    = form_with model: [:staff, @chief], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label "商品名"
-        = f.text_field :chief_name
-        
-      .product_form.required
-        = f.label "商品コード"
-        = f.text_field :chief_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
       
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label "写真1"
         = f.file_field :chief_one 
-        = image_tag @chief.chief_one
+        = image_tag @item.chief_one
       
       .product_form
         = f.label "写真2"
         = f.file_field :chief_two
-        = image_tag @chief.chief_two
+        = image_tag @item.chief_two
         
       .product_form
         = f.label "写真3"
         = f.file_field :chief_three
-        = image_tag @chief.chief_three
+        = image_tag @item.chief_three
         
       .product_submit
         = f.submit "確認"

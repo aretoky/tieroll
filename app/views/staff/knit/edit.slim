@@ -2,56 +2,49 @@
 .staff-cont
   .product_edit_form
     h1 knit_edit_form
-    = form_with model: [:staff, @knit], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label "商品名"
-        = f.text_field :knit_name
-        
-      .product_form.required
-        = f.label "商品コード"
-        = f.text_field :knit_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
         
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label "正面"
         = f.file_field :knit_front
-        = image_tag @knit.knit_front
+        = image_tag @item.knit_front
         
       .product_form
         = f.label "後ろ"
         = f.file_field :knit_back
-        = image_tag @knit.knit_back
+        = image_tag @item.knit_back
         
       .product_form
         = f.label "裾"
         = f.file_field :knit_hem
-        / = image_tag @knit.knit_hem
+        / = image_tag @item.knit_hem
         
       .product_form
         = f.label "内側"
         = f.file_field :knit_inner
-        = image_tag @knit.knit_inner
+        = image_tag @item.knit_inner
         
       .product_form
         = f.label "首元"
         = f.file_field :knit_neck
-        = image_tag @knit.knit_neck
+        = image_tag @item.knit_neck
         
       .product_form
         = f.label "その他1"
         = f.file_field :knit_one
-        = image_tag @knit.knit_one
+        = image_tag @item.knit_one
         
       .product_form
         = f.label "その他2"
         = f.file_field :knit_two
-        = image_tag @knit.knit_two
+        = image_tag @item.knit_two
         
       .product_form
         = f.label "その他3"
         = f.file_field :knit_three
-        = image_tag @knit.knit_three
+        = image_tag @item.knit_three
       
       .product_submit
         = f.submit "確認"

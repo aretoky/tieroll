@@ -43,10 +43,10 @@ class Staff::LapelPinController < Staff::Base
 
   private
   def lapel_pin_params
-    params.require(:lapel_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :lapel_pin_name, :lapel_pin_code, :lapel_pin_one, :lapel_pin_two, :lapel_pin_three, :lapel_pin_four, :lapel_pin_five)
+    params.require(:lapel_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :lapel_pin_one, :lapel_pin_two, :lapel_pin_three, :lapel_pin_four, :lapel_pin_five)
   end
 
   def set_lapel_pin
-    @lapel_pin = LapelPin.find_by(id: params[:id])
+    @item = LapelPin.find_by(id: params[:id])
   end
 end

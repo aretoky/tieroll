@@ -2,100 +2,93 @@
 .staff-cont
   .product_edit_form
     h1 jacket_edit_form
-    = form_with model: [:staff, @jacket], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label '商品名'
-        = f.text_field :jacket_name
-        
-      .product_form.required
-        = f.label '商品コード'
-        = f.text_field :jacket_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
       
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label '正面'
         = f.file_field :j_front
-        = image_tag @jacket.j_front
+        = image_tag @item.j_front
       
       .product_form
         = f.label '後ろ'
         = f.file_field :j_back
-        / - if @jacket.j_back
+        / - if @item.j_back
         /   p 画像を削除する
         /   = f.check_box :remove_j_back
-        = image_tag @jacket.j_back
+        = image_tag @item.j_back
 
       .product_form
         = f.label 'ボタン開けた正面'
         = f.file_field :open_front
-        / - if @jacket.open_front
+        / - if @item.open_front
         /   p 画像を削除する
         /   = f.check_box :remove_open_front
-        = image_tag @jacket.open_front
+        = image_tag @item.open_front
         
       .product_form
         = f.label 'ボタン閉じた正面'
         = f.file_field :closed_front
-        = image_tag @jacket.closed_front
+        = image_tag @item.closed_front
         
       .product_form
         = f.label '切羽'
         = f.file_field :j_cuff
-        - if @jacket.j_cuff
+        - if @item.j_cuff
           p 画像を削除
           = f.check_box :remove_j_cuff
-        = image_tag @jacket.j_cuff
+        = image_tag @item.j_cuff
         
       .product_form
         = f.label '裏地'
         = f.file_field :j_inner
-        = image_tag @jacket.j_inner
+        = image_tag @item.j_inner
         
       .product_form
         = f.label '右側　裏'
         = f.file_field :j_inner_r
-        = image_tag @jacket.j_inner_r
+        = image_tag @item.j_inner_r
       
       .product_form
         = f.label '左側　裏'
         = f.file_field :j_inner_l
-        = image_tag @jacket.j_inner_l
+        = image_tag @item.j_inner_l
         
       .product_form
         = f.label 'ラペル'
         = f.file_field :lapel
-        = image_tag @jacket.lapel
+        = image_tag @item.lapel
         
       .product_form
         = f.label 'ベンツ'
         = f.file_field :j_bents
-        = image_tag @jacket.j_bents
+        = image_tag @item.j_bents
         
       .product_form
         = f.label 'ボタン'
         = f.file_field :j_button
-        = image_tag @jacket.j_button
+        = image_tag @item.j_button
         
       .product_form
         = f.label 'ポケット'
         = f.file_field :j_pocket
-        = image_tag @jacket.j_pocket
+        = image_tag @item.j_pocket
         
       .product_form
         = f.label '胸ポケット'
         = f.file_field :j_breast_pocket
-        = image_tag @jacket.j_breast_pocket
+        = image_tag @item.j_breast_pocket
         
       .product_form
         = f.label 'その他１'
         = f.file_field :j_other_one
-        = image_tag @jacket.j_other_one
+        = image_tag @item.j_other_one
       
       .product_form
         = f.label 'その他２'
         = f.file_field :j_other_two
-        = image_tag @jacket.j_other_two
+        = image_tag @item.j_other_two
         
       .product_submit
         = f.submit '確認'

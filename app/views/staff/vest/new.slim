@@ -2,14 +2,7 @@
 .staff-cont
   h1 vest_create_form 
   = form_with model: [:staff, @vest], url: {action: :create}, html: {multipart: true}, local: true do |f|
-    .product_form.required
-      = f.label "商品名"
-      = f.text_field :vest_name
-      
-    .product_form.required
-      = f.label "商品コード"
-      = f.text_field :vest_code
-      
+
     = render 'staff/product_form', common: f
     
     .product_form.required

@@ -10,8 +10,8 @@ class CreateSocks < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :socks_name
-      t.string :socks_code
+      t.string :name
+      t.string :code
       t.string :socks_one
       t.string :socks_two
       t.string :socks_three

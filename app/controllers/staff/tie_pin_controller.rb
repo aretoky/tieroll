@@ -43,10 +43,10 @@ class Staff::TiePinController < Staff::Base
 
   private
   def tie_pin_params
-    params.require(:tie_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :tie_pin_name, :tie_pin_code, :tie_pin_one, :tie_pin_two, :tie_pin_three)
+    params.require(:tie_pin).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :tie_pin_one, :tie_pin_two, :tie_pin_three)
   end
 
   def set_tie_pin
-    @tie_pin = TiePin.find_by(id: params[:id])
+    @item = TiePin.find_by(id: params[:id])
   end
 end

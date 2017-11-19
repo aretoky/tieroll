@@ -1,5 +1,5 @@
 class CuffLink < ApplicationRecord
-  validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :cuff_link_one, presence: true
+  validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :name, :code, :cuff_link_one, presence: true
   belongs_to :staff_member
 
 
