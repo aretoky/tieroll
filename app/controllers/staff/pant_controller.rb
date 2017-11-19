@@ -29,9 +29,9 @@ class Staff::PantController < Staff::Base
   end
 
   def update
-    if @pant.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @pant.update!(pants_params)
+    elsif @item.update!(pants_params)
       redirect_to :staff_pant_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

@@ -28,9 +28,9 @@ class Staff::EarMufflerController < Staff::Base
   end
 
   def update
-    if @ear_muffler.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @ear_muffler.update!(ear_muffler_params)
+    elsif @item.update!(ear_muffler_params)
       redirect_to :staff_ear_muffler_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

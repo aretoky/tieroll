@@ -42,9 +42,9 @@ class Staff::JacketController < Staff::Base
   end
 
   def update
-    if @jacket.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してください'
-    elsif @jacket.update(jacket_params)
+    elsif @item.update(jacket_params)
       redirect_to :staff_jacket_index, notice: '編集完了'
     else
       render :edit, alert: '確認してね'

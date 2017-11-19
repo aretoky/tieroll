@@ -29,9 +29,9 @@ class Staff::BeltController < Staff::Base
   end
 
   def update
-    if @belt.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @belt.update!(belt_params)
+    elsif @item.update!(belt_params)
       redirect_to :staff_belt_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

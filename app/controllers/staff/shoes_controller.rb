@@ -29,9 +29,9 @@ class Staff::ShoesController < Staff::Base
   end
 
   def update
-    if @shoes.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @shoes.update!(shoes_params)
+    elsif @item.update!(shoes_params)
       redirect_to :staff_shoes, notice: '完了'
     else
       render :edit, alert: '確認してね'

@@ -29,9 +29,9 @@ class Staff::VestController < Staff::Base
   end
 
   def update
-    if @vest.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @vest.update!(vest_params)
+    elsif @item.update!(vest_params)
       redirect_to :staff_vest_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

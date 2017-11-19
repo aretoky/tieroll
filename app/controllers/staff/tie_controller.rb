@@ -29,9 +29,9 @@ class Staff::TieController < Staff::Base
   end
 
   def update
-    if @tie.invalid?
+    if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @tie.update!(tie_params)
+    elsif @item.update!(tie_params)
       redirect_to :staff_tie_index, notice: '完了'
     else
       render :edit, alert: '確認してね'
