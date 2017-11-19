@@ -10,8 +10,8 @@ class CreateBelts < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :belt_name
-      t.string :belt_code
+      t.string :name
+      t.string :code
       t.string :belt_one
       t.string :belt_two
       t.string :belt_three

@@ -10,8 +10,8 @@ class CreateGants < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string  :glove_name
-      t.string  :glove_code
+      t.string  :name
+      t.string  :code
       t.string  :glove_front
       t.string  :glove_back
       t.string  :glove_inner

@@ -10,8 +10,8 @@ class CreateKnits < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string  :knit_name
-      t.string  :knit_code
+      t.string  :name
+      t.string  :code
       t.string  :knit_front
       t.string  :knit_back
       t.string  :knit_hem

@@ -10,8 +10,8 @@ class CreateShoes < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :shoe_name
-      t.string :shoe_code
+      t.string :name
+      t.string :code
       t.string :shoe_front
       t.string :shoe_back
       t.string :shoe_inner

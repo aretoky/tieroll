@@ -10,8 +10,8 @@ class CreateTiePins < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :tie_pin_name
-      t.string :tie_pin_code
+      t.string :name
+      t.string :code
       t.string :tie_pin_one
       t.string :tie_pin_two
       t.string :tie_pin_three

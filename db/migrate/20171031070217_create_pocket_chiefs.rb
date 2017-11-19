@@ -10,8 +10,8 @@ class CreatePocketChiefs < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :chief_name
-      t.string :chief_code
+      t.string :name
+      t.string :code
       t.string :chief_one
       t.string :chief_two
       t.string :chief_three

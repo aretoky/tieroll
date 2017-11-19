@@ -10,8 +10,8 @@ class CreateCoats < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string  :coat_name
-      t.string  :coat_code
+      t.string  :name
+      t.string  :code
       t.string  :coat_front
       t.string  :coat_back
       t.string  :coat_open_front

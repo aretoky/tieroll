@@ -10,8 +10,8 @@ class CreateVests < ActiveRecord::Migration[5.1]
       t.integer :scene
       t.text    :description
       t.text    :raw_materials
-      t.string :vest_name
-      t.string :vest_code
+      t.string :name
+      t.string :code
       t.string :v_front
       t.string :v_back
       t.string :v_pocket
