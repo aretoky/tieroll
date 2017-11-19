@@ -1,5 +1,5 @@
 class TieNeck <ApplicationRecord
-  validates :staff_member, :tie_name, :tie_code, :tie_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
+  validates :staff_member, :name, :code, :tie_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
 
 

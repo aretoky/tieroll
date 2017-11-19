@@ -43,7 +43,7 @@ class Staff::OtherController < Staff::Base
 
   private
   def other_params
-    params.require(:other).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :other_item_name, :other_item_code, :other_one, :other_two, :other_three, :other_four, :other_five)
+    params.require(:other).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :other_one, :other_two, :other_three, :other_four, :other_five)
   end
 
   def set_other

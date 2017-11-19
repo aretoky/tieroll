@@ -43,7 +43,7 @@ class Staff::BeltController < Staff::Base
 
   private
   def belt_params
-    params.require(:belt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :belt_name, :belt_code, :belt_one, :belt_two, :belt_three, :belt_four)
+    params.require(:belt).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :belt_one, :belt_two, :belt_three, :belt_four)
   end
 
   def set_belt

@@ -1,5 +1,5 @@
 class Shurt < ApplicationRecord
-  validates :staff_member, :shurt_name, :shurt_code, :s_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene,presence: true
+  validates :staff_member, :name, :code, :s_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene,presence: true
   belongs_to :staff_member
 
 

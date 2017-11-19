@@ -43,7 +43,7 @@ class Staff::MufflerController < Staff::Base
 
   private
   def muffler_params
-    params.require(:muffler).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :muffler_name, :muffler_code, :muffler_front, :muffler_back, :muffler_fringe, :muffler_one, :muffler_two, :muffler_three)
+    params.require(:muffler).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :muffler_front, :muffler_back, :muffler_fringe, :muffler_one, :muffler_two, :muffler_three)
   end
 
   def set_muffler

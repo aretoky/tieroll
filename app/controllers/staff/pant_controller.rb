@@ -43,7 +43,7 @@ class Staff::PantController < Staff::Base
 
   private
   def pants_params
-    params.require(:pant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :pant_name, :pant_code, :p_front, :p_back, :p_side, :p_inner, :p_hem, :belt_roop, :p_front_pocket, :p_back_pocket, :p_other)
+    params.require(:pant).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :p_front, :p_back, :p_side, :p_inner, :p_hem, :belt_roop, :p_front_pocket, :p_back_pocket, :p_other)
   end
 
   def set_pant

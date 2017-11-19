@@ -1,5 +1,5 @@
 class EarMuffler < ApplicationRecord
-  validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :ear_muffler_name, :ear_muffler_code, :ear_muffler_front, presence: true
+  validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :name, :code, :ear_muffler_front, presence: true
   belongs_to :staff_member
 
 

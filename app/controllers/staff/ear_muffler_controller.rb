@@ -42,7 +42,7 @@ class Staff::EarMufflerController < Staff::Base
 
   private
   def ear_muffler_params
-    params.require(:ear_muffler).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :ear_muffler_name, :ear_muffler_code, :ear_muffler_front, :ear_muffler_beck, :ear_muffler_inner, :ear_muffler_one, :ear_muffler_two, :ear_muffler_three, :ear_muffler_four)
+    params.require(:ear_muffler).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :ear_muffler_front, :ear_muffler_beck, :ear_muffler_inner, :ear_muffler_one, :ear_muffler_two, :ear_muffler_three, :ear_muffler_four)
   end
 
   def set_ear_muffler

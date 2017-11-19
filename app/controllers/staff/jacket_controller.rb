@@ -56,7 +56,7 @@ class Staff::JacketController < Staff::Base
 
   private
   def jacket_params
-    params.require(:jacket).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :jacket_name, :jacket_code, :j_front, :j_back, :open_front, :closed_front, :j_cuff, :lapel, :j_bents, :j_inner, :j_inner_r, :j_inner_l, :j_button, :j_pocket, :j_breast_pocket, :j_other_one, :j_other_two, :j_front_cache, :j_back_cache)
+    params.require(:jacket).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :name, :code, :j_front, :j_back, :open_front, :closed_front, :j_cuff, :lapel, :j_bents, :j_inner, :j_inner_r, :j_inner_l, :j_button, :j_pocket, :j_breast_pocket, :j_other_one, :j_other_two, :j_front_cache, :j_back_cache)
   end
 
   def set_jacket

@@ -1,5 +1,5 @@
 class Hat < ApplicationRecord
-  validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :hat_name, :hat_code, :hat_front, presence: true
+  validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :name, :code, :hat_front, presence: true
   belongs_to :staff_member
 
 
