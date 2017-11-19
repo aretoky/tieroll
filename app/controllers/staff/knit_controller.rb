@@ -31,11 +31,11 @@ class Staff::KnitController < Staff::Base
 
   def update
     if @knit.invalid?
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     elsif @knit.update!(knit_params)
       redirect_to :staff_knit_index, notice: '完了'
     else
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     end
   end
 

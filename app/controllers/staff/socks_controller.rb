@@ -30,11 +30,11 @@ class Staff::SocksController < Staff::Base
 
   def update
     if @socks.invalid?
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     elsif @socks.update!(socks_params)
       redirect_to :staff_socks, notice: '完了'
     else
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     end
   end
 

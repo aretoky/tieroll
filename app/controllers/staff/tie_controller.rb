@@ -1,7 +1,10 @@
 class Staff::TieController < Staff::Base
   before_action :are_you_staff_member?, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
+  before_action :set_tie, only: %i(show edit update destroy)
+
   def index
+    @ties = TieNeck.where(staff_member: @current_staff.id)
   end
 
   def new
@@ -26,6 +29,13 @@ class Staff::TieController < Staff::Base
   end
 
   def update
+    if @tie.invalid?
+      render :edit, alert: '確認してね'
+    elsif @tie.update!(tie_params)
+      redirect_to :staff_tie_index, notice: '完了'
+    else
+      render :edit, alert: '確認してね'
+    end
   end
 
   def destroy
@@ -34,5 +44,9 @@ class Staff::TieController < Staff::Base
   private
   def tie_params
     params.require(:tie_neck).permit(:price, :size, :color, :pattern, :season, :scene, :description, :raw_materials, :tie_name, :tie_code, :tie_one, :tie_two, :tie_three, :tie_four)
+  end
+
+  def set_tie
+    @tie = TieNeck.find_by(id: params[:id])
   end
 end

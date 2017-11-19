@@ -30,11 +30,11 @@ class Staff::HatController < Staff::Base
 
   def update
     if @hat.invalid?
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     elsif @hat.update!(hat_params)
       redirect_to :staff_hat_index, notice: '完了'
     else
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     end
   end
 

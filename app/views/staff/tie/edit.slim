@@ -1,0 +1,37 @@
+= render 'staff/drawer'
+.staff-cont
+  .product_edit_form
+    h1 tie_edit_form
+    = form_with model: [:staff, @tie], url: {action: :update}, html: {multipart: true}, local: true do |f|
+      .product_form.required
+        = f.label "商品名"
+        = f.text_field :tie_name
+        
+      .product_form.required
+        = f.label "商品コード"
+        = f.text_field :tie_code
+      
+      = render 'staff/product_form', common: f
+      
+      .product_form.required
+        = f.label "写真1"
+        = f.file_field :tie_one
+        = image_tag @tie.tie_one
+      
+      .product_form
+        = f.label "写真2"
+        = f.file_field :tie_two
+        = image_tag @tie.tie_two
+        
+      .product_form
+        = f.label "写真3"
+        = f.file_field :tie_three
+        = image_tag @tie.tie_three
+      
+      .product_form
+        = f.label "写真4"
+        = f.file_field :tie_four
+        = image_tag @tie.tie_four
+      
+      .product_submit
+        = f.submit "確認"
