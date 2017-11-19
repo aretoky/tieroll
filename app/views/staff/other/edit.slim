@@ -2,41 +2,34 @@
 .staff-cont
   .product_edit_form
     h1 other_item_edit_form
-    = form_with model: [:staff, @other], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form.required
-        = f.label "商品名"
-        = f.text_field :other_item_name
-        
-      .product_form.required
-        = f.label "商品コード"
-        = f.text_field :other_item_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
         
       = render 'staff/product_form', common: f
       
       .product_form.required
         = f.label "写真1"
         = f.file_field :other_one
-        = image_tag @other.other_one
+        = image_tag @item.other_one
         
       .product_form
         = f.label "写真2"
         = f.file_field :other_two
-        = image_tag @other.other_two
+        = image_tag @item.other_two
         
       .product_form
         = f.label "写真3"
         = f.file_field :other_three
-        = image_tag @other.other_three
+        = image_tag @item.other_three
         
       .product_form
         = f.label "写真4"
         = f.file_field :other_four
-        = image_tag @other.other_four
+        = image_tag @item.other_four
         
       .product_form
         = f.label "写真5"
         = f.file_field :other_five
-        = image_tag @other.other_five
+        = image_tag @item.other_five
         
         .product_submit
           = f.submit "確認"

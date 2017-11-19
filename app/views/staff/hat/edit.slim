@@ -2,56 +2,49 @@
 .staff-cont
   .product_edit_form
     h1 hat_edit_form
-    = form_with model: [:staff, @hat], url: {action: :update}, html: {multipart: true}, local: true do |f|
-      .product_form
-        = f.label "商品名"
-        = f.text_field :hat_name
-        
-      .product_form
-        = f.label "商品コード"
-        = f.text_field :hat_code
+    = form_with model: [:staff, @item], url: {action: :update}, html: {multipart: true}, local: true do |f|
       
       = render 'staff/product_form', common: f
       
       .product_form
         = f.label "正面"
         = f.file_field :hat_front
-        = image_tag @hat.hat_front
+        = image_tag @item.hat_front
         
       .product_form
         = f.label "後ろ"
         = f.file_field :hat_back
-        = image_tag @hat.hat_back
+        = image_tag @item.hat_back
         
       .product_form
         = f.label "横"
         = f.file_field :hat_side
-        = image_tag @hat.hat_side
+        = image_tag @item.hat_side
         
       .product_form
         = f.label "上"
         = f.file_field :hat_roof
-        = image_tag @hat.hat_roof
+        = image_tag @item.hat_roof
         
       .product_form
         = f.label "底"
         = f.file_field :hat_sole
-        = image_tag @hat.hat_sole
+        = image_tag @item.hat_sole
         
       .product_form
         = f.label "中"
         = f.file_field :hat_inner
-        = image_tag @hat.hat_inner
+        = image_tag @item.hat_inner
         
       .product_form
         = f.label "その他1"
         = f.file_field :hat_one
-        = image_tag @hat.hat_one
+        = image_tag @item.hat_one
         
       .product_form
         = f.label "その他2"
         = f.file_field :hat_two
-        = image_tag @hat.hat_two
+        = image_tag @item.hat_two
       
       .product_submit
         = f.submit "確認"
