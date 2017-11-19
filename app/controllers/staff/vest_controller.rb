@@ -47,6 +47,6 @@ class Staff::VestController < Staff::Base
   end
 
   def set_vest
-    @vest = Vest.find_by(id: params[:id])
+    @item = Vest.find_by(id: params[:id])
   end
 end

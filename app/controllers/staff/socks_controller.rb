@@ -47,6 +47,6 @@ class Staff::SocksController < Staff::Base
   end
 
   def set_socks
-    @socks = Sock.find_by(id: params[:id])
+    @item = Sock.find_by(id: params[:id])
   end
 end

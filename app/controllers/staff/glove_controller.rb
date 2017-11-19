@@ -48,6 +48,6 @@ class Staff::GloveController < Staff::Base
   end
 
   def set_glove
-    @glove = Gant.find_by(id: params[:id])
+    @item = Gant.find_by(id: params[:id])
   end
 end

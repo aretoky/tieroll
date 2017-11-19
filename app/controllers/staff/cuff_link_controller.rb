@@ -46,6 +46,6 @@ class Staff::CuffLinkController < Staff::Base
   end
 
   def set_cuff
-    @cuff_link = CuffLink.find_by(id: params[:id])
+    @item = CuffLink.find_by(id: params[:id])
   end
 end

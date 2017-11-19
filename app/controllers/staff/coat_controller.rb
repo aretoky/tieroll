@@ -47,6 +47,6 @@ class Staff::CoatController < Staff::Base
   end
 
   def set_coat
-    @coat = Coat.find_by(id: params[:id])
+    @item = Coat.find_by(id: params[:id])
   end
 end

@@ -47,6 +47,6 @@ class Staff::TieController < Staff::Base
   end
 
   def set_tie
-    @tie = TieNeck.find_by(id: params[:id])
+    @item = TieNeck.find_by(id: params[:id])
   end
 end

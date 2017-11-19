@@ -60,6 +60,6 @@ class Staff::JacketController < Staff::Base
   end
 
   def set_jacket
-    @jacket = Jacket.find_by(id: params[:id])
+    @item = Jacket.find_by(id: params[:id])
   end
 end

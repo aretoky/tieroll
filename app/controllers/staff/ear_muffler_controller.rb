@@ -46,6 +46,6 @@ class Staff::EarMufflerController < Staff::Base
   end
 
   def set_ear_muffler
-    @ear_muffler = EarMuffler.find_by(id: params[:id])
+    @item = EarMuffler.find_by(id: params[:id])
   end
 end

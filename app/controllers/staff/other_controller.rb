@@ -47,6 +47,6 @@ class Staff::OtherController < Staff::Base
   end
 
   def set_other
-    @other = Other.find_by(id: params[:id])
+    @item = Other.find_by(id: params[:id])
   end
 end

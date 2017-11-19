@@ -47,6 +47,6 @@ class Staff::ShurtController < Staff::Base
   end
 
   def set_shurt
-    @shurt = Shurt.find_by(id: params[:id])
+    @item = Shurt.find_by(id: params[:id])
   end
 end

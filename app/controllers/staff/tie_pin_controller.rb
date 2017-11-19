@@ -47,6 +47,6 @@ class Staff::TiePinController < Staff::Base
   end
 
   def set_tie_pin
-    @tie_pin = TiePin.find_by(id: params[:id])
+    @item = TiePin.find_by(id: params[:id])
   end
 end

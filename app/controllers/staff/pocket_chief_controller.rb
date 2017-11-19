@@ -47,6 +47,6 @@ class Staff::PocketChiefController < Staff::Base
   end
 
   def set_chief
-    @chief = PocketChief.find_by(id: params[:id])
+    @item = PocketChief.find_by(id: params[:id])
   end
 end

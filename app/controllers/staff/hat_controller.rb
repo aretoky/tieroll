@@ -47,6 +47,6 @@ class Staff::HatController < Staff::Base
   end
 
   def set_hat
-    @hat = Hat.find_by(id: params[:id])
+    @item = Hat.find_by(id: params[:id])
   end
 end

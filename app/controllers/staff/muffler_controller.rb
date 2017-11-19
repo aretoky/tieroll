@@ -47,6 +47,6 @@ class Staff::MufflerController < Staff::Base
   end
 
   def set_muffler
-    @muffler = Muffler.find_by(id: params[:id])
+    @item = Muffler.find_by(id: params[:id])
   end
 end

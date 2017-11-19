@@ -48,6 +48,6 @@ class Staff::KnitController < Staff::Base
   end
 
   def set_knit
-    @knit = Knit.find_by(id: params[:id])
+    @item = Knit.find_by(id: params[:id])
   end
 end

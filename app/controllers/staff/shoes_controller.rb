@@ -47,6 +47,6 @@ class Staff::ShoesController < Staff::Base
   end
 
   def set_shoes
-    @shoes = Shoe.find_by(id: params[:id])
+    @item = Shoe.find_by(id: params[:id])
   end
 end

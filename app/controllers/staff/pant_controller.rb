@@ -47,6 +47,6 @@ class Staff::PantController < Staff::Base
   end
 
   def set_pant
-    @pant = Pant.find_by(id: params[:id])
+    @item = Pant.find_by(id: params[:id])
   end
 end

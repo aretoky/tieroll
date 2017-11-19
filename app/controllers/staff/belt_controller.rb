@@ -47,7 +47,7 @@ class Staff::BeltController < Staff::Base
   end
 
   def set_belt
-    @belt = Belt.find_by(id: params[:id])
+    @item = Belt.find_by(id: params[:id])
   end
 
 end

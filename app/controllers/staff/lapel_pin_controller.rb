@@ -47,6 +47,6 @@ class Staff::LapelPinController < Staff::Base
   end
 
   def set_lapel_pin
-    @lapel_pin = LapelPin.find_by(id: params[:id])
+    @item = LapelPin.find_by(id: params[:id])
   end
 end
