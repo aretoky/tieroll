@@ -30,11 +30,11 @@ class Staff::ShoesController < Staff::Base
 
   def update
     if @shoes.invalid?
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     elsif @shoes.update!(shoes_params)
       redirect_to :staff_shoes, notice: '完了'
     else
-      render :new, alert: '確認してね'
+      render :edit, alert: '確認してね'
     end
   end
 
