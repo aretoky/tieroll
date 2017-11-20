@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
     get 'item_post', to: 'item#item_post'
     get 'item_edit', to: 'item#item_edit'
+    get 'item_search', to: 'item#search_of_item'
   end
 
   # urlをtieroll/~~にしたい
