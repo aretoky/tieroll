@@ -1,9 +1,10 @@
 = render 'staff/drawer'
 .staff-cont
-  = form_with local: true do |f|
+  = form_with url: {controller: :item, action: :search_of_item}, method: :get, local: true do |f|
     .product_edit_form
       = f.label '商品コードから探す'
-      = f.text_field :product_code
+      = f.select 'item', options_for_select(@how), {prompt: "カテゴリ"}
+      = f.text_field :product_code, placeholder: "商品コード"
       = f.submit '検索'
       
   .product_search_list
