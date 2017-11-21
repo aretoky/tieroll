@@ -1,5 +1,5 @@
 class MainProduct < ApplicationRecord
-  validates :staff_member, :product_face, :name, :code, :season, :scene, :description, :price, :shurt, :pant, :sock, :shoe, presense: true
+  validates :staff_member, :product_face, :code, :season, :scene, :description, :price, :shurt, :pant, :sock, :shoe, presense: true
 
   belongs_to :staff_member
   has_many :belts

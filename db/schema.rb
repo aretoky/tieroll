@@ -281,7 +281,6 @@ ActiveRecord::Schema.define(version: 20171110125140) do
     t.bigint "tie_pin_id"
     t.bigint "vest_id"
     t.string "product_face"
-    t.string "name"
     t.string "code"
     t.integer "scene"
     t.integer "season"
