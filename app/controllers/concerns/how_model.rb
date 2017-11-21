@@ -27,7 +27,7 @@ module HowModel
     when 'pant'
       return Pant
     when 'pocket_chief'
-      return Pockethief
+      return PocketChief
     when 'shoe'
       return Shoe
     when 'shurt'

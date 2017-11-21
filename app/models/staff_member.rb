@@ -2,7 +2,6 @@ class StaffMember < ApplicationRecord
   has_secure_password
 
 
-  has_many :products,       dependent: :destroy
   has_many :belts,          dependent: :destroy
   has_many :jackets,        dependent: :destroy
   has_many :pants,          dependent: :destroy

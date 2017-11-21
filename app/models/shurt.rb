@@ -1,6 +1,7 @@
 class Shurt < ApplicationRecord
   validates :staff_member, :name, :code, :s_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene,presence: true
   belongs_to :staff_member
+  has_many :main_products
 
 
   mount_uploader :s_front,          SFrontUploader

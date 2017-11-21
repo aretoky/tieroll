@@ -1,44 +1,46 @@
 = render 'staff/drawer'
 .staff-cont 
-  h1 各アイテムを投稿する
+  h1 アイテムを投稿する
     
   .items
     ul 
+      / li 
+      /   = link_to 'コーデを登録する', :new_staff_main_product
       li 
-        = link_to '帽子を登録', :staff_hat_index
+        = link_to '帽子を登録', :new_staff_hat
       li 
-        = link_to 'イヤーマフラーを登録', :staff_ear_muffler_index
+        = link_to 'イヤーマフラーを登録', :new_staff_ear_muffler
       li 
-        = link_to 'ネクタイを登録', :staff_tie_index
+        = link_to 'ネクタイを登録', :new_staff_tie
       li 
-        = link_to 'マフラーを登録', :staff_muffler_index
+        = link_to 'マフラーを登録', :new_staff_muffler
       li 
-        = link_to 'タイピンを登録', :staff_tie_pin_index
+        = link_to 'タイピンを登録', :new_staff_tie_pin
       li
-        = link_to 'シャツを登録', :staff_shurt_index
+        = link_to 'シャツを登録', :new_staff_shurt
       li 
-        = link_to 'ニット/セーターを登録', :staff_knit_index
+        = link_to 'ニット/セーターを登録', :new_staff_knit
       li 
-        = link_to 'ベストを登録', :staff_vest_index
+        = link_to 'ベストを登録', :new_staff_vest
       li 
-        = link_to 'ジャケットを登録', :staff_jacket_index
+        = link_to 'ジャケットを登録', :new_staff_jacket
       li 
-        = link_to 'コートを登録', :staff_coat_index
+        = link_to 'コートを登録', :new_staff_coat
       li 
-        = link_to 'チーフを登録', :staff_pocket_chief_index
+        = link_to 'チーフを登録', :new_staff_pocket_chief
       li 
-        = link_to 'カフリンクスを登録', :staff_cuff_link_index
+        = link_to 'カフリンクスを登録', :new_staff_cuff_link
       li 
-        = link_to 'ラペルピンを登録', :staff_lapel_pin_index
+        = link_to 'ラペルピンを登録', :new_staff_lapel_pin
       li 
-        = link_to '手袋を登録', :staff_glove_index  
+        = link_to '手袋を登録', :new_staff_glove  
       li       
-        = link_to 'パンツを登録', :staff_pant_index
+        = link_to 'パンツを登録', :new_staff_pant
       li 
-        = link_to 'ベルトを登録', :staff_belt_index
+        = link_to 'ベルトを登録', :new_staff_belt
       li 
-        = link_to 'ソックスを登録', :staff_socks
+        = link_to 'ソックスを登録', :new_staff_sock
       li 
-        = link_to 'シューズを登録', :staff_shoes
+        = link_to 'シューズを登録', :new_staff_shoe
       li
-        = link_to 'その他アイテム', :staff_other_index
+        = link_to 'その他アイテム', :new_staff_other

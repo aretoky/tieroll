@@ -1,199 +1,102 @@
 = render 'staff/drawer'
 .staff-cont
-  h1 create_main_product
-  = form_with model: [:staff, @product], url: {action: :confirm}, local: :true do |f|
-    .product_form 
-      = f.label "商品名"
-      = f.text_field :product_name
+  h1 main_product_create_form
+  = form_with model: [:staff, @product], url: {action: :confirm}, html: {multipart: true}, local: true do |f|
+    .product_form.required
+      = f.label ''
+      = f.file_field :product_face, required: true
       
-    .product_form
-      = f.label "商品説明"
-      = f.text_field :description
-      
-    .product_form
-      = f.label "価格(税込み)"
-      = f.number_field :price
-      
-    .product_form
-     = f.label "サイズ"
-     = f.collection_select :size, @size
-     
-    .product_form
-      = f.label "カラー"
-      = f.collection_select :color, Color.all, :id, :product_color
-      
-    .product_form
-      = f.label "柄"
-      = f.collection_select :pattern, Pattern.all, :id, :product_pattern
-      
-    .product_form
-      = f.label "季節"
-      = f.collection_select :season, Season.all, :id, :product_season
+    .product_form.required
+      = f.label 'コーディネート識別コード'
+      = f.text_field :code, required: true
     
-    .product_form
-      = f.label "シーン"
-      = f.collection_select :scene, Scene.all, :id, :product_scene
+    .product_form.required
+      = f.label 'ポイント'
+      = f.text_area :description, placeholder: 'コーデの良さ、ポイントなどのアピール'
+    
+    .product_form.required
+      = f.label 'シーン'
+      = f.select 'scene', select_tag MainProduct::PRODUCT_SCENE, prompt: '選んでね'
+
+    .product_form.required
+      = f.label '季節'
+      = f.collection_select :season, Season.all, :id, :product_season, prompt: "選んでね"
+
+    .product_form.ple
+      = f.label '帽子'
+      = f.text_field :hat
       
-    .product_form 
-      = f.label "正面画像"
-      = f.file_field :product_face
+    .product_form.ple
+      = f.label 'イヤーマフラー'
+      = f.text_field :ear_muffler
       
-    .product_form
-      = f.label "ジャケット　正面"
-      = f.file_field :j_front
+    .product_form.ple
+      = f.label 'ネクタイ'
+      = f.text_field :tie_neck
       
-    .product_form
-      = f.label "ジャケット　背"
-      = f.file_field :j_back
+    .product_form.ple
+      = f.label 'マフラー'
+      = f.text_field :muffler
       
-    .product_form
-      = f.label "ジャケット　ボタン外した正面"
-      = f.file_field :open_front
+    .product_form.ple
+      = f.label 'タイピン'
+      = f.text_field :tie_pin
       
-    .product_form
-      = f.label "ジャケット　ボタン外した正面"
-      = f.file_field :closed_front
+    .product_form.ple.required
+      = f.label 'シャツ'
+      = f.text_field :shurt, required: true
       
-    .product_form
-      = f.label "ラペル"
-      = f.file_field :lapel
+    .product_form.ple
+      = f.label 'ニット/セーター'
+      = f.text_field :knit
       
-    .product_form
-      = f.label "ジャケット　カフス"
-      = f.file_field :j_cuff
+    .product_form.ple
+      = f.label 'ベスト'
+      = f.text_field :vest
       
-    .product_form
-      = f.label "ジャケット　ボタン"
-      = f.file_field :j_button
+    .product_form.ple
+      = f.label 'ジャケット'
+      = f.text_field :jacket
       
-    .product_form
-      = f.label "ジャケット　内側"
-      = f.file_field :j_inner
+    .product_form.ple
+      = f.label 'コート'
+      = f.text_field :coat
       
-    .product_form
-      = f.label "ジャケット　右内側"
-      = f.file_field :j_inner_r
+    .product_form.ple
+      = f.label 'チーフ'
+      = f.text_field :pocket_chief
       
-    .product_form
-      = f.label "ジャケット　左内側"
-      = f.file_field :j_inner_l
+    .product_form.ple
+      = f.label 'カフリンクス'
+      = f.text_field :cuff_link
       
-    .product_form
-      = f.label "ジャケット　ポケット"
-      = f.file_field :j_pocket
+    .product_form.ple
+      = f.label 'ラペルピン'
+      = f.text_field :lapel_pin
       
-    .product_form
-      = f.label "ジャケット　胸ポケット"
-      = f.file_field :j_breast_pocket
+    .product_form.ple
+      = f.label '手袋'
+      = f.text_field :gant
       
-    .product_form
-      = f.label "シャツ　正面"
-      = f.file_field :s_front
+    .product_form.ple.required
+      = f.label 'パンツ'
+      = f.text_field :pant, required: true
       
-    .product_form
-      = f.label "シャツ　背"
-      = f.file_field :s_back
+    .product_form.ple
+      = f.label 'ベルト'
+      = f.text_field :belt
       
-    .product_form
-      = f.label "シャツ　カフス"
-      = f.file_field :s_cuff
+    .product_form.ple
+      = f.label '靴下'
+      = f.text_field :sock
       
-    .product_form
-      = f.label "シャツ ボタン"
-      = f.file_field :s_button
+    .product_form.ple
+      = f.label '靴'
+      = f.text_field :shoe
       
-    .product_form
-      = f.label "シャツ　胸ポケット"
-      = f.file_field :s_breast_pocket
-      
-    .product_form
-      = f.label "シャツ　襟"
-      = f.file_field :colar
-      
-    .product_form
-      = f.label "パンツ　正面"
-      = f.file_field :p_fron
-      
-    .product_form
-      = f.label "パンツ　背面"
-      = f.file_field :p_back
-      
-    .product_form
-      = f.label "パンツ　裏面"
-      = f.file_field :p_inner
-      
-    .product_form
-      = f.label "ベルトループ"
-      = f.file_field :belt_roop
-      
-    .product_form
-      = f.label "ベスト　正面"
-      = f.file_field :v_front
-      
-    .product_form
-      = f.label "ベスト　背"
-      = f.file_field :v_back
-      
-    .product_form
-      = f.label "ベスト　裏"
-      = f.file_field :v_inner 
-      
-    .product_form
-      = f.label "ベスト　尾錠"
-      = f.file_field :v_buckle
-      
-    .product_form
-      = f.label "ネクタイ１"
-      = f.file_field :tie_one
-      
-    .product_form
-      = f.label "ネクタイ２"
-      = f.file_field :tie_two
-      
-    .product_form
-      = f.label "ベルト"
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
-    .product_form
-      = f.label ""
-      = f.file_field :
-      
+    .product_form.ple
+      = f.label 'その他'
+      = f.text_field :other
     
     .product_submit
-      = f.submit "go"
+      = f.submit '確認'

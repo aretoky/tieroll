@@ -22,10 +22,11 @@ class CreateMainProducts < ActiveRecord::Migration[5.1]
       t.references  :tie_pin,         foreign_key: true
       t.references  :vest,            foreign_key: true
       t.string      :product_face
-      t.string      :name
       t.string      :code
       t.integer     :scene
       t.integer     :season
+      t.text        :description
+      t.integer     :price
 
       t.timestamps
     end
