@@ -26,6 +26,8 @@ class CreateMainProducts < ActiveRecord::Migration[5.1]
       t.string      :code
       t.integer     :scene
       t.integer     :season
+      t.text        :description
+      t.integer     :price
 
       t.timestamps
     end

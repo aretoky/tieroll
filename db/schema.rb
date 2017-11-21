@@ -285,6 +285,8 @@ ActiveRecord::Schema.define(version: 20171110125140) do
     t.string "code"
     t.integer "scene"
     t.integer "season"
+    t.text "description"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["belt_id"], name: "index_main_products_on_belt_id"

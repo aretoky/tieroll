@@ -1,6 +1,7 @@
 class Muffler < ApplicationRecord
   validates :staff_member, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :name, :code, :muffler_front, presence: true
   belongs_to :staff_member
+  has_many :main_products
 
 
   mount_uploader :muffler_front,  MufflerFrontUploader
