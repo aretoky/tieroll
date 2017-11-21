@@ -13,6 +13,7 @@ class Staff::ItemController < Staff::Base
     # binding.pry
     # item = select_model.where(staff_member: @current_staff.id, code: params[:product_code])
     # ↑の方法だと一発で取得できるがインスタンスの型がActiveRecord_Relationになっていて、編集フォームに渡すのに不都合だと思うから少し遅くなりそうだけど↓にしてみる？
+    # select_model = controllers/concerns/how_model
     items = select_model.where(staff_member: @current_staff.id)
     item = items.find_by(code: params[:product_code])
     if item
