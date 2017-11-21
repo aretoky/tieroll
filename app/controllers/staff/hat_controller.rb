@@ -29,6 +29,7 @@ class Staff::HatController < Staff::Base
   end
 
   def update
+    binding.pry
     if @item.invalid?
       render :edit, alert: '確認してね'
     elsif @item.update!(hat_params)
