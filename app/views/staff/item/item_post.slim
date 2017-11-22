@@ -1,56 +1,130 @@
 = render 'staff/drawer'
 .staff-cont 
   h1 アイテムを投稿する
-    
-    
-  table.pos
-    thead
-      tr 
-        th 
-        img src='assets/hat_icon.png'
-    tbody
-      tr 
-        td 
-        
-  .items
+  .item_post
+    ul
+      li
+      = link_to(image_tag('hat_icon.png'),:new_staff_hat)
+      li 
+      = link_to '帽子を登録', :new_staff_hat
+      
+  .item_post
     ul 
-      / li 
-      /   = link_to 'コーデを登録する', :new_staff_marchandise
+      li  
+      = link_to(image_tag('earmuff_icon.png'), :new_staff_ear_muffler)
       li 
-        = link_to '帽子を登録', :new_staff_hat
+      = link_to 'イヤーマフラーを登録', :new_staff_ear_muffler
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('tie_icon.png'), :new_staff_tie)
       li 
-        = link_to 'イヤーマフラーを登録', :new_staff_ear_muffler
+      = link_to 'ネクタイを登録', :new_staff_tie
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('muffler_icon.png'), :new_staff_muffler)
       li 
-        = link_to 'ネクタイを登録', :new_staff_tie
+      = link_to 'マフラーを登録', :new_staff_muffler
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('tie_pin_icon.jpeg'), :new_staff_tie_pin)
       li 
-        = link_to 'マフラーを登録', :new_staff_muffler
+      = link_to 'タイピンを登録', :new_staff_tie_pin
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('shurt_icon.png'), :new_staff_shurt)
       li 
-        = link_to 'タイピンを登録', :new_staff_tie_pin
-      li
-        = link_to 'シャツを登録', :new_staff_shurt
+      = link_to 'シャツを登録', :new_staff_shurt
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('knit_icon.png'), :new_staff_knit)
       li 
-        = link_to 'ニット/セーターを登録', :new_staff_knit
+      = link_to 'ニット/セーターを登録', :new_staff_knit
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('vest_icon.png'), :new_staff_vest)
       li 
-        = link_to 'ベストを登録', :new_staff_vest
+      = link_to 'ベストを登録', :new_staff_vest
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('jacket_icon.png'), :new_staff_jacket)
       li 
-        = link_to 'ジャケットを登録', :new_staff_jacket
+      = link_to 'ジャケットを登録', :new_staff_jacket
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('coat_icon.png'), :new_staff_coat)
       li 
-        = link_to 'コートを登録', :new_staff_coat
+      = link_to 'コートを登録', :new_staff_coat
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('chief_icon.png'), :new_staff_pocket_chief)
       li 
-        = link_to 'チーフを登録', :new_staff_pocket_chief
+      = link_to 'チーフを登録', :new_staff_pocket_chief
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('cuff_icon.png'), :new_staff_cuff_link)
       li 
-        = link_to 'カフリンクスを登録', :new_staff_cuff_link
+      = link_to 'カフリンクスを登録', :new_staff_cuff_link
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('lapel_icon.jpeg'), :new_staff_lapel_pin)
       li 
-        = link_to 'ラペルピンを登録', :new_staff_lapel_pin
+      = link_to 'ラペルピンを登録', :new_staff_lapel_pin
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('glove_icon.png'), :new_staff_glove)
       li 
-        = link_to '手袋を登録', :new_staff_glove  
-      li       
-        = link_to 'パンツを登録', :new_staff_pant
+      = link_to '手袋を登録', :new_staff_glove
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('pants_icon.png'), :new_staff_pant)
       li 
-        = link_to 'ベルトを登録', :new_staff_belt
+      = link_to 'パンツを登録', :new_staff_pant
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('belt_icon.png'), :new_staff_belt)
       li 
-        = link_to 'ソックスを登録', :new_staff_sock
+      = link_to 'ベルトを登録', :new_staff_belt
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('socks_icon.png'), :new_staff_sock)
       li 
-        = link_to 'シューズを登録', :new_staff_shoe
-      li
-        = link_to 'その他アイテム', :new_staff_other
+      = link_to 'ソックスを登録', :new_staff_sock
+      
+  .item_post
+    ul 
+      li  
+      = link_to(image_tag('shoes_icon.jpeg'), :new_staff_shoe)
+      li 
+      = link_to 'シューズを登録', :new_staff_shoe
+
+  

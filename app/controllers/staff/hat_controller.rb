@@ -8,7 +8,7 @@ class Staff::HatController < Staff::Base
   end
 
   def new
-    @hat = Marchandise.new
+    @hat = Hat.new
   end
 
   def confirm
