@@ -1,8 +1,8 @@
 class TieNeck <ApplicationRecord
   validates :staff_member, :name, :code, :tie_one, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
-  has_many :main_products
-
+  has_many :machandises
+  
 
   mount_uploader :tie_one,     TieOneUploader
   mount_uploader :tie_two,     TieTwoUploader

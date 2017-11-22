@@ -1,7 +1,7 @@
 class Pant < ApplicationRecord
   validates :staff_member, :name, :code, :p_front, :p_side, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
-  has_many :main_products
+  has_many :machandises
 
 
   mount_uploader :p_front,        PFrontUploader
