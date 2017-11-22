@@ -1,7 +1,7 @@
 class Gant < ApplicationRecord
   validates :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, :name, :code, :glove_front, presence: true
   belongs_to :staff_member
-  has_many :main_products
+  has_many :machandises
 
   mount_uploader :glove_front,  GloveFrontUploader
   mount_uploader :glove_back,   GloveBackUploader

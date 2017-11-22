@@ -1,7 +1,7 @@
 = render 'staff/drawer'
 .staff-cont
   h1 main_product_create_form
-  = form_with model: [:staff, @product], url: {action: :confirm}, html: {multipart: true}, local: true do |f|
+  = form_with model: [:staff, @product], url: {action: :create}, html: {multipart: true}, local: true do |f|
     .product_form.required
       = f.label ''
       = f.file_field :product_face, required: true
@@ -14,9 +14,9 @@
       = f.label 'ポイント'
       = f.text_area :description, placeholder: 'コーデの良さ、ポイントなどのアピール'
     
-    .product_form.required
-      = f.label 'シーン'
-      = f.select 'scene', select_tag MainProduct::PRODUCT_SCENE, prompt: '選んでね'
+    / .product_form.required
+    /   = f.label 'シーン'
+    /   = f.select 'scene', select_tag(MainProduct::PRODUCT_SCENE), {prompt: '選んでね'}
 
     .product_form.required
       = f.label '季節'
@@ -86,11 +86,11 @@
       = f.label 'ベルト'
       = f.text_field :belt
       
-    .product_form.ple
+    .product_form.ple.required
       = f.label '靴下'
       = f.text_field :sock
       
-    .product_form.ple
+    .product_form.ple.required
       = f.label '靴'
       = f.text_field :shoe
       

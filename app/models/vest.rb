@@ -1,7 +1,7 @@
 class Vest < ApplicationRecord
   validates :staff_member, :name, :code, :v_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
-  has_many :main_products
+  has_many :machandises
 
 
   mount_uploader :v_front,            VFrontUploader

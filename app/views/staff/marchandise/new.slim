@@ -1,0 +1,102 @@
+/ = render 'staff/drawer'
+/ .staff-cont
+/   h1 marchandise_create_form
+/   = form_with model: [:staff, @marchandise], url: {action: :create}, html: {multipart: true}, local: true do |f|
+/     .product_form.required
+/       = f.label ''
+/       = f.file_field :product_face, required: true
+/       
+/     .product_form.required
+/       = f.label 'コーディネート識別コード'
+/       = f.text_field :code, required: true
+/     
+/     .product_form.required
+/       = f.label 'ポイント'
+/       = f.text_area :description, placeholder: 'コーデの良さ、ポイントなどのアピール'
+/     
+/     / .product_form.required
+/     /   = f.label 'シーン'
+/     /   = f.select 'scene', select_tag(MainProduct::PRODUCT_SCENE), {prompt: '選んでね'}
+/   
+/     .product_form.required
+/       = f.label '季節'
+/       = f.collection_select :season, Season.all, :id, :product_season, prompt: "選んでね"
+/   
+/     .product_form.ple
+/       = f.label '帽子'
+/       = f.text_field :hat
+/       
+/     .product_form.ple
+/       = f.label 'イヤーマフラー'
+/       = f.text_field :ear_muffler
+/       
+/     .product_form.ple
+/       = f.label 'ネクタイ'
+/       = f.text_field :tie_neck
+/       
+/     .product_form.ple
+/       = f.label 'マフラー'
+/       = f.text_field :muffler
+/       
+/     .product_form.ple
+/       = f.label 'タイピン'
+/       = f.text_field :tie_pin
+/       
+/     .product_form.ple.required
+/       = f.label 'シャツ'
+/       = f.text_field :shurt, required: true
+/       
+/     .product_form.ple
+/       = f.label 'ニット/セーター'
+/       = f.text_field :knit
+/       
+/     .product_form.ple
+/       = f.label 'ベスト'
+/       = f.text_field :vest
+/       
+/     .product_form.ple
+/       = f.label 'ジャケット'
+/       = f.text_field :jacket
+/       
+/     .product_form.ple
+/       = f.label 'コート'
+/       = f.text_field :coat
+/       
+/     .product_form.ple
+/       = f.label 'チーフ'
+/       = f.text_field :pocket_chief
+/       
+/     .product_form.ple
+/       = f.label 'カフリンクス'
+/       = f.text_field :cuff_link
+/       
+/     .product_form.ple
+/       = f.label 'ラペルピン'
+/       = f.text_field :lapel_pin
+/       
+/     .product_form.ple
+/       = f.label '手袋'
+/       = f.text_field :gant
+/       
+/     .product_form.ple.required
+/       = f.label 'パンツ'
+/       = f.text_field :pant, required: true
+/       
+/     .product_form.ple
+/       = f.label 'ベルト'
+/       = f.text_field :belt
+/       
+/     .product_form.ple.required
+/       = f.label '靴下'
+/       = f.text_field :sock
+/       
+/     .product_form.ple.required
+/       = f.label '靴'
+/       = f.text_field :shoe
+/       
+/     .product_form.ple
+/       = f.label 'その他'
+/       = f.text_field :other
+/     
+/     .product_submit
+/       = f.submit '確認'

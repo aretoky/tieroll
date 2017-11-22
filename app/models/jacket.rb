@@ -1,7 +1,7 @@
 class Jacket < ApplicationRecord
   validates :staff_member, :name, :code, :j_front, :description, :raw_materials, :price, :size, :color, :pattern, :season, :scene, presence: true
   belongs_to :staff_member
-  has_many :main_products
+  has_many :machandises
 
   # cache確認時の簡易的な検証
   # validates :j_front, :jacket_name, presence: true
