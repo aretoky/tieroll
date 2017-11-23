@@ -3,6 +3,13 @@ class MufflerFringeUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
+
+  process resize_to_fit: [700, 700]
+
+  def extension_whitelist
+    %w(jpg jpeg png)
+  end
 
   # Choose what kind of storage to use for this uploader:
   storage :file

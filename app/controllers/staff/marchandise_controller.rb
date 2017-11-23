@@ -2,7 +2,7 @@ class Staff::MarchandiseController < Staff::Base
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
 
   def new
-    # @marchandise = Marchandise.new
+    @maerchandise = Marchandise.new
   end
 
   def confirm
