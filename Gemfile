@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'slim-rails'
+gem 'jquery-rails'
 
 # 画像系
 gem 'carrierwave'
