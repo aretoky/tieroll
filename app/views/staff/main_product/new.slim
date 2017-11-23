@@ -3,7 +3,7 @@
   h1 main_product_create_form
   = form_with model: [:staff, @product], url: {action: :create}, html: {multipart: true}, local: true do |f|
     .product_form.required
-      = f.label ''
+      = f.label 'a'
       = f.file_field :product_face, required: true
       
     .product_form.required

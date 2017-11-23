@@ -2,10 +2,10 @@ class Staff::MainProductController < Staff::Base
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
 
   def new
-    binding.pry
+    # binding.pry
     @product = MainProduct.new
-    binding.pry
-    
+    # binding.pry
+
   end
 
   def confirm
