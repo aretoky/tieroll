@@ -1,5 +1,6 @@
-/ = render 'staff/drawer'
-/ .staff-cont
+= render 'staff/drawer'
+.staff-cont
+  h1 対応中
 /   h1 marchandise_create_form
 /   = form_with model: [:staff, @marchandise], url: {action: :create}, html: {multipart: true}, local: true do |f|
 /     .product_form.required
