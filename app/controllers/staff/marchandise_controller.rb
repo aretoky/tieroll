@@ -2,15 +2,11 @@ class Staff::MarchandiseController < Staff::Base
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
 
   def new
-    # binding.pry
-    @marchandise = Marchandise.new
-    # .scrub('?').chomp.split("\t")
-    # @marchandise = @marchandise.encoding
-    # binding.pry
+    # @marchandise = Marchandise.new
   end
 
   def confirm
-    render :new if @marchandise.invalid?
+    render :new, alert: "編集してね" if @marchandise.invalid?
   end
 
   def create
