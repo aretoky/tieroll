@@ -21,10 +21,10 @@ class CreateMarchandises < ActiveRecord::Migration[5.1]
       t.references  :tie_neck,      foreign_key: true
       t.references  :tie_pin,       foreign_key: true
       t.references  :vest,          foreign_key: true
+      t.integer     :product_scene, foreign_key: true
+      t.integer     :season,        foreign_key: true
       t.string      :product_face
       t.string      :code
-      t.integer     :scene
-      t.integer     :season
       t.text        :description
       t.integer     :price
 

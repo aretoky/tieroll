@@ -1,0 +1,2 @@
+class ProductScene < ApplicationRecord
+end

@@ -24,6 +24,6 @@ class Marchandise < ApplicationRecord
   belongs_to :other
 
   mount_uploader :product_face, ProductFaceUploader
+  # PRODUCT_SCENE = {'ビジネス': 'Business', 'ビジカジ': 'Office_casual', '休日': 'Holiday', 'デート': 'Date', 'パーティー/お呼ばれ': 'Party' '結婚式': 'Wedding'}
 
-  # PRODUCT_SCENE = {ビジネス: 'Business', ビジカジ: 'Office_casual', 休日: 'Holiday', デート: 'Date', 'パーティー/お呼ばれ': 'Party' 結婚式: 'Wedding'}
 end

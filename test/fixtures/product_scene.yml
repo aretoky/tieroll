@@ -1,0 +1,23 @@
+product_scene1:
+  id: 1
+  marchandise_scene: Business
+
+product_scene2:
+  id: 2
+  marchandise_scene: Office_Casual
+
+product_scene3:
+  id: 3
+  marchandise_scene: Holiday
+
+product_scene4:
+  id: 4
+  marchandise_scene: Date
+
+product_scene5:
+  id: 5
+  marchandise_scene: Party
+
+product_scene6:
+  id: 6
+  marchandise_scene: Wedding
