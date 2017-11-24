@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121105303) do
+ActiveRecord::Schema.define(version: 20171123235225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -280,10 +280,10 @@ ActiveRecord::Schema.define(version: 20171121105303) do
     t.bigint "tie_neck_id"
     t.bigint "tie_pin_id"
     t.bigint "vest_id"
+    t.integer "product_scene"
+    t.integer "season"
     t.string "product_face"
     t.string "code"
-    t.integer "scene"
-    t.integer "season"
     t.text "description"
     t.integer "price"
     t.datetime "created_at", null: false
@@ -405,6 +405,12 @@ ActiveRecord::Schema.define(version: 20171121105303) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["staff_member_id"], name: "index_pocket_chiefs_on_staff_member_id"
+  end
+
+  create_table "product_scenes", force: :cascade do |t|
+    t.string "marchandise_scene"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "scenes", force: :cascade do |t|
