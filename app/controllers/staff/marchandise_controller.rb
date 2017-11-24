@@ -1,4 +1,6 @@
 class Staff::MarchandiseController < Staff::Base
+  include SearchItem #Concern
+
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
   before_action :set_marchan, only: %i(new edit)
 
@@ -11,6 +13,8 @@ class Staff::MarchandiseController < Staff::Base
   end
 
   def create
+    binding.pry
+
     @marchandise = @current_staff.marchandises.build(marchandise_params)
     if params[:back]
       render :new, notice: "編集してね"
@@ -32,7 +36,7 @@ class Staff::MarchandiseController < Staff::Base
 
   private
   def marchandise_params
-    params.require(:main_product).permit(:belt, :coat, :cuff_link, :ear_muffler, :gant, :hat, :jacket, :knit, :lapel_pin, :muffler, :other, :pant, :shoe, :shurt, :sock, :tie_neck, :tie_pin, :vest, :product_face, :code, :scene, :season, :description)
+    params.require(:main_product).permit(:product_face, :code, :product_scene, :season, :description)
   end
 
   def set_marchan
