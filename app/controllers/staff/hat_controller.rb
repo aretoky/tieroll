@@ -3,6 +3,8 @@ class Staff::HatController < Staff::Base
 
   before_action :set_hat, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_label, only: %i(new, edit)
+
   def index
     @hats = Hat.where(staff_member: @current_staff.id)
   end

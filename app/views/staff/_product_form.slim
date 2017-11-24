@@ -21,19 +21,24 @@
 .product_form.required
   = common.label "サイズ"
   = common.collection_select :size, Size.all, :id, :product_size, prompt: "選んでね"
+  / = common.select :size, size, prompt: "選んでね"
   
 .product_form.required
   = common.label "色"
   = common.collection_select :color, Color.all, :id, :product_color, prompt: "選んでね"
+  / = common.select :color, color, prompt: "選んでね"
 
 .product_form.required
   = common.label "柄"
   = common.collection_select :pattern, Pattern.all, :id, :product_pattern, prompt: "選んでね"
+  / = common.select :pattern, pattern, prompt: "選んでね"
   
 .product_form.required
   = common.label "季節"
   = common.collection_select :season, Season.all, :id, :product_season, prompt: "選んでね"
+  / = common.select :season, season, prompt: "選んでね"
 
 .product_form.required
   = common.label "シーン"
   = common.collection_select :scene, Scene.all, :id, :product_scene, prompt: "選んでね"
+  / = common.select :scene, scene, prompt: "選んでね"

@@ -26,4 +26,12 @@ class Staff::Base < ApplicationController
       redirect_to :staff_login
     end
   end
+
+  def set_label
+    @season = Season.pluck(:product_season, :id)
+    @scene = Scene.pluck(:product_scene, :id)
+    @size = Size.pluck(:product_size, :id)
+    @color = Color.pluck(:product_color, :id)
+    @pattern = Pattern.pluck(:product_pattern, :id)
+  end
 end
