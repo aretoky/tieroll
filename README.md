@@ -147,7 +147,7 @@ ladys
 
 **商品**
 
-|marchandise登録(未)|
+|marchandiseロジック(未)|
 |:--:|
 |10|
 
