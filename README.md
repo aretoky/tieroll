@@ -104,6 +104,8 @@ ladys
 
 動かすときは`rails db:fixtures:load`してください
 
+寝る前とかには動かずともpushするので気をつけて下さい
+
 
 進捗
 -
