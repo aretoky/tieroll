@@ -2,7 +2,7 @@
 .staff-cont
 
   h1 marchandise_create_form
-  = form_with model: [:staff, @marchandise], url: {action: :create}, html: {multipart: true}, local: true do |f|
+  = form_with model: [:staff, @marchandise], url: {action: :confirm}, method: :post, html: {multipart: true}, local: true do |f|
     .product_form.required
       = f.label '顔面'
       = f.file_field :product_face, required: true
@@ -22,82 +22,133 @@
     .product_form.required
       = f.label 'コーディネートテーマ'
       = f.select :product_scene, @scene, prompt: "選んでね"
-  
-    .product_form
-      = f.label '帽子'
-      = f.text_field :hat_code, placeholder: '帽子の商品コードを入力してね'
       
     .product_form
-      = f.label 'イヤーマフラー'
-      = f.text_field :ear_muffler_code, placeholder: 'イヤーマフラーのの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'ネクタイ'
-      = f.text_field :tie_neck_code, placeholder: 'ネクタイの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'マフラー'
-      = f.text_field :muffler_code, placeholder: 'マフラーの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'タイピン'
-      = f.text_field :tie_pin_code, placeholder: 'タイピンの商品コードを入力してね'
-      
-    .product_form.required
-      = f.label 'シャツ'
-      = f.text_field :shurt_code, placeholder: 'シャツの商品コードを入力してね', required: true
-      
-    .product_form
-      = f.label 'ニット/セーター'
-      = f.text_field :knit_code, placeholder: 'ニット/セーターの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'ベスト'
-      = f.text_field :vest_code, placeholder: 'ベストの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'ジャケット'
-      = f.text_field :jacket_code, placeholder: 'ジャケットの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'コート'
-      = f.text_field :coat_code, placeholder: 'コートの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'チーフ'
-      = f.text_field :pocket_chief_code, placeholder: 'チーフの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'カフリンクス'
-      = f.text_field :cuff_link_code, placeholder: 'カフリンクスの商品コードを入力してね'
-      
-    .product_form
-      = f.label 'ラペルピン'
-      = f.text_field :lapel_pin_code, placeholder: 'ラペルピンの商品コードを入力してね'
-      
-    .product_form
-      = f.label '手袋'
-      = f.text_field :gant_code, placeholder: '手袋の商品コードを入力してね'
-      
-    .product_form.required
-      = f.label 'パンツ'
-      = f.text_field :pant_code, placeholder: 'パンツの商品コードを入力してね', required: true
-      
-    .product_form
-      = f.label 'ベルト'
-      = f.text_field :belt_code, placeholder: 'ベルトの商品コードを入力してね'
-      
-    .product_form.required
-      = f.label '靴下'
-      = f.text_field :sock_code, placeholder: '靴下の商品コードを入力してね', requried: true
-      
-    .product_form.required
-      = f.label '靴'
-      = f.text_field :shoe_code, placeholder: '靴の商品コードを入力してね', required: true
-      
-    .product_form
-      = f.label 'その他'
-      = f.text_field :other_code, placeholder: 'その他の商品コードを入力してね'
+      ul 
+        li 
+          = image_tag 'hat_icon.png'
+        il 
+          = f.text_field :hat_code, placeholder: "帽子の商品コード"
     
+    .product_form
+      ul 
+        li 
+          = image_tag 'earmuff_icon.png'
+        li 
+          = f.text_field :ear_muffler_code, placeholder: "イヤーマフラーの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'tie_icon.png'
+        li 
+          = f.text_field :tie_code, placeholder: "ネクタイの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'muffler_icon.png'
+        li 
+          = f.text_field :muffler_code, placeholder: "マフラーの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'tie_pin_icon'
+        li 
+          = f.text_field :tie_pin_code, placeholder: "タイピンの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'shurt_icon.png'
+        li.required 
+          = f.text_field :shurt_code, placeholder: "シャツの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'knit_icon.png'
+        li 
+          = f.text_field :knit_code, placeholder: "ニット/セーターの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'vest_icon.png'
+        li 
+          = f.text_field :vest_code, placeholder: "ベストの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'jacket_icon.png'
+        li 
+          = f.text_field :jacket_code, placeholder: "ジャケットの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'coat_icon.png'
+        li 
+          = f.text_field :coat_code, placeholder: "コートの商品コード"
+           
+    .product_form
+      ul 
+        li 
+          = image_tag 'chief_icon.png'
+        li 
+          = f.text_field :chief_code, placeholder: "チーフの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'cuff_icon.png'
+        li 
+          = f.text_field :cuff_link_code, placeholder: "カフリンクスの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'lapel_icon.jpeg'
+        li 
+          = f.text_field :lapel_pin_code, placeholder: "ラペルピンの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'glove_icon.png'
+        li 
+          = f.text_field :glove_code, placeholder: "手袋の商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'pants_icon.png'
+        li.required
+          = f.text_field :pant_code, placeholder: "パンツの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'belt_icon.png'
+        li 
+          = f.text_field :belt_code, placeholder: "ベルトの商品コード"
+          
+    .product_form
+      ul 
+        li 
+          = image_tag 'socks_icon.png'
+        li.required
+          = f.text_field :sock_code, placeholder: "靴下の商品コード"
+           
+    .product_form
+      ul 
+        li 
+          = image_tag 'shoes_icon.jpeg'
+        li.required
+          = f.text_field :shoe_code, placeholder: "靴の商品コード"          
+  
+        
     .product_submit
       = f.submit '確認'
