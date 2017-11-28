@@ -3,7 +3,7 @@ module EmailExchange
   extend ActiveSupport::Concern
 
   # emailに含まれる全角スペース、英数などを半角に、前後の空白も除去
-  def normarize_as_email string
+  def normalize_as_email string
     NKF.nkf('-w -Z1', string).strip if email
   end
 end
