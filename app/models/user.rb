@@ -2,7 +2,8 @@ class User < ApplicationRecord
   include EmailExchange
 
   before_validation do
-    self.email = normalize_as_email(email) if email
+    self.email = normalize_as_email(email)
+    self.email = email.downcase if email 
   end
 
 
