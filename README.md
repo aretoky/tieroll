@@ -144,11 +144,12 @@ ladys
 
 **商品**
 
-|marchandiseロジック(未)|
+|marchandise(未)|
 |:--:|
 |10|
 
 **Admin**
+
 |モデル(一時)|
 |:--:|
 |5|
