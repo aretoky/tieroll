@@ -10,22 +10,6 @@ class Staff::MarchandiseController < Staff::Base
 
   def confirm
     @marchandise = @current_staff.marchandises.build(marchandise_params)
-    # set_required_items #SearchItem
-    # set_any_items #SearchItem
-    # input_items #SearchItem
-    if params[:marchandise][:shurt_code]
-      # shurts = Shurt.where(staff_member: @current_staff.id)
-      # shurt = shurts.find_by(code: params[:marchandise][:shurt_code])
-      shurt = Shurt.where(staff_member: @current_staff.id, code: params[:marchandise][:shurt_code]).pluck(:id, :s_front, :code).flatten!
-      # binding.pry
-    end
-
-    # shurt.each do |f|
-    #   binding.pry
-    # end
-    @marchandise.shurt = shurt.id
-    # binding.pry
-
     render :new, alert: "編集してね" if @marchandise.invalid?
   end
 
