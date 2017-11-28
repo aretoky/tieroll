@@ -1,8 +1,10 @@
 class Admin < ApplicationRecord
-
-  before_save :email_down, :email_white_space
-
+  include EmailExchange
   has_secure_password
+
+  before_validation do
+    self.email = normalize_as_email(email) if email
+  end 
 
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -18,13 +20,13 @@ class Admin < ApplicationRecord
 
 
   protected
-  def email_down
-    self.email = email.downcase
-  end
-
-  def email_white_space
-    self.email = email.strip
-    self.email = email.gsub(" ", "")
-  end
+  # def email_down
+  #   self.email = email.downcase
+  # end
+  #
+  # def email_white_space
+  #   self.email = email.strip
+  #   self.email = email.gsub(" ", "")
+  # end
 
 end
