@@ -4,7 +4,7 @@ class Admin < ApplicationRecord
 
   before_validation do
     self.email = normalize_as_email(email) if email
-  end 
+  end
 
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
