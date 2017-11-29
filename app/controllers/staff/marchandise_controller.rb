@@ -18,11 +18,6 @@ class Staff::MarchandiseController < Staff::Base
     @marchandise = @current_staff.marchandises.build(marchandise_params)
     if params[:back]
       render :new, notice: "編集してね"
-    # elsif @marchandise && @marchandise.save!
-    #   redirect_to @marchandise, notice: "登録完了"
-    # else
-    #   render :new, alert: "確認してね"
-    # end
     elsif @marchandise #marchandiseがあれば必須アイテムをセットし、その他アイテムをセットし、@marchandiseにアイテムの値段の合計を代入してさらにアイテムのIDを代入する
       if set_required_items
         set_any_items
@@ -38,7 +33,7 @@ class Staff::MarchandiseController < Staff::Base
 
       else  #@marchandiseは存在するが各種カラムの代入が正常に行われなかった時
         render :new, alert: '確認してね'
-      end 
+      end
 
     else #なにはともあれFalseのとき
         binding.pry
