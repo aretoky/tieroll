@@ -23,8 +23,6 @@ class Staff::MarchandiseController < Staff::Base
         set_any_items
         @marchandise.price = set_item_price
         input_items
-        binding.pry
-
         if @marchandise.save! #@marchandiseがあり、その他の入力全ての処理が正常に終了したら
           redirect_to :staff_item_post, notice: '登録完了'
         else
@@ -54,7 +52,7 @@ class Staff::MarchandiseController < Staff::Base
 
   private
   def marchandise_params
-    params.require(:marchandise).permit(:product_face, :code, :product_scene, :season, :description, :shurt)
+    params.require(:marchandise).permit(:product_face, :code, :product_scene, :season, :description)
   end
 
   def set_marchandise_label
