@@ -25,9 +25,9 @@ class Staff::MarchandiseController < Staff::Base
     # end
     elsif @marchandise
       if set_required_items
-        price = set_item_price
-        @marchandise.price = price
-        @marchandise.shurt_id = @shurt[0]
+        set_any_items
+        @marchandise.price = set_item_price
+        input_items
         binding.pry
         render :new
       end

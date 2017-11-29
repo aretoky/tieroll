@@ -1,5 +1,5 @@
 class Marchandise < ApplicationRecord
-  # validates :staff_member, :product_face, :code, :season, :scene, :description, :price, :shurt, :pant, :sock, :shoe, presence: true
+  validates :staff_member, :product_face, :code, :season, :scene, :description, :price, :shurt, :pant, :sock, :shoe, presence: true
   # validates :staff_member, presence: true
 
 

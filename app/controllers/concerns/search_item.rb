@@ -46,6 +46,7 @@ module SearchItem
   end
 
   def set_item_price
+    total_price = 0
     total_price = @shurt[1] + @pant[1] + @socks[1] + @shoes[1]
     total_price += @hat[1] if @hat
     total_price += @ear_muffler[1] if @ear_muffler
@@ -70,25 +71,25 @@ module SearchItem
   def input_items
     # シャツ、パンツ、靴下、靴は必ずあるものとする
     # 先に↑のset_required_itemsを呼ぶこと
-    @marchandise.shurt_id = @shurt[1]
-    @marchandise.pant_id = @pant[1]
-    @marchandise.sock_id = @socks[1]
-    @marchandise.shoe_id = @shoes[1]
+    @marchandise.shurt_id = @shurt[0]
+    @marchandise.pant_id = @pant[0]
+    @marchandise.sock_id = @socks[0]
+    @marchandise.shoe_id = @shoes[0]
 
-    @marchandise.hat_id = @hat[1] if @hat
-    @marchandise.ear_muffler_id = @ear_muffler[1] if @ear_muffler
-    @marchandise.tie_neck_id = @tie[1] if @tie
-    @marchandise.muffler_id = @muffler[1] if @muffler
-    @marchandise.tie_pin_id = @tie_pin[1] if @tie_pin
-    @marchandise.knit_id = @knit[1] if @knit
-    @marchandise.vest_id = @vest[1] if @vest
-    @marchandise.jacket_id = @jacket[1] if @jacket
-    @marchandise.coat_id = @coat[1] if @coat
-    @marchandise.pocket_chief_id = @chief[1] if @chief
-    @marchandise.cuff_link_id = @cuff[1] if @cuff
-    @marchandise.lapel_pin_id = @lapel_pin[1] if @lapel_pin
-    @marchandise.gant_id = @glove[1] if @glove
-    @marchandise.belt_id = @belt[1] if @belt
-    @marchandise.other_id = @other[1] if @other
+    @marchandise.hat_id = @hat[0] if @hat
+    @marchandise.ear_muffler_id = @ear_muffler[0] if @ear_muffler
+    @marchandise.tie_neck_id = @tie[0] if @tie
+    @marchandise.muffler_id = @muffler[0] if @muffler
+    @marchandise.tie_pin_id = @tie_pin[0] if @tie_pin
+    @marchandise.knit_id = @knit[0] if @knit
+    @marchandise.vest_id = @vest[0] if @vest
+    @marchandise.jacket_id = @jacket[0] if @jacket
+    @marchandise.coat_id = @coat[0] if @coat
+    @marchandise.pocket_chief_id = @chief[0] if @chief
+    @marchandise.cuff_link_id = @cuff[0] if @cuff
+    @marchandise.lapel_pin_id = @lapel_pin[0] if @lapel_pin
+    @marchandise.gant_id = @glove[0] if @glove
+    @marchandise.belt_id = @belt[0] if @belt
+    @marchandise.other_id = @other[0] if @other
   end
 end
