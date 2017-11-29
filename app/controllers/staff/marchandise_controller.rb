@@ -1,12 +1,22 @@
 class Staff::MarchandiseController < Staff::Base
   include SearchItem #Concern
 
+
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
   before_action :set_marchandise_label, only: %i(new edit)
+  before_action :set_code, only: %i(edit update destroy)
+
+
+  def index
+    @code = Marchandise.where(staff_member: @current_staff.id)
+    # binding.pry
+  end
+
 
   def new
     @marchandise = Marchandise.new
   end
+
 
   def confirm
     @marchandise = @current_staff.marchandises.build(marchandise_params)
@@ -42,6 +52,7 @@ class Staff::MarchandiseController < Staff::Base
   end
 
   def edit
+    set_required_items
   end
 
   def update
@@ -59,5 +70,13 @@ class Staff::MarchandiseController < Staff::Base
     @season = Season.pluck(:product_season, :id)
     @scene = ProductScene.pluck(:marchandise_scene, :id)
   end
+
+  def set_code
+    @code = Marchandise.find_by(id: params[:id])
+  end
+
+  # def set_required_items
+  #   @shurt = Shurt.find_by(id: @marchandise.shurt)
+  # end
 
 end
