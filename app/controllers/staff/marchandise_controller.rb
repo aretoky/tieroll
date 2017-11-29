@@ -14,16 +14,29 @@ class Staff::MarchandiseController < Staff::Base
   end
 
   def create
-    binding.pry
-
+    # binding.pry
     @marchandise = @current_staff.marchandises.build(marchandise_params)
     if params[:back]
       render :new, notice: "編集してね"
-    elsif @marchandise && @marchandise.save!
-      redirect_to @marchandise, notice: "登録完了"
+    # elsif @marchandise && @marchandise.save!
+    #   redirect_to @marchandise, notice: "登録完了"
+    # else
+    #   render :new, alert: "確認してね"
+    # end
+    elsif @marchandise
+      if set_required_items
+        price = set_item_price
+        @marchandise.price = price
+        @marchandise.shurt_id = @shurt[0]
+        binding.pry
+        render :new
+      end
     else
-      render :new, alert: "確認してね"
+      binding.pry
+
+      render :new
     end
+
   end
 
   def edit

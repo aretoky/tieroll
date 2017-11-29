@@ -2,27 +2,29 @@
 .staff-cont
 
   h1 marchandise_create_form
-  = form_with model: [:staff, @marchandise], url: {action: :confirm}, method: :post, html: {multipart: true}, local: true do |f|
-    .product_form.required
-      = f.label '顔面'
-      = f.file_field :product_face, required: true
-      
-    .product_form.required
-      = f.label 'コーディネート識別コード'
-      = f.text_field :code, required: true
-    
-    .product_form.required
-      = f.label 'ポイント'
-      = f.text_area :description, placeholder: 'コーデの良さ、ポイントなどのアピール', required: true
-  
-    .product_form.required
-      = f.label '季節'
-      = f.select :season, @season, prompt: "選んでね"
-      
-    .product_form.required
-      = f.label 'コーディネートテーマ'
-      = f.select :product_scene, @scene, prompt: "選んでね"
-      
+  = form_with model: [:staff, @marchandise], url: {action: :create}, html: {multipart: true}, local: true do |f|
+    / .product_form.required
+    /   = f.label '顔面'
+    /   = f.file_field :product_face, required: true
+    /   
+    / .product_form.required
+    /   = f.label 'コーディネート識別コード'
+    /   = f.text_field :code, required: true
+    / 
+    / .product_form.required
+    /   = f.label 'ポイント'
+    /   = f.text_area :description, placeholder: 'コーデの良さ、ポイントなどのアピール', required: true
+    / 
+    / .product_form.required
+    /   = f.label '季節'
+    /   / = f.select :season, @season, prompt: "選んでね"
+    /   = f.collection_select :season, Season.all, :id, :product_season, prompt: '選んでね'
+    /   
+    / .product_form.required
+    /   = f.label 'コーディネートテーマ'
+    /   / = f.select :product_scene, @scene, prompt: "選んでね"
+    /   = f.collection_select :product_scene, ProductScene.all, :id, :marchandise_scene, prompt: '選んでね@hat'
+    /   
     .product_form
       ul 
         li 

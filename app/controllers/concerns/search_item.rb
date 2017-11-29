@@ -4,68 +4,91 @@ module SearchItem
 
   # シャツ、パンツ、靴下、靴は必ず存在する
   def set_required_items
-    @shurt = Shurt.where(staff_member: @current_staff.id, code: params[:marchandise][:shurt_code]).pluck(:id, :s_front, :code)
-    @pant = Pant.where(staff_member: @current_staff.id, code: params[:marchandise][:pant_code])
-    @socks = Sock.where(staff_member: @current_staff.id, code: params[:marchandise][:sock_code])
-    @shoes = Shoe.where(staff_member: @current_staff.id, code: params[:marchandise][:shoe_code])
+    @shurt = Shurt.where(staff_member: @current_staff.id, code: params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten!
+    # @shurt = Shurt.where('staff_member = :staff AND code = :shurt_code', @current_staff.id, params[:marchandise][:shurt_code])
+    @pant = Pant.where(staff_member: @current_staff.id, code: params[:marchandise][:pant_code]).pluck(:id, :price, :p_side).flatten!
+    @socks = Sock.where(staff_member: @current_staff.id, code: params[:marchandise][:sock_code]).pluck(:id, :price, :socks_one).flatten!
+    @shoes = Shoe.where(staff_member: @current_staff.id, code: params[:marchandise][:shoe_code]).pluck(:id, :price, :shoe_front).flatten!
   end
 
   # 入力があれば引っ張ってくる
+  # 中身は1つのレコードしか入らないのでflattenして1次元の配列に変換してアクセスしやすくする
   def set_any_items
-    @hat = Hat.where(staff_member: @current_staff.id, code: params[:marchandise][:hat_code]) if params[:marchandise][:hat_code]
+    @hat = Hat.where(staff_member: @current_staff.id, code: params[:marchandise][:hat_code]).pluck(:id, :price, :hat_front).flatten! if params[:marchandise][:hat_code]
 
-    @ear_muffler = EarMuffler.where(staff_member: @current_staff.id, code: params[:marchandise][:ear_muffler_code]) if params[:marchandise][:ear_muffler_code]
+    @ear_muffler = EarMuffler.where(staff_member: @current_staff.id, code: params[:marchandise][:ear_muffler_code]).pluck(:id, :price, :ear_muffler_front).flatten! if params[:marchandise][:ear_muffler_code]
 
-    @tie = TieNeck.where(staff_member: @current_staff.id, code: params[:marchandise][:tie_code]) if params[:marchandise][:tie_code]
+    @tie = TieNeck.where(staff_member: @current_staff.id, code: params[:marchandise][:tie_code]).pluck(:id, :price, :tie_one).flatten! if params[:marchandise][:tie_code]
 
-    @muffler = Muffler.where(staff_member: @current_staff.id, code: params[:marchandise][:muffler_code]) if params[:marchandise][:muffler_code]
+    @muffler = Muffler.where(staff_member: @current_staff.id, code: params[:marchandise][:muffler_code]).pluck(:id, :price, :muffler_front).flatten! if params[:marchandise][:muffler_code]
 
-    @tie_pin = TiePin.where(staff_member: @current_staff.id, code: params[:marchandise][:tie_pin_code]) if params[:marchandise][:tie_pin_code]
+    @tie_pin = TiePin.where(staff_member: @current_staff.id, code: params[:marchandise][:tie_pin_code]).pluck(:id, :price, :tie_pin_one).flatten! if params[:marchandise][:tie_pin_code]
 
-    @knit = Knit.where(staff_member: @current_staff.id, code: params[:marchandise][:knit_code]) if params[:marchandise][:knit_code]
+    @knit = Knit.where(staff_member: @current_staff.id, code: params[:marchandise][:knit_code]).pluck(:id, :price, :knit_front).flatten! if params[:marchandise][:knit_code]
 
-    @vest = Vest.where(staff_member: @current_staff.id, code: params[:marchandise][:vest_code]) if params[:marchandise][:vest_code]
+    @vest = Vest.where(staff_member: @current_staff.id, code: params[:marchandise][:vest_code]).pluck(:id, :price, :v_front).flatten! if params[:marchandise][:vest_code]
 
-    @jacket = Jacket.where(staff_member: @current_staff.id, code: params[:marchandise][:jacket_code]) if params[:marchandise][:jacket_code]
+    @jacket = Jacket.where(staff_member: @current_staff.id, code: params[:marchandise][:jacket_code]).pluck(:id, :price, :j_front).flatten! if params[:marchandise][:jacket_code]
 
-    @coat = Coat.where(staff_member: @current_staff.id, code: params[:marchandise][:coat_code]) if params[:marchandise][:coat_code]
+    @coat = Coat.where(staff_member: @current_staff.id, code: params[:marchandise][:coat_code]).pluck(:id, :price, :coat_front).flatten! if params[:marchandise][:coat_code]
 
-    @chief = PocketChief.where(staff_member: @current_staff.id, code: params[:marchandise][:chief_code]) if params[:marchandise][:chief_code]
+    @chief = PocketChief.where(staff_member: @current_staff.id, code: params[:marchandise][:chief_code]).pluck(:id, :price, :chief_one).flatten! if params[:marchandise][:chief_code]
 
-    @cuff = CuffLink.where(staff_member: @current_staff.id, code: params[:marchandise][:cuff_link_code]).pluck(:id, :price, :cuff_link_one) if params[:marchandise][:cuff_link_code]
+    @cuff = CuffLink.where(staff_member: @current_staff.id, code: params[:marchandise][:cuff_link_code]).pluck(:id, :price, :cuff_link_one).pluck(:id, :price, :cuff_link_one).flatten! if params[:marchandise][:cuff_link_code]
 
-    @lapel_pin = LapelPin.where(staff_member: @current_staff.id, code: params[:marchandise][:lapel_pin_code]) if params[:marchandise][:lapel_pin_code]
+    @lapel_pin = LapelPin.where(staff_member: @current_staff.id, code: params[:marchandise][:lapel_pin_code]).pluck(:id, :price, :lapel_pin_one).flatten! if params[:marchandise][:lapel_pin_code]
 
-    @glove = Gant.where(staff_member: @current_staff.id, code: params[:marchandise][:glove_code]) if params[:marchandise][:glove_code]
+    @glove = Gant.where(staff_member: @current_staff.id, code: params[:marchandise][:glove_code]).pluck(:id, :price, :glove_front).flatten! if params[:marchandise][:glove_code]
 
-    @belt = Belt.where(staff_member: @current_staff.id, code: params[:marchandise][:belt_code]) if params[:marchandise][:belt_code]
+    @belt = Belt.where(staff_member: @current_staff.id, code: params[:marchandise][:belt_code]).pluck(:id, :price, :belt_one).flatten! if params[:marchandise][:belt_code]
 
-    @other = Other.where(staff_member: @current_staff.id, code: params[:marchandise][:other_code]) if params[:marchandise][:other_code]
+    @other = Other.where(staff_member: @current_staff.id, code: params[:marchandise][:other_code]).pluck(:id, :price, :other_one).flatten! if params[:marchandise][:other_code]
   end
+
+  def set_item_price
+    total_price = @shurt[1] + @pant[1] + @socks[1] + @shoes[1]
+    total_price += @hat[1] if @hat
+    total_price += @ear_muffler[1] if @ear_muffler
+    total_price += @tie[1] if @tie
+    total_price += @muffler[1] if @muffler
+    total_price += @tie_pin[1] if @tie_pin
+    total_price += @knit[1] if @knit
+    total_price += @vest[1] if @vest
+    total_price += @jacket[1] if @jacket
+    total_price += @coat[1] if @coat
+    total_price += @chief[1] if @chief
+    total_price += @cuff[1] if @cuff
+    total_price += @lapel_pin if @lapel_pin
+    total_price += @glove[1] if @glove
+    total_price += @belt[1] if @belt
+    total_price += @other[1] if @other
+    return total_price
+  end
+
 
   #TODO もっと簡単に書けそう
   def input_items
     # シャツ、パンツ、靴下、靴は必ずあるものとする
     # 先に↑のset_required_itemsを呼ぶこと
-    @marchandise.shurt = @shurt.id
-    @marchandise.pant = @pant.id
-    @marchandise.sock = @socks.id
-    @marchandise.shoe = @shoes.id
+    @marchandise.shurt_id = @shurt[1]
+    @marchandise.pant_id = @pant[1]
+    @marchandise.sock_id = @socks[1]
+    @marchandise.shoe_id = @shoes[1]
 
-    @marchandise.hat = @hat.id if @hat
-    @marchandise.ear_muffler = @ear_muffler.id if @ear_muffler
-    @marchandise.tie_neck = @tie.id if @tie
-    @marchandise.muffler = @muffler.id if @muffler
-    @marchandise.tie_pin = @tie_pin.id if @tie_pin
-    @marchandise.knit = @knit.id if @knit
-    @marchandise.vest = @vest.id if @vest
-    @marchandise.jacket = @jacket.id if @jacket
-    @marchandise.coat = @coat.id if @coat
-    @marchandise.pocket_chief = @chief if @chief
-    @marchandise.cuff_link = @cuff.id if @cuff
-    @marchandise.lapel_pin = @lapel_pin.id if @lapel_pin
-    @marchandise.gant = @glove.id if @glove
-    @marchandise.belt = @belt.id if @belt
-    @marchandise.other = @other.id if @other
+    @marchandise.hat_id = @hat[1] if @hat
+    @marchandise.ear_muffler_id = @ear_muffler[1] if @ear_muffler
+    @marchandise.tie_neck_id = @tie[1] if @tie
+    @marchandise.muffler_id = @muffler[1] if @muffler
+    @marchandise.tie_pin_id = @tie_pin[1] if @tie_pin
+    @marchandise.knit_id = @knit[1] if @knit
+    @marchandise.vest_id = @vest[1] if @vest
+    @marchandise.jacket_id = @jacket[1] if @jacket
+    @marchandise.coat_id = @coat[1] if @coat
+    @marchandise.pocket_chief_id = @chief[1] if @chief
+    @marchandise.cuff_link_id = @cuff[1] if @cuff
+    @marchandise.lapel_pin_id = @lapel_pin[1] if @lapel_pin
+    @marchandise.gant_id = @glove[1] if @glove
+    @marchandise.belt_id = @belt[1] if @belt
+    @marchandise.other_id = @other[1] if @other
   end
 end
