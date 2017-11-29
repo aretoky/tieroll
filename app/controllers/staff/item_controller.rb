@@ -6,7 +6,7 @@ class Staff::ItemController < Staff::Base
   end
 
   def item_edit
-    @how = {帽子: "hat", イヤーマフラー: "ear_muffler", ネクタイ: "tie", マフラー: "muffler", タイピン: "tie_pin", シャツ: "shurt", 'ニット/セーター': "knit", ベスト: "vest", ジャケット: "jacket", コート: "coat", チーフ: "pocket_chief", カフリンクス: "cuff_link", ラペルピン: "lapel_pin", 手袋: "glove", パンツ: "pant", ベルト: "belt", 靴下: "sock", 靴: "shoe", その他: "other"}
+    @how = {コーディネート: "marchandise" ,帽子: "hat", イヤーマフラー: "ear_muffler", ネクタイ: "tie", マフラー: "muffler", タイピン: "tie_pin", シャツ: "shurt", 'ニット/セーター': "knit", ベスト: "vest", ジャケット: "jacket", コート: "coat", チーフ: "pocket_chief", カフリンクス: "cuff_link", ラペルピン: "lapel_pin", 手袋: "glove", パンツ: "pant", ベルト: "belt", 靴下: "sock", 靴: "shoe", その他: "other"}
   end
 
   def search_of_item

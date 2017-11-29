@@ -4,6 +4,8 @@ module HowModel
   private
   def select_model
     case params[:item]
+    when 'marchandise'
+      return Marchandise
     when 'belt'
       return Belt
     when 'coat'
