@@ -1,5 +1,6 @@
 class Staff::MarchandiseController < Staff::Base
   include SearchItem #Concern
+  include MarchandiseEdit
 
 
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
@@ -52,7 +53,11 @@ class Staff::MarchandiseController < Staff::Base
   end
 
   def edit
-    set_required_items
+    # set_required_items
+    # binding.pry
+    # @shurt = Shurt.find_by(id: @code.shurt)
+    set_items_photos
+    binding.pry
   end
 
   def update
