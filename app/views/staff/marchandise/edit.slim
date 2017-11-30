@@ -37,29 +37,45 @@
       
       .product_form
         ul 
-          li 
-            = image_tag 'earmuff_icon.png'
+          - if @code.ear_muffler
+            li 
+              = image_tag @ear_muffler.ear_muffler_front
+          - else 
+            li 
+              = image_tag 'earmuff_icon.png'
           li 
             = f.text_field :ear_muffler_code, placeholder: "イヤーマフラーの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'tie_icon.png'
+          - if @code.tie_neck
+            li 
+              = image_tag @tie.tie_one
+          - else 
+            li 
+              = image_tag 'tie_icon.png'
           li 
             = f.text_field :tie_code, placeholder: "ネクタイの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'muffler_icon.png'
+          - if @code.muffler
+            li 
+              = image_tag @muffler.muffler_front
+          - else 
+            li 
+              = image_tag 'muffler_icon.png'
           li 
             = f.text_field :muffler_code, placeholder: "マフラーの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'tie_pin_icon'
+          - if @code.tie_pin
+            li 
+              = image_tag @tie_pin.tie_pin_one
+          - else 
+            li 
+              = image_tag 'tie_pin_icon'
           li 
             = f.text_field :tie_pin_code, placeholder: "タイピンの商品コード"
             
@@ -72,57 +88,89 @@
             
       .product_form
         ul 
-          li 
-            = image_tag 'knit_icon.png'
+          - if @code.knit
+            li 
+              = image_tag @knit.knit_front
+          - else
+            li 
+              = image_tag 'knit_icon.png'
           li 
             = f.text_field :knit_code, placeholder: "ニット/セーターの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'vest_icon.png'
+          - if @code.vest
+            li 
+              = image_tag @vest.v_front
+          - else 
+            li 
+              = image_tag 'vest_icon.png'
           li 
             = f.text_field :vest_code, placeholder: "ベストの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'jacket_icon.png'
+          - if @code.jacket
+            li
+              = image_tag @jacket.j_front
+          - else 
+            li 
+              = image_tag 'jacket_icon.png'
           li 
             = f.text_field :jacket_code, placeholder: "ジャケットの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'coat_icon.png'
+          - if @code.coat 
+            li 
+              = image_tag @coat.coat_front
+          - else 
+            li 
+              = image_tag 'coat_icon.png'
           li 
             = f.text_field :coat_code, placeholder: "コートの商品コード"
              
       .product_form
         ul 
-          li 
-            = image_tag 'chief_icon.png'
+          - if @code.pocket_chief
+            li 
+              = image_tag @chief.chief_one
+          - else 
+            li 
+              = image_tag 'chief_icon.png'
           li 
             = f.text_field :chief_code, placeholder: "チーフの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'cuff_icon.png'
+          - if @code.cuff_link
+            li 
+              = image_tag @cuff.cuff_link_one
+          - else 
+            li 
+              = image_tag 'cuff_icon.png'
           li 
             = f.text_field :cuff_link_code, placeholder: "カフリンクスの商品コード"
             
       .product_form
         ul 
-          li 
-            = image_tag 'lapel_icon.jpeg'
+          - if @code.lapel_pin
+            li 
+              = image_tag @lapel_pin.lapel_pin_one
+          - else 
+            li 
+              = image_tag 'lapel_icon.jpeg'
           li 
             = f.text_field :lapel_pin_code, placeholder: "ラペルピンの商品コード"
             
       .product_form
-        ul 
-          li 
-            = image_tag 'glove_icon.png'
+        ul
+          - if @code.gant
+            li 
+              = image_tag @glove.glove_front
+          - else 
+            li 
+              = image_tag 'glove_icon.png'
           li 
             = f.text_field :glove_code, placeholder: "手袋の商品コード"
             
@@ -134,9 +182,13 @@
             = f.text_field :pant_code, placeholder: "パンツの商品コード"
             
       .product_form
-        ul 
-          li 
-            = image_tag 'belt_icon.png'
+        ul
+          - if @code.belt 
+            li 
+              = image_tag @belt.belt_one
+          - else 
+            li 
+              = image_tag 'belt_icon.png'
           li 
             = f.text_field :belt_code, placeholder: "ベルトの商品コード"
             
@@ -153,3 +205,6 @@
             = image_tag @shoes.shoe_front
           li.required
             = f.text_field :shoe_code, placeholder: "靴の商品コード" 
+            
+      .product_submit
+        = f.submit '更新'

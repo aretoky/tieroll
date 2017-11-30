@@ -1,6 +1,7 @@
 module MarchandiseEdit
   extend ActiveSupport::Concern
 
+
   def set_required_items_photos
     # TODO 本当は一回で取り出したいけど今はcarrierwaveの画像ファイルに重複があるからこの方法で実装する
     shurts = Shurt.where(staff_member: @current_staff.id)
@@ -17,6 +18,7 @@ module MarchandiseEdit
 
   end
 
+
   def set_any_items_photos
     # @hat = Hat.where(staff_member: @current_staff.id, id: @code.hat).select(:hat_front)
     if @code.hat
@@ -25,7 +27,7 @@ module MarchandiseEdit
     end
 
     if @code.ear_muffler
-      ear_mufflers = Earuffler..where(staff_member: @current_staff.id)
+      ear_mufflers = EarMuffler.where(staff_member: @current_staff.id)
       @ear_muffler = ear_mufflers.find_by(id: @code.ear_muffler_id)
     end
 
@@ -56,7 +58,7 @@ module MarchandiseEdit
 
     if @code.jacket
       jackets = Jacket.where(staff_member: @current_staff.id)
-      @jacket.find_by(id: @code.jacket_id)
+      @jacket = jackets.find_by(id: @code.jacket_id)
     end
 
     if @code.coat
@@ -79,9 +81,9 @@ module MarchandiseEdit
       @lapel_pin = lapins.find_by(id: @code.lapel_pin_id)
     end
 
-    if @code.glove
+    if @code.gant
       gloves = Gant.where(staff_member: @current_staff.id)
-      @gloe = gloves.find_by(id: @code.gant_id)
+      @glove = gloves.find_by(id: @code.gant_id)
     end
 
     if @code.belt

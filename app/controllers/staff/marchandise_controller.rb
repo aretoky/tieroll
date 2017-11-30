@@ -23,6 +23,7 @@ class Staff::MarchandiseController < Staff::Base
     @marchandise = @current_staff.marchandises.build(marchandise_params)
     render :new, alert: "編集してね" if @marchandise.invalid?
   end
+  
 
   def create
     # binding.pry
@@ -52,6 +53,7 @@ class Staff::MarchandiseController < Staff::Base
 
   end
 
+
   def edit
     # set_required_items
     # binding.pry
@@ -61,25 +63,29 @@ class Staff::MarchandiseController < Staff::Base
     # binding.pry
   end
 
+
   def update
   end
+
 
   def destroy
   end
 
+
   private
-  def marchandise_params
-    params.require(:marchandise).permit(:product_face, :code, :product_scene, :season, :description)
-  end
 
-  def set_marchandise_label
-    @season = Season.pluck(:product_season, :id)
-    @scene = ProductScene.pluck(:marchandise_scene, :id)
-  end
+    def marchandise_params
+      params.require(:marchandise).permit(:product_face, :code, :product_scene, :season, :description)
+    end
 
-  def set_code
-    @code = Marchandise.find_by(id: params[:id])
-  end
+    def set_marchandise_label
+      @season = Season.pluck(:product_season, :id)
+      @scene = ProductScene.pluck(:marchandise_scene, :id)
+    end
+
+    def set_code
+      @code = Marchandise.find_by(id: params[:id])
+    end
 
   # def set_required_items
   #   @shurt = Shurt.find_by(id: @marchandise.shurt)

@@ -2,6 +2,7 @@ module SearchItem
   extend ActiveSupport::Concern
   # XXX input_any_itemsを呼ぶときは先にset_required_itemsを呼ぶ事
 
+
   # シャツ、パンツ、靴下、靴は必ず存在する
   def set_required_items
     # @shurt = Shurt.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten!
@@ -10,6 +11,7 @@ module SearchItem
     @socks = Sock.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:sock_code]).pluck(:id, :price, :socks_one).flatten!
     @shoes = Shoe.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shoe_code]).pluck(:id, :price, :shoe_front).flatten!
   end
+
 
   # 入力があれば引っ張ってくる
   # 中身は1つのレコードしか入らないのでflattenして1次元の配列に変換してアクセスしやすくする
@@ -34,7 +36,7 @@ module SearchItem
 
     @chief = PocketChief.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:chief_code]).pluck(:id, :price, :chief_one).flatten! if params[:marchandise][:chief_code]
 
-    @cuff = CuffLink.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:cuff_link_code]).pluck(:id, :price, :cuff_link_one).pluck(:id, :price, :cuff_link_one).flatten! if params[:marchandise][:cuff_link_code]
+    @cuff = CuffLink.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:cuff_link_code]).pluck(:id, :price, :cuff_link_one).flatten! if params[:marchandise][:cuff_link_code]
 
     @lapel_pin = LapelPin.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:lapel_pin_code]).pluck(:id, :price, :lapel_pin_one).flatten! if params[:marchandise][:lapel_pin_code]
 
@@ -59,7 +61,7 @@ module SearchItem
     total_price += @coat[1] if @coat
     total_price += @chief[1] if @chief
     total_price += @cuff[1] if @cuff
-    total_price += @lapel_pin if @lapel_pin
+    total_price += @lapel_pin[1] if @lapel_pin
     total_price += @glove[1] if @glove
     total_price += @belt[1] if @belt
     total_price += @other[1] if @other
