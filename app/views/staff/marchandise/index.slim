@@ -10,11 +10,11 @@
         th
         th
     tbody
-      - @code.each do |code|
+      - @marchandise.each do |marchandise|
        tr 
-        td = image_tag code.product_face
-        td = code.code
-        td = number_to_currency(code.price, unit: '', precision: 0)
-        td = link_to '編集', edit_staff_marchandise_path(code)
-        td = link_to '詳細', staff_marchandise_path(code)
+        td = image_tag marchandise.product_face
+        td = marchandise.code
+        td = number_to_currency(marchandise.price, unit: '', precision: 0)
+        td = link_to '編集', edit_staff_marchandise_path(marchandise)
+        td = link_to '詳細', staff_marchandise_path(marchandise)
         

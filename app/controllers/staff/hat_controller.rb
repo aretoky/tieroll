@@ -34,7 +34,7 @@ class Staff::HatController < Staff::Base
     binding.pry
     if @item.invalid?
       render :edit, alert: '確認してね'
-    elsif @item.update!(hat_params)
+    elsif @item.update(hat_params)
       redirect_to :staff_hat_index, notice: '完了'
     else
       render :edit, alert: '確認してね'

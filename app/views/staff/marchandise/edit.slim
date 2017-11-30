@@ -2,11 +2,11 @@
 .staff-cont
   .product_edit_form
     h1 code_edit_form
-    = form_with model: [:staff, @code], url: {action: :update}, html: {multipart: true}, local: true do |f|
+    = form_with model: [:staff, @marchandise], url: {action: :update}, html: {multipart: true}, local: true do |f|
       .product_form.required
         = f.label '顔面'
         = f.file_field :product_face
-        = image_tag @code.product_face 
+        = image_tag @marchandise.product_face 
         
       .product_form.required
         = f.label 'コーディネート識別コード'
@@ -26,7 +26,7 @@
       
       .product_form
         ul 
-          - if @code.hat 
+          - if @marchandise.hat 
             li 
               = image_tag @hat.hat_front
           - else 
@@ -37,7 +37,7 @@
       
       .product_form
         ul 
-          - if @code.ear_muffler
+          - if @marchandise.ear_muffler
             li 
               = image_tag @ear_muffler.ear_muffler_front
           - else 
@@ -48,7 +48,7 @@
             
       .product_form
         ul 
-          - if @code.tie_neck
+          - if @marchandise.tie_neck
             li 
               = image_tag @tie.tie_one
           - else 
@@ -59,7 +59,7 @@
             
       .product_form
         ul 
-          - if @code.muffler
+          - if @marchandise.muffler
             li 
               = image_tag @muffler.muffler_front
           - else 
@@ -70,7 +70,7 @@
             
       .product_form
         ul 
-          - if @code.tie_pin
+          - if @marchandise.tie_pin
             li 
               = image_tag @tie_pin.tie_pin_one
           - else 
@@ -88,7 +88,7 @@
             
       .product_form
         ul 
-          - if @code.knit
+          - if @marchandise.knit
             li 
               = image_tag @knit.knit_front
           - else
@@ -99,7 +99,7 @@
             
       .product_form
         ul 
-          - if @code.vest
+          - if @marchandise.vest
             li 
               = image_tag @vest.v_front
           - else 
@@ -110,7 +110,7 @@
             
       .product_form
         ul 
-          - if @code.jacket
+          - if @marchandise.jacket
             li
               = image_tag @jacket.j_front
           - else 
@@ -121,7 +121,7 @@
             
       .product_form
         ul 
-          - if @code.coat 
+          - if @marchandise.coat 
             li 
               = image_tag @coat.coat_front
           - else 
@@ -132,7 +132,7 @@
              
       .product_form
         ul 
-          - if @code.pocket_chief
+          - if @marchandise.pocket_chief
             li 
               = image_tag @chief.chief_one
           - else 
@@ -143,7 +143,7 @@
             
       .product_form
         ul 
-          - if @code.cuff_link
+          - if @marchandise.cuff_link
             li 
               = image_tag @cuff.cuff_link_one
           - else 
@@ -154,7 +154,7 @@
             
       .product_form
         ul 
-          - if @code.lapel_pin
+          - if @marchandise.lapel_pin
             li 
               = image_tag @lapel_pin.lapel_pin_one
           - else 
@@ -165,7 +165,7 @@
             
       .product_form
         ul
-          - if @code.gant
+          - if @marchandise.gant
             li 
               = image_tag @glove.glove_front
           - else 
@@ -183,7 +183,7 @@
             
       .product_form
         ul
-          - if @code.belt 
+          - if @marchandise.belt 
             li 
               = image_tag @belt.belt_one
           - else 

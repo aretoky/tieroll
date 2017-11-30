@@ -5,11 +5,11 @@ class Staff::MarchandiseController < Staff::Base
 
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
   before_action :set_marchandise_label, only: %i(new edit)
-  before_action :set_code, only: %i(edit update destroy)
+  before_action :set_marchandise, only: %i(edit update destroy)
 
 
   def index
-    @code = Marchandise.where(staff_member: @current_staff.id)
+    @marchandise = Marchandise.where(staff_member: @current_staff.id)
     # binding.pry
   end
 
@@ -23,7 +23,7 @@ class Staff::MarchandiseController < Staff::Base
     @marchandise = @current_staff.marchandises.build(marchandise_params)
     render :new, alert: "編集してね" if @marchandise.invalid?
   end
-  
+
 
   def create
     # binding.pry
@@ -65,6 +65,17 @@ class Staff::MarchandiseController < Staff::Base
 
 
   def update
+    set_required_items
+    set_required_items_photos
+    set_any_items_photos
+    binding.pry
+    if @marchandise.invalid?
+      render :edit, alert: '確認してね'
+    elsif @marchandise
+      render :edit, alert: '確認してね'
+    else
+      render :edit, alert: '確認してね'
+    end
   end
 
 
@@ -83,8 +94,8 @@ class Staff::MarchandiseController < Staff::Base
       @scene = ProductScene.pluck(:marchandise_scene, :id)
     end
 
-    def set_code
-      @code = Marchandise.find_by(id: params[:id])
+    def set_marchandise
+      @marchandise = Marchandise.find_by(id: params[:id])
     end
 
   # def set_required_items
