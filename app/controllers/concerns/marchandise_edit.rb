@@ -54,6 +54,11 @@ module MarchandiseEdit
       @vest = vests.find_by(id: @code.vest_id)
     end
 
+    if @code.jacket
+      jackets = Jacket.where(staff_member: @current_staff.id)
+      @jacket.find_by(id: @code.jacket_id)
+    end
+
     if @code.coat
       coats = Coat.where(staff_member: @current_staff.id)
       @coat = coats.find_by(id: @code.coat_id)
@@ -65,7 +70,7 @@ module MarchandiseEdit
     end
 
     if @code.cuff_link
-      cuffs = CuffLink..where(staff_member: @current_staff.id)
+      cuffs = CuffLink.where(staff_member: @current_staff.id)
       @cuff = cuffs.find_by(id: @code.cuff_link_id)
     end
 
@@ -75,7 +80,7 @@ module MarchandiseEdit
     end
 
     if @code.glove
-      gloves = Gant..where(staff_member: @current_staff.id)
+      gloves = Gant.where(staff_member: @current_staff.id)
       @gloe = gloves.find_by(id: @code.gant_id)
     end
 
