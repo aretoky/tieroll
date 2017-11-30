@@ -67,6 +67,8 @@
         ul 
           li 
             = image_tag 'shurt_icon.png'
+          li
+            = image_tag @shurt[0].s_front
           li.required 
             = f.text_field :shurt_code, placeholder: "シャツの商品コード"
             
@@ -74,8 +76,6 @@
         ul 
           li 
             = image_tag 'knit_icon.png'
-          li 
-            = image_tag @shurt.s_front
           li 
             = f.text_field :knit_code, placeholder: "ニット/セーターの商品コード"
             

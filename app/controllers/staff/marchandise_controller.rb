@@ -1,6 +1,6 @@
 class Staff::MarchandiseController < Staff::Base
   include SearchItem #Concern
-  include MarchandiseEdit
+  include MarchandiseEdit #Concern
 
 
   before_action :are_you_staff_member?, only: %i(index new confirm create show edit update destroy)
@@ -30,10 +30,10 @@ class Staff::MarchandiseController < Staff::Base
     if params[:back]
       render :new, notice: "編集してね"
     elsif @marchandise #marchandiseがあれば必須アイテムをセットし、その他アイテムをセットし、@marchandiseにアイテムの値段の合計を代入してさらにアイテムのIDを代入する
-      if set_required_items
-        set_any_items
-        @marchandise.price = set_item_price
-        input_items
+      if set_required_items #SearchItem
+        set_any_items #SearchItem
+        @marchandise.price = set_item_price #SearchItem
+        input_items #SearchItem
         if @marchandise.save! #@marchandiseがあり、その他の入力全ての処理が正常に終了したら
           redirect_to :staff_item_post, notice: '登録完了'
         else
@@ -56,8 +56,8 @@ class Staff::MarchandiseController < Staff::Base
     # set_required_items
     # binding.pry
     # @shurt = Shurt.find_by(id: @code.shurt)
-    set_items_photos
-    binding.pry
+    set_items_photos #MarchandiseEdit
+    # binding.pry
   end
 
   def update

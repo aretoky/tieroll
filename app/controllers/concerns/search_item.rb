@@ -1,6 +1,6 @@
 module SearchItem
   extend ActiveSupport::Concern
-  # input_any_itemsを呼ぶときは先にset_required_itemsを呼ぶ事
+  # XXX input_any_itemsを呼ぶときは先にset_required_itemsを呼ぶ事
 
   # シャツ、パンツ、靴下、靴は必ず存在する
   def set_required_items
@@ -67,7 +67,7 @@ module SearchItem
   end
 
 
-  #TODO もっと簡単に書けそう
+  #FIXME もっと簡単に書けそう
   def input_items
     # シャツ、パンツ、靴下、靴は必ずあるものとする
     # 先に↑のset_required_itemsを呼ぶこと
