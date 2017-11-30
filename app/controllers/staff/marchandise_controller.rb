@@ -56,7 +56,8 @@ class Staff::MarchandiseController < Staff::Base
     # set_required_items
     # binding.pry
     # @shurt = Shurt.find_by(id: @code.shurt)
-    set_items_photos #MarchandiseEdit
+    set_required_items_photos #MarchandiseEdit
+    set_any_items_photos
     # binding.pry
   end
 

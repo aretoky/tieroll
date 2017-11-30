@@ -28,7 +28,7 @@
         ul 
           - if @code.hat 
             li 
-              = image_tag @hat[0].hat_front
+              = image_tag @hat.hat_front
           - else 
             li 
               = image_tag 'hat_icon.png'
@@ -65,10 +65,8 @@
             
       .product_form
         ul 
-          li 
-            = image_tag 'shurt_icon.png'
           li
-            = image_tag @shurt[0].s_front
+            = image_tag @shurt.s_front
           li.required 
             = f.text_field :shurt_code, placeholder: "シャツの商品コード"
             
@@ -131,7 +129,7 @@
       .product_form
         ul 
           li 
-            = image_tag 'pants_icon.png'
+            = image_tag @pant.p_side
           li.required
             = f.text_field :pant_code, placeholder: "パンツの商品コード"
             
@@ -145,13 +143,13 @@
       .product_form
         ul 
           li 
-            = image_tag 'socks_icon.png'
+            = image_tag @socks.socks_one
           li.required
             = f.text_field :sock_code, placeholder: "靴下の商品コード"
              
       .product_form
         ul 
           li 
-            = image_tag 'shoes_icon.jpeg'
+            = image_tag @shoes.shoe_front
           li.required
             = f.text_field :shoe_code, placeholder: "靴の商品コード" 
