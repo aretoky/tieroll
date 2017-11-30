@@ -6,7 +6,6 @@ module SearchItem
   # シャツ、パンツ、靴下、靴は必ず存在する
   # 必ず存在するから入力があればってやらなくても良いと思うんだけど、update内でも使いまわしたいから入力があればってやることにする
   def set_required_items
-    # @shurt = Shurt.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten!
     @shurt = Shurt.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten! if params[:marchandise][:shurt_code]
     @pant = Pant.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:pant_code]).pluck(:id, :price, :p_side).flatten! if params[:marchandise][:pant_code]
     @socks = Sock.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:sock_code]).pluck(:id, :price, :socks_one).flatten! if params[:marchandise][:sock_code]
@@ -48,12 +47,14 @@ module SearchItem
     @other = Other.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:other_code]).pluck(:id, :price, :other_one).flatten! if params[:marchandise][:other_code]
   end
 
+
   def set_item_price
     total_price = 0
     total_price += @shurt[1] if @shurt
     total_price += @pant[1] if @pant
     total_price += @socks[1] if @socks
     total_price += @shoes[1] if @shoes
+
     total_price += @hat[1] if @hat
     total_price += @ear_muffler[1] if @ear_muffler
     total_price += @tie[1] if @tie

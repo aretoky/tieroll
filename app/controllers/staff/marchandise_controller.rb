@@ -83,6 +83,8 @@ class Staff::MarchandiseController < Staff::Base
 
 
   def destroy
+    @marchandise.destroy
+    redirect_to :staff_marchandise_index, notice: 'グッバイフォーエバー'
   end
 
 
