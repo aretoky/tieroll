@@ -31,24 +31,19 @@ class Staff::MarchandiseController < Staff::Base
     if params[:back]
       render :new, notice: "編集してね"
     elsif @marchandise #marchandiseがあれば必須アイテムをセットし、その他アイテムをセットし、@marchandiseにアイテムの値段の合計を代入してさらにアイテムのIDを代入する
-      if set_required_items #SearchItem
-        set_any_items #SearchItem
-        @marchandise.price = set_item_price #SearchItem
-        input_items #SearchItem
-        if @marchandise.save! #@marchandiseがあり、その他の入力全ての処理が正常に終了したら
-          redirect_to :staff_item_post, notice: '登録完了'
-        else
-          render :new, alert: '確認してね'
-        end
-
-      else  #@marchandiseは存在するが各種カラムの代入が正常に行われなかった時
+      set_required_items #SearchItem
+      set_any_items #SearchItem
+      @marchandise.price = set_item_price #SearchItem
+      input_items #SearchItem
+      if @marchandise.save! #@marchandiseがあり、その他の入力全ての処理が正常に終了したら
+        redirect_to :staff_item_post, notice: '登録完了'
+      else
         render :new, alert: '確認してね'
       end
 
     else #なにはともあれFalseのとき
-        binding.pry
-
-        render :new
+        # binding.pry
+        render :new, alert: '確認してね'
     end
 
   end
@@ -59,20 +54,28 @@ class Staff::MarchandiseController < Staff::Base
     # binding.pry
     # @shurt = Shurt.find_by(id: @code.shurt)
     set_required_items_photos #MarchandiseEdit
-    set_any_items_photos
+    set_any_items_photos #MarchandiseEdit
     # binding.pry
   end
 
 
   def update
-    set_required_items
-    set_required_items_photos
-    set_any_items_photos
-    binding.pry
+    # 検証でeditフォームに飛んだ時様に現在存在している画像を探してくる
+    set_required_items_photos #MarchandiseEdit
+    set_any_items_photos #MarchandiseEdit
+    # binding.pry
     if @marchandise.invalid?
       render :edit, alert: '確認してね'
-    elsif @marchandise
-      render :edit, alert: '確認してね'
+    elsif @marchandise #@marchandiseが存在していれば、各種入力に従ったアイテムを探してきて@marchandiseに代入する
+      set_required_items #SearchItems
+      set_any_items #SearchItems
+      input_items #SearchItems
+      @marchandise.price = set_item_price #SearchItems
+
+      if @marchandise.update(marchandise_params)
+        redirect_to :staff_marchandise_index, notice: '更新完了'
+      end
+
     else
       render :edit, alert: '確認してね'
     end

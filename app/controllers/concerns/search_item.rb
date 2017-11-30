@@ -4,12 +4,13 @@ module SearchItem
 
 
   # シャツ、パンツ、靴下、靴は必ず存在する
+  # 必ず存在するから入力があればってやらなくても良いと思うんだけど、update内でも使いまわしたいから入力があればってやることにする
   def set_required_items
     # @shurt = Shurt.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten!
-    @shurt = Shurt.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten!
-    @pant = Pant.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:pant_code]).pluck(:id, :price, :p_side).flatten!
-    @socks = Sock.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:sock_code]).pluck(:id, :price, :socks_one).flatten!
-    @shoes = Shoe.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shoe_code]).pluck(:id, :price, :shoe_front).flatten!
+    @shurt = Shurt.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shurt_code]).pluck(:id, :price, :s_front).flatten! if params[:marchandise][:shurt_code]
+    @pant = Pant.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:pant_code]).pluck(:id, :price, :p_side).flatten! if params[:marchandise][:pant_code]
+    @socks = Sock.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:sock_code]).pluck(:id, :price, :socks_one).flatten! if params[:marchandise][:sock_code]
+    @shoes = Shoe.where('staff_member_id = ? AND code = ?', @current_staff.id, params[:marchandise][:shoe_code]).pluck(:id, :price, :shoe_front).flatten! if params[:marchandise][:shoe_code]
   end
 
 
@@ -49,7 +50,10 @@ module SearchItem
 
   def set_item_price
     total_price = 0
-    total_price = @shurt[1] + @pant[1] + @socks[1] + @shoes[1]
+    total_price += @shurt[1] if @shurt
+    total_price += @pant[1] if @pant
+    total_price += @socks[1] if @socks
+    total_price += @shoes[1] if @shoes
     total_price += @hat[1] if @hat
     total_price += @ear_muffler[1] if @ear_muffler
     total_price += @tie[1] if @tie
@@ -73,10 +77,10 @@ module SearchItem
   def input_items
     # シャツ、パンツ、靴下、靴は必ずあるものとする
     # 先に↑のset_required_itemsを呼ぶこと
-    @marchandise.shurt_id = @shurt[0]
-    @marchandise.pant_id = @pant[0]
-    @marchandise.sock_id = @socks[0]
-    @marchandise.shoe_id = @shoes[0]
+    @marchandise.shurt_id = @shurt[0] if @shurt
+    @marchandise.pant_id = @pant[0] if @pant
+    @marchandise.sock_id = @socks[0] if @socks
+    @marchandise.shoe_id = @shoes[0] if @shoes
 
     @marchandise.hat_id = @hat[0] if @hat
     @marchandise.ear_muffler_id = @ear_muffler[0] if @ear_muffler
